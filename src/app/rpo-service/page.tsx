@@ -101,36 +101,36 @@ const RPOServiceBanner = () => {
     );
 };
 
-// Modern Interactive Benefits Cards
-const ModernBenefitsSection = () => {
+// Brand-Focused Benefits Section with Solid Icons
+const BrandBenefitsSection = () => {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(false);
 
     const benefits = [
         {
-            icon: "⚡",
+            icon: FaUsers,
             title: "Flexible hiring",
             description: "Adapt to changing business needs with scalable recruitment solutions",
-            gradient: "from-blue-500 to-cyan-500"
+            accentColor: "#34969D"
         },
         {
-            icon: "🚀",
+            icon: FaRocket,
             title: "Faster hires", 
             description: "Reduce time-to-hire by 60% with our streamlined processes",
-            gradient: "from-purple-500 to-pink-500"
+            accentColor: "#CBDC13"
         },
         {
-            icon: "⭐",
+            icon: FaGraduationCap,
             title: "Top talent",
             description: "Access pre-vetted candidates from our extensive talent network",
-            gradient: "from-green-500 to-emerald-500"
+            accentColor: "#34969D"
         },
         {
-            icon: "💰",
+            icon: FaDollarSign,
             title: "Cost control",
             description: "Lower recruitment costs while maintaining quality standards",
-            gradient: "from-orange-500 to-red-500"
+            accentColor: "#CBDC13"
         }
     ];
 
@@ -159,53 +159,54 @@ const ModernBenefitsSection = () => {
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 w-full mt-8">
-                {benefits.map((benefit, index) => (
-                    <div
-                        key={index}
-                        className={`group relative overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer float-animation hover-lift ${
-                            isVisible ? 'animate-in' : 'opacity-0'
-                        }`}
-                        style={{ 
-                            animationDelay: `${index * 0.2}s`,
-                            animationFillMode: 'forwards'
-                        }}
-                        onMouseEnter={() => setHoveredCard(index)}
-                        onMouseLeave={() => setHoveredCard(null)}
-                    >
-                        {/* Glass morphism background */}
-                        <div className="glass-card p-6 md:p-8 h-full relative z-10">
-                            {/* Gradient border effect */}
-                            <div className="gradient-border absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
-                            {/* Icon with pulse effect */}
-                            <div className="relative mb-6">
-                                <div className={`w-16 h-16 bg-gradient-to-br ${benefit.gradient} rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                                    <span className="filter drop-shadow-sm">{benefit.icon}</span>
+                {benefits.map((benefit, index) => {
+                    const IconComponent = benefit.icon;
+                    return (
+                        <div
+                            key={index}
+                            className={`group relative overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer bg-white border-2 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:scale-105 ${
+                                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            }`}
+                            style={{ 
+                                animationDelay: `${index * 0.1}s`,
+                                borderColor: benefit.accentColor,
+                                transitionDelay: `${index * 0.1}s`
+                            }}
+                            onMouseEnter={() => setHoveredCard(index)}
+                            onMouseLeave={() => setHoveredCard(null)}
+                        >
+                            {/* Solid background card */}
+                            <div className="p-6 md:p-8 h-full relative z-10">
+                                {/* Solid Icon with brand colors */}
+                                <div className="relative mb-6">
+                                    <div 
+                                        className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+                                        style={{ 
+                                            backgroundColor: benefit.accentColor,
+                                            boxShadow: hoveredCard === index ? `0 10px 30px ${benefit.accentColor}40` : 'none'
+                                        }}
+                                    >
+                                        <IconComponent className="text-white" />
+                                    </div>
                                 </div>
-                                {hoveredCard === index && (
-                                    <div className="absolute inset-0 rounded-2xl animate-pulse" style={{
-                                        background: `linear-gradient(135deg, rgba(52,150,157,0.2), rgba(203,220,19,0.2))`,
-                                        animation: 'glowPulse 2s ease-in-out infinite'
-                                    }}></div>
-                                )}
+                                
+                                {/* Content */}
+                                <h3 className="text-xl md:text-2xl font-bold mb-3 transition-colors duration-300" style={{color: '#012D50'}}>
+                                    {benefit.title}
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                                    {benefit.description}
+                                </p>
+                                
+                                {/* Accent line */}
+                                <div 
+                                    className="absolute bottom-0 left-0 h-1 w-full transition-all duration-500 group-hover:h-2"
+                                    style={{ backgroundColor: benefit.accentColor }}
+                                ></div>
                             </div>
-                            
-                            {/* Content */}
-                            <h3 className="text-xl md:text-2xl font-bold text-primary mb-3 group-hover:text-secondry transition-colors duration-300">
-                                {benefit.title}
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                                {benefit.description}
-                            </p>
-                            
-                            {/* Hover overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondry/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                         </div>
-                        
-                        {/* Background decoration */}
-                        <div className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-primary-green-color/20 to-secondry/20 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );
