@@ -97,8 +97,8 @@ export default function RPOService() {
             <BgWithListComponent
                 title="Highly Skilled Team for Business Expansions"
                 desc="Right recruitment means matching the right talent with the team to work efficiently and deliver actionable results. RPO is taking forward more from reactive hiring to strategic talent-pool acquisition to build success."
-                bg={rpoBenefitsBg?.src}
-                bgList={rpoBenefitsList?.src}
+                bg="/img/bgListImgs/businessBenefits.png"
+                bgList="/img/bgListImgs/businessBenefits2.png"
                 listData={rpoBenefitsData}
             />
 
