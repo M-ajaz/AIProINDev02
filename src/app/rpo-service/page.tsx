@@ -534,7 +534,6 @@ const InteractiveTimeline = () => {
                                                 ></div>
                                             )}
                                         </div>
-                            )}
 
                                     {/* Step content */}
                                     <div className={`flex-1 ml-8 md:ml-0 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
