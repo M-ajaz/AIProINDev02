@@ -561,15 +561,7 @@ export default function RPOService() {
             <ModernServiceSlider />
             <InteractiveTimeline />
 
-            <div className="py-16 md:py-24 w-full flex justify-center">
-                <BgWithListComponent
-                    title="Highly Skilled Team for Business Expansions"
-                    desc="Right recruitment means matching the right talent with the team to work efficiently and deliver actionable results. RPO is taking forward more from reactive hiring to strategic talent-pool acquisition to build success."
-                    bg="/img/bgListImgs/businessBenefits.png"
-                    bgList="/img/bgListImgs/businessBenefits2.png"
-                    listData={rpoBenefitsData}
-                />
-            </div>
+            <PremiumInteractiveSlider />
 
             <div className="py-16 md:py-24 w-full flex justify-center bg-gray-50">
                 <div className="w-full max-w-[1450px]">
