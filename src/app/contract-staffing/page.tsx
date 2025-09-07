@@ -77,16 +77,14 @@ const contractStaffingFAQ = [
 const ContractStaffingHero = () => {
     return (
         <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
-            <video
-                autoPlay
-                muted
-                loop
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ objectPosition: 'center center' }}
-            >
-                <source src="/ITConsultingBg.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(1,45,80,0.9), rgba(52,150,157,0.7))' }}></div>
+            {/* Professional background image */}
+            <div 
+                className="absolute inset-0 w-full h-full object-cover bg-center bg-cover"
+                style={{
+                    backgroundImage: 'url(https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80)'
+                }}
+            ></div>
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(1,45,80,0.85), rgba(52,150,157,0.75))' }}></div>
             
             {/* Floating geometric elements */}
             <div className="absolute inset-0 overflow-hidden">
