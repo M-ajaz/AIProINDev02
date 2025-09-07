@@ -864,43 +864,53 @@ const IndustriesSection = () => {
                         return (
                             <div
                                 key={index}
-                                className="group relative overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer bg-white shadow-lg hover:shadow-2xl hover:-translate-y-3"
-                                style={{
-                                    borderTop: `4px solid ${industry.accentColor}`
-                                }}
+                                className="group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer bg-white shadow-lg hover:shadow-xl hover:-translate-y-2"
                             >
-                                {/* Industry Image Background */}
-                                <div className="absolute inset-0 h-32">
-                                    <img 
-                                        src={industry.image} 
-                                        alt={industry.title}
-                                        className="w-full h-full object-cover"
-                                    />
-                                    <div 
-                                        className="absolute inset-0 opacity-85 group-hover:opacity-75 transition-opacity duration-300"
-                                        style={{ 
-                                            background: `linear-gradient(135deg, ${industry.accentColor}DD, ${industry.accentColor}AA)` 
-                                        }}
-                                    ></div>
-                                </div>
-                                
-                                <div className="p-8 h-full relative z-10">
-                                    <div className="relative mb-6 -mt-2">
+                                {/* Modern Gradient Header */}
+                                <div 
+                                    className="h-24 relative overflow-hidden"
+                                    style={{
+                                        background: `linear-gradient(135deg, ${industry.accentColor}, ${industry.accentColor}CC)`
+                                    }}
+                                >
+                                    {/* Geometric Pattern */}
+                                    <div className="absolute inset-0 opacity-20">
+                                        <div className="absolute top-2 right-4 w-16 h-16 border-2 border-white/30 rounded-full"></div>
+                                        <div className="absolute bottom-2 left-4 w-8 h-8 bg-white/20 rotate-45"></div>
+                                        <div className="absolute top-1/2 left-1/2 w-4 h-16 bg-white/10 rotate-12"></div>
+                                    </div>
+                                    
+                                    {/* Icon */}
+                                    <div className="absolute bottom-0 left-8 transform translate-y-1/2">
                                         <div 
-                                            className="w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-4 transition-all duration-300 group-hover:scale-110 border-4 border-white"
+                                            className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl transition-all duration-300 group-hover:scale-110 shadow-lg border-4 border-white"
                                             style={{ backgroundColor: industry.accentColor }}
                                         >
                                             <IconComponent className="text-white" />
                                         </div>
                                     </div>
-                                    
+                                </div>
+                                
+                                <div className="p-8 pt-12">
                                     <h3 className="text-xl font-bold mb-4 transition-colors duration-300" style={{ color: '#012D50' }}>
                                         {industry.title}
                                     </h3>
-                                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                                    <p className="text-gray-600 leading-relaxed mb-6">
                                         {industry.description}
                                     </p>
+                                    
+                                    {/* Modern hover effect */}
+                                    <div className="flex items-center gap-2 text-sm font-semibold transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:gap-3" style={{ color: industry.accentColor }}>
+                                        <span>Explore Solutions</span>
+                                        <FaArrowRight className="text-xs" />
+                                    </div>
                                 </div>
+                                
+                                {/* Side accent */}
+                                <div 
+                                    className="absolute right-0 top-1/4 w-1 h-1/2 transition-all duration-500 group-hover:h-3/4"
+                                    style={{ backgroundColor: industry.accentColor }}
+                                ></div>
                             </div>
                         );
                     })}
