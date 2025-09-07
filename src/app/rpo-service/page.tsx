@@ -826,6 +826,208 @@ const PremiumInteractiveSlider = () => {
     );
 };
 
+// Powerful Partner Section - Maximum Visual Impact
+const PowerfulPartnerSection = () => {
+    const [visibleCards, setVisibleCards] = useState<boolean[]>([]);
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    const impactData = [
+        {
+            number: "25+",
+            title: "Years of Excellence",
+            description: "Deep industry experience in engineering and tech hiring, knowing niche talent better than anyone else.",
+            icon: FaGraduationCap,
+            accentColor: "#34969D"
+        },
+        {
+            number: "60%",
+            title: "Faster Hiring",
+            description: "We shorten time-to-hire without sacrificing quality by refining our sourcing frameworks.",
+            icon: FaRocket,
+            accentColor: "#CBDC13"
+        },
+        {
+            number: "100%",
+            title: "Transparent Process",
+            description: "Complete visibility in hiring with regular updates, dedicated account managers, and full transparency.",
+            icon: FaCheckCircle,
+            accentColor: "#34969D"
+        }
+    ];
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const cards = entry.target.querySelectorAll('.impact-card');
+                        const newVisibleCards = Array(cards.length).fill(false);
+                        
+                        cards.forEach((_, index) => {
+                            setTimeout(() => {
+                                setVisibleCards(prev => {
+                                    const updated = [...prev];
+                                    updated[index] = true;
+                                    return updated;
+                                });
+                            }, index * 200);
+                        });
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <section ref={sectionRef} className="relative py-20 overflow-hidden">
+            {/* Dynamic gradient background */}
+            <div 
+                className="absolute inset-0"
+                style={{
+                    background: 'linear-gradient(135deg, #012D50 0%, #34969D 35%, #012D50 70%, #CBDC13 100%)',
+                    backgroundSize: '400% 400%',
+                    animation: 'gradient-shift 15s ease infinite'
+                }}
+            >
+                {/* Floating shapes */}
+                <div className="floating-shapes">
+                    <div className="absolute top-20 left-10 w-16 h-16 opacity-20 animate-bounce" style={{ animationDelay: '0s' }}>
+                        <div className="w-full h-full border-2 rotate-45" style={{ borderColor: '#CBDC13' }}></div>
+                    </div>
+                    <div className="absolute bottom-32 right-20 w-12 h-12 rounded-full opacity-30 animate-pulse" style={{ backgroundColor: '#CBDC13', animationDelay: '1s' }}></div>
+                    <div className="absolute top-1/2 left-1/4 w-8 h-8 opacity-25 animate-spin" style={{ backgroundColor: '#34969D', animationDelay: '2s' }}></div>
+                    <div className="absolute bottom-20 left-1/3 w-6 h-6 rounded-full opacity-40 animate-bounce" style={{ backgroundColor: '#CBDC13', animationDelay: '0.5s' }}></div>
+                </div>
+            </div>
+
+            <div className="relative z-10 container mx-auto px-4 md:px-6 max-w-[1450px]">
+                {/* Powerful headline treatment */}
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white text-center leading-tight mb-8" style={{ textShadow: '0 4px 20px rgba(1, 45, 80, 0.3)' }}>
+                        <span className="block">We Are Not Another</span>
+                        <span className="block animate-pulse" style={{ color: '#CBDC13', textShadow: '0 0 30px rgba(203, 220, 19, 0.5)' }}>
+                            RPO Vendor
+                        </span>
+                        <span className="block mt-4">But A Trusted</span>
+                        <span className="block bg-gradient-to-r from-[#34969D] to-[#CBDC13] bg-clip-text text-transparent font-black">
+                            Talent Growth Partner
+                        </span>
+                    </h2>
+                    
+                    <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
+                        We work for excellence with the top-tier talent pool. Our pre-vetted candidates are highly skilled 
+                        to evolve and expand your organization with precision and measurable results.
+                    </p>
+                </div>
+
+                {/* Impact statements grid */}
+                <div className="grid md:grid-cols-3 gap-8 mb-12">
+                    {impactData.map((item, index) => {
+                        const IconComponent = item.icon;
+                        return (
+                            <div
+                                key={index}
+                                className={`impact-card group relative bg-white border-l-8 p-8 rounded-2xl transition-all duration-700 transform ${
+                                    visibleCards[index] 
+                                        ? 'opacity-100 translate-y-0 rotate-0' 
+                                        : 'opacity-0 translate-y-12 rotate-6'
+                                }`}
+                                style={{
+                                    borderLeftColor: item.accentColor,
+                                    transitionDelay: `${index * 0.2}s`,
+                                    transformStyle: 'preserve-3d',
+                                    perspective: '1000px'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'perspective(1000px) rotateY(5deg) translateX(10px) translateY(-10px)';
+                                    e.currentTarget.style.boxShadow = '-20px 20px 40px rgba(1, 45, 80, 0.2)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) translateX(0px) translateY(0px)';
+                                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+                                }}
+                            >
+                                {/* Large number accent */}
+                                <div className="flex items-start justify-between mb-6">
+                                    <div 
+                                        className="impact-number font-black leading-none"
+                                        style={{
+                                            fontSize: '72px',
+                                            background: `linear-gradient(135deg, ${item.accentColor}, #CBDC13)`,
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                            backgroundClip: 'text'
+                                        }}
+                                    >
+                                        {item.number}
+                                    </div>
+                                    <div 
+                                        className="w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"
+                                        style={{ backgroundColor: item.accentColor }}
+                                    >
+                                        <IconComponent className="text-white text-2xl" />
+                                    </div>
+                                </div>
+                                
+                                <h3 className="text-2xl font-bold mb-4" style={{ color: '#012D50' }}>
+                                    {item.title}
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    {item.description}
+                                </p>
+
+                                {/* Hover glow effect */}
+                                <div 
+                                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"
+                                    style={{
+                                        background: `linear-gradient(135deg, ${item.accentColor}20, #CBDC1320)`,
+                                        filter: 'blur(10px)'
+                                    }}
+                                ></div>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* Call-to-Action */}
+                <div className="text-center">
+                    <button className="group relative inline-flex items-center gap-4 px-12 py-6 text-xl font-bold text-white rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:-translate-y-2" 
+                            style={{
+                                background: 'linear-gradient(135deg, #34969D, #CBDC13)',
+                                boxShadow: '0 10px 30px rgba(52, 150, 157, 0.3)'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.background = 'linear-gradient(135deg, #CBDC13, #34969D)';
+                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(203, 220, 19, 0.4)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.background = 'linear-gradient(135deg, #34969D, #CBDC13)';
+                                e.currentTarget.style.boxShadow = '0 10px 30px rgba(52, 150, 157, 0.3)';
+                            }}
+                    >
+                        <span className="relative z-10" style={{ color: '#012D50' }}>Start Your Transformation</span>
+                        <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#012D50' }} />
+                        
+                        {/* Button glow effect */}
+                        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                    </button>
+                    
+                    <p className="mt-6 text-gray-300 text-lg">
+                        Join 500+ companies who chose Protingent as their trusted growth partner
+                    </p>
+                </div>
+            </div>
+        </section>
+    );
+};
+
 export default function RPOService() {
     return (
         <div className="bg-white w-full flex flex-col items-center gap-0 pb-12 md:pb-20">
