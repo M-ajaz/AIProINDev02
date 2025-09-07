@@ -668,7 +668,7 @@ const ProtingentAdvantageSection = () => {
             accentColor: "#34969D"
         },
         {
-            icon: FaGlobe2,
+            icon: FaGlobe,
             title: "Proven Global Partnerships",
             description: "Trusted by organizations for predictable services and long-term collaboration",
             accentColor: "#CBDC13"
