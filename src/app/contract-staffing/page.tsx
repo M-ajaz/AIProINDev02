@@ -271,37 +271,43 @@ const ContractStaffingSolutions = () => {
             icon: FaUserTie,
             title: "Contract-to-Hire Staffing",
             description: "Hire skilled pre-vetted candidates on a contract basis with the option to convert them to full-time when needed, while ensuring corporate culture understanding and operational efficiency.",
-            accentColor: "#34969D"
+            accentColor: "#34969D",
+            image: "https://images.unsplash.com/photo-1681505526188-b05e68c77582?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaProjectDiagram,
             title: "Project-Based Staffing",
             description: "Quick deployment of a niche-specific team of experts for dedicated projects, ensuring agility, efficiency, and end-to-end performance.",
-            accentColor: "#CBDC13"
+            accentColor: "#CBDC13",
+            image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaClock,
             title: "Short-Term & Long-Term Contracts",
             description: "We have a talent pool available for a flexible duration, whether it's short-term or long-term. Clients can extend their working contracts from weeks to months based on business demands.",
-            accentColor: "#34969D"
+            accentColor: "#34969D",
+            image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaGlobe,
             title: "Remote & Hybrid Staffing",
             description: "Our database includes talented candidates who fulfill contract agreements on remote and hybrid requirements across the globe. We ensure that there are no geographical limitations for remote and hybrid staffing models.",
-            accentColor: "#CBDC13"
+            accentColor: "#CBDC13",
+            image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
             icon: FaIndustry,
             title: "Specialized Industry Staffing",
             description: "The AI-enabled CRM software has a huge tech-expert details of domain-specific tech programmers like IT, Healthcare, Finance, Manufacturing, and Retail to address unique workforce challenges with precision.",
-            accentColor: "#34969D"
+            accentColor: "#34969D",
+            image: "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaCogs,
             title: "Workforce Replacement & Continuity",
             description: "Ensure uninterrupted operations with swift workforce replacement services, minimizing risks of downtime and maintaining consistent productivity across projects and functions.",
-            accentColor: "#CBDC13"
+            accentColor: "#CBDC13",
+            image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600"
         }
     ];
 
