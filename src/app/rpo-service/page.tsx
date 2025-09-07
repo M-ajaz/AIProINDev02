@@ -32,7 +32,14 @@ import {
     FaClipboardCheck,
     FaCalendarAlt,
     FaFileContract,
-    FaChartBar
+    FaChartBar,
+    FaCircleNotch,
+    FaProjectDiagram,
+    FaBolt,
+    FaLayerGroup,
+    FaIndustry,
+    FaExpandArrowsAlt,
+    FaUserCheck
 } from 'react-icons/fa';
 
 // --------------------------------------------------------------
