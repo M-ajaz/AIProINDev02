@@ -866,202 +866,117 @@ const PremiumInteractiveSlider = () => {
     );
 };
 
-// Powerful Partner Section - Maximum Visual Impact
+// Trusted Partner Section - Updated with Exact Content
 const PowerfulPartnerSection = () => {
-    const [visibleCards, setVisibleCards] = useState<boolean[]>([]);
-    const sectionRef = useRef<HTMLDivElement>(null);
-
-    const impactData = [
-        {
-            number: "25+",
-            title: "Years of Excellence",
-            description: "Deep industry experience in engineering and tech hiring, knowing niche talent better than anyone else.",
-            icon: FaGraduationCap,
-            accentColor: "#34969D"
-        },
-        {
-            number: "60%",
-            title: "Faster Hiring",
-            description: "We shorten time-to-hire without sacrificing quality by refining our sourcing frameworks.",
-            icon: FaRocket,
-            accentColor: "#CBDC13"
-        },
-        {
-            number: "100%",
-            title: "Transparent Process",
-            description: "Complete visibility in hiring with regular updates, dedicated account managers, and full transparency.",
-            icon: FaCheckCircle,
-            accentColor: "#34969D"
-        }
-    ];
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const cards = entry.target.querySelectorAll('.impact-card');
-                        const newVisibleCards = Array(cards.length).fill(false);
-                        
-                        cards.forEach((_, index) => {
-                            setTimeout(() => {
-                                setVisibleCards(prev => {
-                                    const updated = [...prev];
-                                    updated[index] = true;
-                                    return updated;
-                                });
-                            }, index * 200);
-                        });
-                    }
-                });
-            },
-            { threshold: 0.3 }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <section ref={sectionRef} className="relative py-20 overflow-hidden">
-            {/* Dynamic gradient background */}
-            <div 
-                className="absolute inset-0"
-                style={{
-                    background: 'linear-gradient(135deg, #012D50 0%, #34969D 35%, #012D50 70%, #CBDC13 100%)',
-                    backgroundSize: '400% 400%',
-                    animation: 'gradient-shift 15s ease infinite'
-                }}
-            >
-                {/* Floating shapes */}
-                <div className="floating-shapes">
-                    <div className="absolute top-20 left-10 w-16 h-16 opacity-20 animate-bounce" style={{ animationDelay: '0s' }}>
-                        <div className="w-full h-full border-2 rotate-45" style={{ borderColor: '#CBDC13' }}></div>
-                    </div>
-                    <div className="absolute bottom-32 right-20 w-12 h-12 rounded-full opacity-30 animate-pulse" style={{ backgroundColor: '#CBDC13', animationDelay: '1s' }}></div>
-                    <div className="absolute top-1/2 left-1/4 w-8 h-8 opacity-25 animate-spin" style={{ backgroundColor: '#34969D', animationDelay: '2s' }}></div>
-                    <div className="absolute bottom-20 left-1/3 w-6 h-6 rounded-full opacity-40 animate-bounce" style={{ backgroundColor: '#CBDC13', animationDelay: '0.5s' }}></div>
-                </div>
-            </div>
-
-            <div className="relative z-10 container mx-auto px-4 md:px-6 max-w-[1450px]">
-                {/* Powerful headline treatment */}
+        <section className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #012D50 0%, #34969D 50%, #012D50 100%)' }}>
+            <div className="container mx-auto px-4 relative z-10 max-w-[1450px]">
+                
+                {/* Main Headline */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white text-center leading-tight mb-8" style={{ textShadow: '0 4px 20px rgba(1, 45, 80, 0.3)' }}>
-                        <span className="block">We Are Not Another</span>
-                        <span className="block animate-pulse" style={{ color: '#CBDC13', textShadow: '0 0 30px rgba(203, 220, 19, 0.5)' }}>
-                            RPO Vendor
-                        </span>
+                    <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+                        <span className="block mb-2">We Are Not Another</span>
+                        <span className="text-5xl md:text-7xl" style={{ color: '#CBDC13' }}>RPO Vendor</span>
                         <span className="block mt-4">But A Trusted</span>
-                        <span className="block bg-gradient-to-r from-[#34969D] to-[#CBDC13] bg-clip-text text-transparent font-black">
+                        <span className="bg-gradient-to-r from-[#34969D] to-[#CBDC13] bg-clip-text text-transparent text-5xl md:text-7xl">
                             Talent Growth Partner
                         </span>
                     </h2>
                     
-                    <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-light">
-                        We work for excellence with the top-tier talent pool. Our pre-vetted candidates are highly skilled 
-                        to evolve and expand your organization with precision and measurable results.
+                    {/* Subheading */}
+                    <p className="text-xl text-white/90 max-w-4xl mx-auto mt-8 leading-relaxed">
+                        We work for excellence with the top-tier talent pool. Our pre-vetted and new 
+                        candidates are highly skilled to evolve and expand your organization with precision. 
+                        Our recruiters blend agility, domain expertise, and a tech-enabled approach to 
+                        build talent pipelines that work efficiently.
                     </p>
                 </div>
 
-                {/* Impact statements grid */}
-                <div className="grid md:grid-cols-3 gap-8 mb-12">
-                    {impactData.map((item, index) => {
-                        const IconComponent = item.icon;
-                        return (
-                            <div
-                                key={index}
-                                className={`impact-card group relative bg-white border-l-8 p-8 rounded-2xl transition-all duration-700 transform ${
-                                    visibleCards[index] 
-                                        ? 'opacity-100 translate-y-0 rotate-0' 
-                                        : 'opacity-0 translate-y-12 rotate-6'
-                                }`}
-                                style={{
-                                    borderLeftColor: item.accentColor,
-                                    transitionDelay: `${index * 0.2}s`,
-                                    transformStyle: 'preserve-3d',
-                                    perspective: '1000px'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'perspective(1000px) rotateY(5deg) translateX(10px) translateY(-10px)';
-                                    e.currentTarget.style.boxShadow = '-20px 20px 40px rgba(1, 45, 80, 0.2)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) translateX(0px) translateY(0px)';
-                                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
-                                }}
-                            >
-                                {/* Large number accent */}
-                                <div className="flex items-start justify-between mb-6">
-                                    <div 
-                                        className="impact-number font-black leading-none"
-                                        style={{
-                                            fontSize: '72px',
-                                            background: `linear-gradient(135deg, ${item.accentColor}, #CBDC13)`,
-                                            WebkitBackgroundClip: 'text',
-                                            WebkitTextFillColor: 'transparent',
-                                            backgroundClip: 'text'
-                                        }}
-                                    >
-                                        {item.number}
-                                    </div>
-                                    <div 
-                                        className="w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"
-                                        style={{ backgroundColor: item.accentColor }}
-                                    >
-                                        <IconComponent className="text-white text-2xl" />
-                                    </div>
-                                </div>
-                                
-                                <h3 className="text-2xl font-bold mb-4" style={{ color: '#012D50' }}>
-                                    {item.title}
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed">
-                                    {item.description}
-                                </p>
-
-                                {/* Hover glow effect */}
-                                <div 
-                                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"
-                                    style={{
-                                        background: `linear-gradient(135deg, ${item.accentColor}20, #CBDC1320)`,
-                                        filter: 'blur(10px)'
-                                    }}
-                                ></div>
-                            </div>
-                        );
-                    })}
-                </div>
-
-                {/* Call-to-Action */}
-                <div className="text-center">
-                    <button className="group relative inline-flex items-center gap-4 px-12 py-6 text-xl font-bold text-white rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:-translate-y-2" 
-                            style={{
-                                background: 'linear-gradient(135deg, #34969D, #CBDC13)',
-                                boxShadow: '0 10px 30px rgba(52, 150, 157, 0.3)'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.background = 'linear-gradient(135deg, #CBDC13, #34969D)';
-                                e.currentTarget.style.boxShadow = '0 20px 60px rgba(203, 220, 19, 0.4)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.background = 'linear-gradient(135deg, #34969D, #CBDC13)';
-                                e.currentTarget.style.boxShadow = '0 10px 30px rgba(52, 150, 157, 0.3)';
-                            }}
-                    >
-                        <span className="relative z-10" style={{ color: '#012D50' }}>Start Your Transformation</span>
-                        <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" style={{ color: '#012D50' }} />
-                        
-                        {/* Button glow effect */}
-                        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                    </button>
+                {/* Five Key Differentiators */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
                     
-                    <p className="mt-6 text-gray-300 text-lg">
-                        Join 500+ companies who chose Protingent as their trusted growth partner
-                    </p>
+                    {/* 1. Deep Industry Experience */}
+                    <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                        <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#CBDC13' }}>
+                            <FaIndustry className="text-2xl" style={{ color: '#012D50' }} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                            Deep Industry Experience
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                            With over 25 years of engineering and tech hiring experience, 
+                            we know niche talent better than anyone else.
+                        </p>
+                    </div>
+
+                    {/* 2. Speed + Precision */}
+                    <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                        <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#CBDC13' }}>
+                            <FaRocket className="text-2xl" style={{ color: '#012D50' }} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                            Speed + Precision
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                            We shorten time-to-hire without sacrificing quality by refining 
+                            our sourcing frameworks and enabling our expert recruiters.
+                        </p>
+                    </div>
+
+                    {/* 3. Flexible, Scalable Engagement */}
+                    <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                        <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#CBDC13' }}>
+                            <FaExpandArrowsAlt className="text-2xl" style={{ color: '#012D50' }} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                            Flexible, Scalable Engagement
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                            Start small or big - our modular RPO models adapt and grow 
+                            with your business needs.
+                        </p>
+                    </div>
+
+                    {/* 4. Transparent Collaboration */}
+                    <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                        <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#CBDC13' }}>
+                            <FaHandshake className="text-2xl" style={{ color: '#012D50' }} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                            Transparent Collaboration
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                            You will always have a say in your hiring process. Expect regular updates, 
+                            an identified account manager, and full visibility in the hiring process.
+                        </p>
+                    </div>
+
+                    {/* 5. Candidate-First Approach */}
+                    <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 lg:col-span-1 md:col-span-2">
+                        <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ backgroundColor: '#CBDC13' }}>
+                            <FaUserCheck className="text-2xl" style={{ color: '#012D50' }} />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">
+                            Candidate-First Approach
+                        </h3>
+                        <p className="text-white/80 leading-relaxed">
+                            We treat every talent touchpoint with intent, creating better 
+                            brand experiences and higher acceptance rates.
+                        </p>
+                    </div>
+                </div>
+
+                {/* CTA Button */}
+                <div className="text-center mt-12">
+                    <button 
+                        className="font-bold text-lg px-10 py-4 rounded-full hover:scale-105 transform transition-all shadow-2xl"
+                        style={{
+                            background: 'linear-gradient(90deg, #CBDC13, #34969D)',
+                            color: '#012D50'
+                        }}
+                    >
+                        Start Building Your Dream Team
+                    </button>
                 </div>
             </div>
         </section>
