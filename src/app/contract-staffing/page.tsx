@@ -227,6 +227,12 @@ const ContractualBenefitsSection = () => {
                                     transitionDelay: `${index * 0.1}s`
                                 }}
                             >
+                                {/* Background Image */}
+                                <div 
+                                    className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+                                    style={{ backgroundImage: `url(${benefit.image})` }}
+                                ></div>
+                                
                                 <div className="p-6 md:p-8 h-full relative z-10">
                                     <div className="relative mb-6">
                                         <div 
