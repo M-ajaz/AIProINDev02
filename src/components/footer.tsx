@@ -7,11 +7,11 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <div id="footer" className="bg-primary w-full min-h-[700px] relative text-white">
+        <div id="footer" className="bg-primary w-full min-h-[500px] md:min-h-[700px] relative text-white">
             <div style={{ background: "url(/img/footerBg.png)" }} className="w-full min-h-[776px] opacity-[50%] !bg-cover !bg-center !bg-no-repeat absolute top-0 left-0 z-[0]">
             </div>
-            <div className="relative z-10 w-full flex flex-col justify-center items-center " >
-                <div className="w-full max-w-[1450px] flex justify-between [&>div>p]:text-[26px] py-28 border-b border-white" >
+            <div className="relative z-10 w-full flex flex-col justify-center items-center px-4 md:px-6" >
+                <div className="w-full max-w-[1450px] flex flex-col lg:flex-row justify-between gap-8 lg:gap-0 [&>div>p]:text-lg md:[&>div>p]:text-xl lg:[&>div>p]:text-[26px] py-12 md:py-20 lg:py-28 border-b border-white" >
                     <div className="flex flex-col gap-8 max-w-[445px] !border-0" >
                         <p className="!text-4xl " >
                             <span className="font-extrabold" >PRO</span>TINGENT INDIA LLP
