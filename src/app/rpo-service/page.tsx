@@ -849,13 +849,7 @@ export default function RPOService() {
                 </div>
             </div>
 
-            <div className="py-16 md:py-24 w-full flex justify-center">
-                <ServicePartners
-                    title="We Are Not Another RPO Vendor, But A Trusted Talent Growth Partner"
-                    desc="We work for excellence with the top-tier talent pool. Our pre-vetted and new candidates are highly skilled to evolve and expand your organization with precision. Our recruiters blend agility, domain expertise, and a tech-enabled approach to build talent pipelines that work efficiently."
-                    cardList={rpoPartnersData}
-                />
-            </div>
+            <PowerfulPartnerSection />
 
             <div className="py-16 md:py-24 w-full flex justify-center bg-gray-50">
                 <ContactUsComponent />
