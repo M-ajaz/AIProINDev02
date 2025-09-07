@@ -486,32 +486,55 @@ const InteractiveTimeline = () => {
                     ></div>
 
                     <div className="space-y-12 md:space-y-16">
-                        {rpoProcessData.map((step, index) => (
-                            <div
-                                key={index}
-                                data-index={index}
-                                className={`timeline-step relative ${visibleSteps[index] ? 'animate-in' : ''}`}
-                                style={{ animationDelay: `${index * 0.2}s` }}
-                            >
-                                <div className={`flex flex-col md:flex-row items-start md:items-center gap-8 ${
-                                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                                }`}>
-                                    {/* Step number */}
-                                    <div className="relative z-20 flex-shrink-0">
-                                        <div 
-                                            className={`w-16 h-16 rounded-full border-4 border-white shadow-lg flex items-center justify-center font-bold text-white cursor-pointer transition-all duration-300 ${
-                                                activeStep === index 
-                                                    ? 'bg-primary-green-color scale-110' 
-                                                    : 'bg-gradient-to-br from-primary to-secondry hover:scale-105'
-                                            }`}
-                                            onClick={() => setActiveStep(activeStep === index ? null : index)}
-                                        >
-                                            {String(index + 1).padStart(2, '0')}
+                        {rpoProcessData.map((step, index) => {
+                            const IconComponent = timelineIcons[index];
+                            return (
+                                <div
+                                    key={index}
+                                    data-index={index}
+                                    className={`timeline-step relative ${visibleSteps[index] ? 'animate-in' : ''}`}
+                                    style={{ animationDelay: `${index * 0.2}s` }}
+                                >
+                                    <div className={`flex flex-col md:flex-row items-start md:items-center gap-8 ${
+                                        index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                                    }`}>
+                                        {/* Step number with icon */}
+                                        <div className="relative z-20 flex-shrink-0 flex flex-col items-center">
+                                            {/* Icon */}
+                                            <div 
+                                                className="w-12 h-12 rounded-xl flex items-center justify-center mb-2 transition-all duration-300 hover:scale-110 hover:rotate-6"
+                                                style={{ 
+                                                    backgroundColor: index % 2 === 0 ? '#34969D' : '#CBDC13',
+                                                    boxShadow: visibleSteps[index] ? `0 8px 25px ${index % 2 === 0 ? '#34969D' : '#CBDC13'}40` : 'none'
+                                                }}
+                                            >
+                                                <IconComponent className="text-white text-lg" />
+                                            </div>
+                                            
+                                            {/* Step number */}
+                                            <div 
+                                                className={`w-16 h-16 rounded-full border-4 border-white shadow-lg flex items-center justify-center font-bold text-white cursor-pointer transition-all duration-300 ${
+                                                    activeStep === index 
+                                                        ? 'scale-110' 
+                                                        : 'hover:scale-105'
+                                                }`}
+                                                style={{
+                                                    backgroundColor: activeStep === index ? '#CBDC13' : '#012D50'
+                                                }}
+                                                onClick={() => setActiveStep(activeStep === index ? null : index)}
+                                            >
+                                                {String(index + 1).padStart(2, '0')}
+                                            </div>
+                                            {visibleSteps[index] && (
+                                                <div 
+                                                    className="absolute inset-0 rounded-full animate-pulse"
+                                                    style={{ 
+                                                        backgroundColor: index % 2 === 0 ? '#34969D30' : '#CBDC1330'
+                                                    }}
+                                                ></div>
+                                            )}
                                         </div>
-                                        {visibleSteps[index] && (
-                                            <div className="absolute inset-0 rounded-full bg-primary-green-color/30 animate-pulse"></div>
-                                        )}
-                                    </div>
+                            )}
 
                                     {/* Step content */}
                                     <div className={`flex-1 ml-8 md:ml-0 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
