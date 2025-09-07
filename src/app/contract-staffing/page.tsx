@@ -379,7 +379,7 @@ const StreamlinedApproachTimeline = () => {
             accentColor: "#CBDC13"
         },
         {
-            icon: FaMonitorHeartbeat,
+            icon: FaDesktop,
             title: "Continuous Performance Monitoring",
             description: "Through regular feedback loops and data-driven insights, we ensure workforce productivity, offering replacements or scaling support as required.",
             accentColor: "#34969D"
