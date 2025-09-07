@@ -53,23 +53,23 @@ const RPOServiceBanner = () => {
 
 const RPOIntroSection = () => {
     return (
-        <div className="w-full max-w-[1450px] flex flex-col items-center gap-8 px-4">
+        <div className="w-full max-w-[1450px] flex flex-col items-center gap-6 md:gap-8 px-4 md:px-6">
             <CommonHeading
                 title="Recruitment Process Outsourcing (RPO) for Your Talent-Pool"
                 desc="Recruitment delays cost businesses more than time. It holds back growth, revenue, and innovation. Through professional RPO Services, you can outsource talent hiring responsibility to expert recruiters like Protingent who act as an extension of your in-house HR team. We manage scouting, screening, and first-round interviews with pre-vetted candidates who are both culturally and skill fit for your organization."
             />
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full mt-8">
-                <div className="text-center">
-                    <h3 className="text-lg font-semibold text-primary">Flexible hiring</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full mt-6 md:mt-8">
+                <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <h3 className="text-base md:text-lg font-semibold text-primary">Flexible hiring</h3>
                 </div>
-                <div className="text-center">
-                    <h3 className="text-lg font-semibold text-primary">Faster hires</h3>
+                <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <h3 className="text-base md:text-lg font-semibold text-primary">Faster hires</h3>
                 </div>
-                <div className="text-center">
-                    <h3 className="text-lg font-semibold text-primary">Top talent</h3>
+                <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <h3 className="text-base md:text-lg font-semibold text-primary">Top talent</h3>
                 </div>
-                <div className="text-center">
-                    <h3 className="text-lg font-semibold text-primary">Cost control</h3>
+                <div className="text-center p-4 bg-gray-50 rounded-lg">  
+                    <h3 className="text-base md:text-lg font-semibold text-primary">Cost control</h3>
                 </div>
             </div>
         </div>
