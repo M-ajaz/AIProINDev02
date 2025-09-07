@@ -767,37 +767,43 @@ const IndustriesSection = () => {
             icon: FaLaptopCode,
             title: "Information Technology (IT)",
             description: "Engage software developers, cloud experts, and IT experts to quickly onboard for projects with domain knowledge and full flexibility and availability.",
-            accentColor: "#34969D"
+            accentColor: "#34969D",
+            image: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaHeartbeat,
             title: "Healthcare",
             description: "Fill urgent clinical roles, allied health staff, and administrative positions while managing compliance and patient care continuity.",
-            accentColor: "#CBDC13"
+            accentColor: "#CBDC13",
+            image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaUniversity,
             title: "Banking, Financial Services & Insurance (BFSI)",
             description: "Bring compliance based finance professionals, risk analysts and support staff on board for your evolving BFSI workforce needs.",
-            accentColor: "#34969D"
+            accentColor: "#34969D",
+            image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaTools,
             title: "Manufacturing",
             description: "Onboard qualified engineers, technicians, and floor staff to meet production cycles, seasonal dips, and quality maintenance and operation.",
-            accentColor: "#CBDC13"
+            accentColor: "#CBDC13",
+            image: "https://images.pexels.com/photos/33802168/pexels-photo-33802168.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
             icon: FaShoppingCart,
             title: "Retail & E-commerce",
             description: "Expand functions in your supply chain, sales, and customer service support using agile workforce smart workforce models to meet peak seasonal business demands.",
-            accentColor: "#34969D"
+            accentColor: "#34969D",
+            image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
             icon: FaSignal,
             title: "Telecommunications",
             description: "Easily onboard field engineers, support staff, and project specialists to meet demands of company networks, new and ongoing services and network expansion.",
-            accentColor: "#CBDC13"
+            accentColor: "#CBDC13",
+            image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         }
     ];
 
