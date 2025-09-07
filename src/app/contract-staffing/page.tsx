@@ -146,25 +146,29 @@ const ContractualBenefitsSection = () => {
             icon: FaRocket,
             title: "Rapid Scalability",
             description: "Maximise or minimise the team anytime required based on project needs",
-            accentColor: "#34969D"
+            accentColor: "#34969D",
+            image: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaDollarSign,
             title: "Cost Control",
             description: "Reduce long-term hiring overheads whenever the project closes",
-            accentColor: "#CBDC13"
+            accentColor: "#CBDC13",
+            image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaShieldAlt,
             title: "Compliance Assured",
             description: "Navigate labor laws and payroll complexities with zero risk",
-            accentColor: "#34969D"
+            accentColor: "#34969D",
+            image: "https://images.unsplash.com/photo-1551836022-aadb801c60ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         },
         {
             icon: FaUsers,
             title: "Access to Specialists",
             description: "Quickly secure niche experts for short-term and high-priority projects",
-            accentColor: "#CBDC13"
+            accentColor: "#CBDC13",
+            image: "https://images.unsplash.com/photo-1551135049-8a33b5883817?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
         }
     ];
 
