@@ -1092,6 +1092,9 @@ export default function RPOService() {
 
             <PremiumInteractiveSlider />
 
+            {/* RPO Engagement Models Section - NEW SECTION */}
+            <RPOEngagementModelsSection />
+
             <div className="py-16 md:py-24 w-full flex justify-center bg-gray-50">
                 <div className="w-full max-w-[1450px]">
                     <IndustriesSection
@@ -1102,6 +1105,7 @@ export default function RPOService() {
                 </div>
             </div>
 
+            {/* Updated Trusted Partner Section */}
             <PowerfulPartnerSection />
 
             <div className="py-16 md:py-24 w-full flex justify-center bg-gray-50">
