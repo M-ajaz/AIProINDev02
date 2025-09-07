@@ -574,7 +574,8 @@ const InteractiveTimeline = () => {
                                     </div>
                                 </div>
                             </div>
-                        );})
+                        );
+                        })}
                     </div>
                 </div>
             </div>
