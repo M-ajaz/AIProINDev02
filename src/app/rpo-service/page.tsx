@@ -1033,7 +1033,7 @@ export default function RPOService() {
         <div className="bg-white w-full flex flex-col items-center gap-0 pb-12 md:pb-20">
             <RPOServiceBanner />
             <div className="py-16 md:py-24">
-                <ModernBenefitsSection />
+                <BrandBenefitsSection />
             </div>
             
             <ModernServiceSlider />
