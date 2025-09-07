@@ -1,13 +1,10 @@
 "use client"
 import { useState, useEffect, useRef } from "react";
 import {
-    BgWithListComponent,
     ContactUsComponent,
-    FAQSection,
+    FAQ Section,
     IndustriesSection,
-    ServicePartners,
-    CommonHeading,
-    ThreeCardSlider
+    CommonHeading
 } from "@/components";
 import {
     rpoBenefitsData,
@@ -18,6 +15,25 @@ import {
     rpoServicesData,
     serviceRPOFAQ
 } from "@/utils/constants";
+import { 
+    FaUsersCog, 
+    FaChartLine, 
+    FaHandshake, 
+    FaCogs, 
+    FaRocket,
+    FaUsers,
+    FaLightbulb,
+    FaDollarSign,
+    FaArrowLeft,
+    FaArrowRight,
+    FaCheckCircle,
+    FaGraduationCap,
+    FaSearch,
+    FaClipboardCheck,
+    FaCalendarAlt,
+    FaFileContract,
+    FaChartBar
+} from 'react-icons/fa';
 
 // --------------------------------------------------------------
 
