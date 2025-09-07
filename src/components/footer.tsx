@@ -64,93 +64,95 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <p>
-                            Services
-                        </p>
-                        <div className="text-xl border-l pl-6 pt-12 pb-16 border-white flex flex-col gap-2 ">
-                            <p>
-                                RPO
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 lg:flex lg:justify-between w-full lg:w-auto">
+                        <div>
+                            <p className="mb-4 md:mb-6">
+                                Services
                             </p>
-                            <p>
-                                FTE Hiring
-                            </p>
-                            <p>
-                                Contract Staffing
-                            </p>
-                            <p>
-                                IT Consulting
-                            </p>
-                            <p>
-                                Marketing Solutions
-                            </p>
-                            <p>
-                                BI DATA Visualization
-                            </p>
-                            <p>
-                                Product Development
-                            </p>
+                            <div className="text-sm md:text-base lg:text-xl border-l pl-4 md:pl-6 pt-4 md:pt-6 lg:pt-12 pb-8 md:pb-12 lg:pb-16 border-white flex flex-col gap-1 md:gap-2 ">
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    RPO
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    FTE Hiring
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Contract Staffing
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    IT Consulting
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Marketing Solutions
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    BI DATA Visualization
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Product Development
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <p>
-                            Industries
-                        </p>
-                        <div className="text-xl border-l pl-6 py-10 border-white flex flex-col gap-2 ">
-                            <p>
-                                Healthcare
+                        <div>
+                            <p className="mb-4 md:mb-6">
+                                Industries
                             </p>
-                            <p>
-                                Engineering
-                            </p>
-                            <p>
-                                Startups
-                            </p>
-                            <p>
-                                Consumer Goods & Retail
-                            </p>
-                            <p>
-                                IT, Technology & Software
-                            </p>
-                            <p>
-                                Life Sciences & Pharmaceutical
-                            </p>
-                            <p>
-                                Manufacturing & Distribution
-                            </p>
-                            <p>
-                                Professional Services
-                            </p>
+                            <div className="text-sm md:text-base lg:text-xl border-l pl-4 md:pl-6 py-4 md:py-6 lg:py-10 border-white flex flex-col gap-1 md:gap-2 ">
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Healthcare
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Engineering
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Startups
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Consumer Goods & Retail
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    IT, Technology & Software
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Life Sciences & Pharmaceutical
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Manufacturing & Distribution
+                                </p>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">  
+                                    Professional Services
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <p>
-                            Company
-                        </p>
-                        <div className="text-xl border-l pl-6 pt-12 pb-36 border-white flex flex-col gap-2 ">
-                            <Link href={"/"} >
-                                <p>
-                                    Home
-                                </p>
-                            </Link>
-                            <Link href={"/about"} >
-                                <p>
-                                    About Us
-                                </p>
-                            </Link>
-                            <p>
-                                Careers
+                        <div>
+                            <p className="mb-4 md:mb-6">
+                                Company
                             </p>
-                            <Link href={"/insights"} >
-                                <p>
-                                    insights
+                            <div className="text-sm md:text-base lg:text-xl border-l pl-4 md:pl-6 pt-4 md:pt-6 lg:pt-12 pb-12 md:pb-24 lg:pb-36 border-white flex flex-col gap-1 md:gap-2 ">
+                                <Link href={"/"} >
+                                    <p className="hover:text-primary-green-color transition-colors">
+                                        Home
+                                    </p>
+                                </Link>
+                                <Link href={"/about"} >
+                                    <p className="hover:text-primary-green-color transition-colors">
+                                        About Us
+                                    </p>
+                                </Link>
+                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
+                                    Careers
                                 </p>
-                            </Link>
-                            <Link href={"/contact"} >
-                                <p>
-                                    Contact Us
-                                </p>
-                            </Link>
+                                <Link href={"/insights"} >
+                                    <p className="hover:text-primary-green-color transition-colors">
+                                        insights
+                                    </p>
+                                </Link>
+                                <Link href={"/contact"} >
+                                    <p className="hover:text-primary-green-color transition-colors">
+                                        Contact Us
+                                    </p>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
