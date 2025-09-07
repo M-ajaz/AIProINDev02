@@ -831,10 +831,25 @@ const IndustriesSection = () => {
                                     borderTop: `4px solid ${industry.accentColor}`
                                 }}
                             >
-                                <div className="p-8 h-full">
-                                    <div className="relative mb-6">
+                                {/* Industry Image Background */}
+                                <div className="absolute inset-0 h-32">
+                                    <img 
+                                        src={industry.image} 
+                                        alt={industry.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div 
+                                        className="absolute inset-0 opacity-85 group-hover:opacity-75 transition-opacity duration-300"
+                                        style={{ 
+                                            background: `linear-gradient(135deg, ${industry.accentColor}DD, ${industry.accentColor}AA)` 
+                                        }}
+                                    ></div>
+                                </div>
+                                
+                                <div className="p-8 h-full relative z-10">
+                                    <div className="relative mb-6 -mt-2">
                                         <div 
-                                            className="w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-4 transition-all duration-300 group-hover:scale-110"
+                                            className="w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-4 transition-all duration-300 group-hover:scale-110 border-4 border-white"
                                             style={{ backgroundColor: industry.accentColor }}
                                         >
                                             <IconComponent className="text-white" />
