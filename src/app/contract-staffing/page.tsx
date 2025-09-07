@@ -847,6 +847,11 @@ export default function ContractStaffingService() {
             <ContractStaffingHero />
             <ContractualBenefitsSection />
             <ContractStaffingSolutions />
+            <StreamlinedApproachTimeline />
+            <MeasurableImpactSection />
+            <ProtingentAdvantageSection />
+            <IndustriesSection />
+            <CTASection />
             
             <div className="py-16 md:py-24 w-full flex justify-center">
                 <ContactUsComponent />
