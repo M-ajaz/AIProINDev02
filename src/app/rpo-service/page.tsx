@@ -198,7 +198,7 @@ export default function RPOService() {
     return (
         <div className="bg-white w-full flex flex-col items-center gap-16 md:gap-24 lg:gap-32 pb-12 md:pb-20">
             <RPOServiceBanner />
-            <RPOIntroSection />
+            <ModernBenefitsSection />
             
             <ThreeCardSlider
                 title="Our Core RPO Services Offering"
