@@ -12,52 +12,52 @@ const Footer = () => {
             </div>
             <div className="relative z-10 w-full flex flex-col justify-center items-center px-4 md:px-6" >
                 <div className="w-full max-w-[1450px] flex flex-col lg:flex-row justify-between gap-8 lg:gap-0 [&>div>p]:text-lg md:[&>div>p]:text-xl lg:[&>div>p]:text-[26px] py-12 md:py-20 lg:py-28 border-b border-white" >
-                    <div className="flex flex-col gap-8 max-w-[445px] !border-0" >
-                        <p className="!text-4xl " >
+                    <div className="flex flex-col gap-6 md:gap-8 max-w-full lg:max-w-[445px] !border-0" >
+                        <p className="!text-2xl md:!text-3xl lg:!text-4xl font-bold" >
                             <span className="font-extrabold" >PRO</span>TINGENT INDIA LLP
                         </p>
-                        <div className="flex gap-4 items-center" >
+                        <div className="flex gap-3 md:gap-4 items-start" >
                             <Image
                                 src={"/img/addressIcon.svg"}
                                 height={35}
                                 width={35}
                                 alt=""
-                                className="min-w-[40px] h-[40px]"
+                                className="min-w-[30px] md:min-w-[40px] h-[30px] md:h-[40px] mt-1"
                             />
-                            <p className="text-2xl" >
+                            <p className="text-base md:text-lg lg:text-2xl leading-relaxed" >
                                 4th floor, Jaipur Centre, 420, Tonk Rd, Choti Chopad, Chandrakala Colony, Durgapura, Jaipur, Rajasthan 302018
                             </p>
                         </div>
-                        <div className="flex gap-4 items-center" >
+                        <div className="flex gap-3 md:gap-4 items-center" >
                             <Image
                                 src={"/img/emailIcon.png"}
                                 height={40}
                                 width={40}
                                 alt=""
-                                className="min-w-[40px] h-[40px]"
+                                className="min-w-[30px] md:min-w-[40px] h-[30px] md:h-[40px]"
                             />
                             <Link href="mailto:connect@protingentindia.com">
-                                <p className="text-2xl" >
+                                <p className="text-base md:text-lg lg:text-2xl hover:text-primary-green-color transition-colors" >
                                     connect@protingentindia.com
                                 </p>
                             </Link>
                         </div>
-                        <div className="flex gap-4 items-center" >
+                        <div className="flex gap-3 md:gap-4 items-center" >
                             <Image
                                 src={"/img/callIcon.png"}
                                 height={40}
                                 width={40}
                                 alt=""
-                                className="min-w-[40px] h-[40px]"
+                                className="min-w-[30px] md:min-w-[40px] h-[30px] md:h-[40px]"
                             />
                             <div>
                                 <Link href={'tel:+911412990687'}>
-                                    <p className="text-2xl" >
+                                    <p className="text-base md:text-lg lg:text-2xl hover:text-primary-green-color transition-colors" >
                                         +91 141 299 0687
                                     </p>
                                 </Link>
                                 <Link href={'tel:+919119102197'}>
-                                    <p className="text-2xl" >
+                                    <p className="text-base md:text-lg lg:text-2xl hover:text-primary-green-color transition-colors" >
                                         +91 91191 02197
                                     </p>
                                 </Link>
