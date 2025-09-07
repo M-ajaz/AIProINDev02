@@ -335,10 +335,26 @@ const ContractStaffingSolutions = () => {
                                     borderTop: `4px solid ${solution.accentColor}`
                                 }}
                             >
-                                <div className="p-8 h-full">
-                                    <div className="relative mb-6">
+                                {/* Background Image with Overlay */}
+                                <div className="absolute inset-0 h-48">
+                                    <img 
+                                        src={solution.image} 
+                                        alt={solution.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div 
+                                        className="absolute inset-0 opacity-90 group-hover:opacity-80 transition-opacity duration-300"
+                                        style={{ 
+                                            background: `linear-gradient(135deg, ${solution.accentColor}E6, ${solution.accentColor}CC)` 
+                                        }}
+                                    ></div>
+                                </div>
+                                
+                                <div className="p-8 h-full relative z-10">
+                                    {/* Icon positioned on image */}
+                                    <div className="relative mb-6 -mt-4">
                                         <div 
-                                            className="w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-4 transition-all duration-300 group-hover:scale-110"
+                                            className="w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-4 transition-all duration-300 group-hover:scale-110 border-4 border-white"
                                             style={{ backgroundColor: solution.accentColor }}
                                         >
                                             <IconComponent className="text-white" />
