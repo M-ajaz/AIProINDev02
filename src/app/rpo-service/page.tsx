@@ -535,55 +535,54 @@ const InteractiveTimeline = () => {
 
 export default function RPOService() {
     return (
-        <div className="bg-white w-full flex flex-col items-center gap-16 md:gap-24 lg:gap-32 pb-12 md:pb-20">
+        <div className="bg-white w-full flex flex-col items-center gap-0 pb-12 md:pb-20">
             <RPOServiceBanner />
-            <ModernBenefitsSection />
+            <div className="py-16 md:py-24">
+                <ModernBenefitsSection />
+            </div>
             
-            <ThreeCardSlider
-                title="Our Core RPO Services Offering"
-                desc="We outsource the talent you need on time with our pre-vetted candidates. Reliable hiring experts offering tailored RPO services align with your business goals:"
-                cardData={rpoServicesData}
-            />
+            <ModernServiceSlider />
+            <InteractiveTimeline />
 
-            <ThreeCardSlider
-                title="RPO Service Delivery Process"
-                desc="Protingent follows the RPO process, designed to deliver the best talent pool hiring results quickly, flexibly, and aligned with objectives."
-                cardData={rpoProcessData}
-            />
+            <div className="py-16 md:py-24 w-full flex justify-center">
+                <BgWithListComponent
+                    title="Highly Skilled Team for Business Expansions"
+                    desc="Right recruitment means matching the right talent with the team to work efficiently and deliver actionable results. RPO is taking forward more from reactive hiring to strategic talent-pool acquisition to build success."
+                    bg="/img/bgListImgs/businessBenefits.png"
+                    bgList="/img/bgListImgs/businessBenefits2.png"
+                    listData={rpoBenefitsData}
+                />
+            </div>
 
-            <BgWithListComponent
-                title="Highly Skilled Team for Business Expansions"
-                desc="Right recruitment means matching the right talent with the team to work efficiently and deliver actionable results. RPO is taking forward more from reactive hiring to strategic talent-pool acquisition to build success."
-                bg="/img/bgListImgs/businessBenefits.png"
-                bgList="/img/bgListImgs/businessBenefits2.png"
-                listData={rpoBenefitsData}
-            />
+            <div className="py-16 md:py-24 w-full flex justify-center bg-gray-50">
+                <div className="w-full max-w-[1450px]">
+                    <IndustriesSection
+                        title="Industries Where We Serve"
+                        desc="We provide tailored RPO solutions across diverse industries, helping businesses hire top talent faster, reduce costs, and scale efficiently. Our expertise adapts to your hiring needs, whether you're in tech, healthcare, manufacturing, or beyond."
+                        cardData={rpoIndustriesData}
+                    />
+                </div>
+            </div>
 
-            <ThreeCardSlider
-                title="RPO Engagement Models We Offer"
-                desc="Protingent offers flexible RPO models tailored to organizational growth stage, talent needs, and operational scalability."
-                cardData={rpoEngagementModelsData}
-            />
+            <div className="py-16 md:py-24 w-full flex justify-center">
+                <ServicePartners
+                    title="We Are Not Another RPO Vendor, But A Trusted Talent Growth Partner"
+                    desc="We work for excellence with the top-tier talent pool. Our pre-vetted and new candidates are highly skilled to evolve and expand your organization with precision. Our recruiters blend agility, domain expertise, and a tech-enabled approach to build talent pipelines that work efficiently."
+                    cardList={rpoPartnersData}
+                />
+            </div>
 
-            <IndustriesSection
-                title="Industries Where We Serve"
-                desc="We provide tailored RPO solutions across diverse industries, helping businesses hire top talent faster, reduce costs, and scale efficiently. Our expertise adapts to your hiring needs, whether you're in tech, healthcare, manufacturing, or beyond."
-                cardData={rpoIndustriesData}
-            />
+            <div className="py-16 md:py-24 w-full flex justify-center bg-gray-50">
+                <ContactUsComponent />
+            </div>
 
-            <ServicePartners
-                title="We Are Not Another RPO Vendor, But A Trusted Talent Growth Partner"
-                desc="We work for excellence with the top-tier talent pool. Our pre-vetted and new candidates are highly skilled to evolve and expand your organization with precision. Our recruiters blend agility, domain expertise, and a tech-enabled approach to build talent pipelines that work efficiently."
-                cardList={rpoPartnersData}
-            />
-
-            <ContactUsComponent />
-
-            <FAQSection
-                title="Frequently Asked Questions"
-                desc="Get answers to common questions about our RPO services and how Protingent can help accelerate your hiring process while maintaining quality and reducing costs."
-                FAQList={serviceRPOFAQ}
-            />
+            <div className="py-16 md:py-24 w-full flex justify-center">
+                <FAQSection
+                    title="Frequently Asked Questions"
+                    desc="Get answers to common questions about our RPO services and how Protingent can help accelerate your hiring process while maintaining quality and reducing costs."
+                    FAQList={serviceRPOFAQ}
+                />
+            </div>
         </div>
     );
 }
