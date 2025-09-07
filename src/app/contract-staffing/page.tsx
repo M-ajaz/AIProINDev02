@@ -752,7 +752,7 @@ const ProtingentAdvantageSection = () => {
 
     return (
         <section className="py-16 md:py-24 bg-gray-50">
-            <div className="container mx-auto px-4 max-w-[1450px]">
+            <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#012D50' }}>
                         Protingent Advantage
