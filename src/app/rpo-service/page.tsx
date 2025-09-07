@@ -6,7 +6,8 @@ import {
     FAQSection,
     IndustriesSection,
     ServicePartners,
-    CommonHeading
+    CommonHeading,
+    ThreeCardSlider
 } from "@/components";
 import {
     rpoBenefitsData,
