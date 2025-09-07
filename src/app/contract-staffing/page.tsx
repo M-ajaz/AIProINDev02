@@ -219,40 +219,54 @@ const ContractualBenefitsSection = () => {
                         return (
                             <div
                                 key={index}
-                                className={`benefit-card group relative overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer bg-white border-2 shadow-lg hover:shadow-2xl hover:-translate-y-3 hover:scale-105 ${
+                                className={`benefit-card group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer bg-white shadow-lg hover:shadow-xl hover:-translate-y-2 ${
                                     visibleCards[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                                 }`}
                                 style={{ 
-                                    borderColor: benefit.accentColor,
                                     transitionDelay: `${index * 0.1}s`
                                 }}
                             >
-                                {/* Background Image */}
-                                <div 
-                                    className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-500"
-                                    style={{ backgroundImage: `url(${benefit.image})` }}
-                                ></div>
+                                {/* Modern Geometric Background Pattern */}
+                                <div className="absolute inset-0 overflow-hidden">
+                                    <div 
+                                        className="absolute -top-4 -right-4 w-24 h-24 rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+                                        style={{ backgroundColor: benefit.accentColor }}
+                                    ></div>
+                                    <div 
+                                        className="absolute -bottom-4 -left-4 w-16 h-16 rotate-45 opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+                                        style={{ backgroundColor: benefit.accentColor }}
+                                    ></div>
+                                    <div 
+                                        className="absolute top-1/2 right-8 w-2 h-16 rotate-12 opacity-20"
+                                        style={{ backgroundColor: benefit.accentColor }}
+                                    ></div>
+                                </div>
                                 
-                                <div className="p-6 md:p-8 h-full relative z-10">
-                                    <div className="relative mb-6">
+                                <div className="p-8 h-full relative z-10">
+                                    <div className="mb-6">
                                         <div 
-                                            className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
-                                            style={{ backgroundColor: benefit.accentColor }}
+                                            className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-6 transition-all duration-300 group-hover:scale-110 shadow-lg"
+                                            style={{ 
+                                                background: `linear-gradient(135deg, ${benefit.accentColor}, ${benefit.accentColor}E6)`
+                                            }}
                                         >
                                             <IconComponent className="text-white" />
                                         </div>
                                     </div>
                                     
-                                    <h3 className="text-xl md:text-2xl font-bold mb-3 transition-colors duration-300" style={{ color: '#012D50' }}>
+                                    <h3 className="text-xl font-bold mb-4 transition-colors duration-300" style={{ color: '#012D50' }}>
                                         {benefit.title}
                                     </h3>
-                                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                                    <p className="text-gray-600 leading-relaxed">
                                         {benefit.description}
                                     </p>
                                     
+                                    {/* Modern accent line */}
                                     <div 
-                                        className="absolute bottom-0 left-0 h-1 w-full transition-all duration-500 group-hover:h-2"
-                                        style={{ backgroundColor: benefit.accentColor }}
+                                        className="absolute bottom-0 left-0 h-1 w-full transition-all duration-500 group-hover:h-1.5"
+                                        style={{ 
+                                            background: `linear-gradient(90deg, ${benefit.accentColor}, transparent)`
+                                        }}
                                     ></div>
                                 </div>
                             </div>
