@@ -424,11 +424,21 @@ const ModernServiceSlider = () => {
     );
 };
 
-// Modern Interactive Timeline Component
+// Modern Interactive Timeline Component with Solid Icons
 const InteractiveTimeline = () => {
     const [activeStep, setActiveStep] = useState<number | null>(null);
     const [visibleSteps, setVisibleSteps] = useState<boolean[]>(new Array(rpoProcessData.length).fill(false));
     const timelineRef = useRef<HTMLDivElement>(null);
+
+    const timelineIcons = [
+        FaSearch,           // Discovery & Requirement Mapping
+        FaCogs,             // Custom RPO Strategy  
+        FaUsersCog,         // Talent Sourcing & Employer Branding
+        FaClipboardCheck,   // Screening & Assessment
+        FaCalendarAlt,      // Interview Coordination & Candidate Experience
+        FaFileContract,     // Offer Management & Onboarding
+        FaChartBar          // Performance Monitoring & Reporting
+    ];
 
     useEffect(() => {
         const observer = new IntersectionObserver(
