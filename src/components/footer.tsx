@@ -156,54 +156,54 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-between w-full max-w-[1450px] py-14" >
-                    <div className="flex gap-11" >
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4 w-full max-w-[1450px] py-8 md:py-14" >
+                    <div className="flex gap-6 md:gap-11 order-2 md:order-1" >
                         <Icon
                             icon="ri:facebook-fill"
-                            height={36}
-                            width={36}
-                            className="text-white"
+                            height={28}
+                            width={28}
+                            className="text-white hover:text-primary-green-color transition-colors cursor-pointer md:h-9 md:w-9"
                         />
                         <Icon
                             icon="ri:youtube-fill"
-                            height={36}
-                            width={36}
-                            className="text-white"
+                            height={28}
+                            width={28}
+                            className="text-white hover:text-primary-green-color transition-colors cursor-pointer md:h-9 md:w-9"
                         />
                         <Link href="https://www.linkedin.com/company/protingent-india-llp/" target="new">
                             <Icon
                                 icon="ri:linkedin-fill"
-                                height={36}
-                                width={36}
-                                className="text-white"
+                                height={28}
+                                width={28}
+                                className="text-white hover:text-primary-green-color transition-colors md:h-9 md:w-9"
                             />
                         </Link>
                         <Icon
                             icon="ri:twitter-fill"
-                            height={36}
-                            width={36}
-                            className="text-white"
+                            height={28}
+                            width={28}
+                            className="text-white hover:text-primary-green-color transition-colors cursor-pointer md:h-9 md:w-9"
                         />
                         <Icon
                             icon="grommet-icons:reddit"
-                            height={36}
-                            width={36}
-                            className="text-white"
+                            height={28}
+                            width={28}
+                            className="text-white hover:text-primary-green-color transition-colors cursor-pointer md:h-9 md:w-9"
                         />
                     </div>
-                    <div>
-                        <p>
+                    <div className="order-1 md:order-2">
+                        <p className="text-sm md:text-base text-center">
                             © 2025 Protingent India LLP | All Right reserved
                         </p>
                     </div>
-                    <div className="flex gap-6" >
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-6 order-3 text-center" >
                         <Link href={"/privacy-policy"} >
-                            <p>
+                            <p className="text-sm md:text-base hover:text-primary-green-color transition-colors">
                                 Privacy Policy & Cookies
                             </p>
                         </Link>
                         <Link href={"/terms-condition"} >
-                            <p>
+                            <p className="text-sm md:text-base hover:text-primary-green-color transition-colors">
                                 Terms & Conditions
                             </p>
                         </Link>
