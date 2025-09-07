@@ -20,14 +20,12 @@ import {
     FaRobot,
     FaClipboardCheck,
     FaHandshake,
-    FaMonitorHeartbeat,
     FaExpand,
     FaBrain,
     FaBuilding,
     FaCogs,
     FaFileContract,
     FaAward,
-    FaGlobe2,
     FaLaptopCode,
     FaHeartbeat,
     FaUniversity,
@@ -35,7 +33,8 @@ import {
     FaShoppingCart,
     FaSignal,
     FaArrowRight,
-    FaCheckCircle
+    FaCheckCircle,
+    FaDesktop
 } from 'react-icons/fa';
 
 // Contract Staffing FAQ Data
