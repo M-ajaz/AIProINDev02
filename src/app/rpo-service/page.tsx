@@ -17,9 +17,7 @@ import {
     rpoServicesData,
     serviceRPOFAQ
 } from "@/utils/constants";
-import RPOHero from "../../../public/img/ITConsultingBg.mp4";
-import rpoBenefitsBg from "../../../public/img/bgListImgs/businessBenefits.png";
-import rpoBenefitsList from "../../../public/img/bgListImgs/businessBenefits2.png";
+
 
 // --------------------------------------------------------------
 
