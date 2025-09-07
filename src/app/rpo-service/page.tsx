@@ -23,7 +23,7 @@ import {
 
 const RPOServiceBanner = () => {
     return (
-        <div className="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
+        <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
             <video
                 autoPlay
                 muted
@@ -33,17 +33,17 @@ const RPOServiceBanner = () => {
                 <source src="/ITConsultingBg.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-            <div className="relative z-10 text-center text-white max-w-4xl px-4">
-                <h1 className="text-5xl font-bold animate-fade-in-up mb-6">
+            <div className="relative z-10 text-center text-white max-w-4xl px-4 md:px-6">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold animate-fade-in-up mb-4 md:mb-6">
                     RPO That Builds Your Team Fast
                 </h1>
-                <p className="text-xl font-light mb-8 max-w-3xl mx-auto">
+                <p className="text-base md:text-lg lg:text-xl font-light mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
                     Streamlined recruitment solutions designed for growth-oriented businesses. 
                     Protingent's Recruitment Process Outsourcing (RPO) model helps you hire 
                     smarter and faster, while reducing hiring costs, improving talent quality, 
                     and providing real-time insights.
                 </p>
-                <button className="bg-primary-green-color text-primary font-semibold px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300">
+                <button className="bg-primary-green-color text-primary font-semibold px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 text-sm md:text-base">
                     Request Free RPO Consultation
                 </button>
             </div>
