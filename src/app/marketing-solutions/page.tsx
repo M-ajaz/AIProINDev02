@@ -16,7 +16,7 @@ import {
     FaArrowRight,
     FaCheckCircle,
     FaSearch,
-    FaMegaphone,
+    FaBullhorn,
     FaShare,
     FaRobot,
     FaUserFriends,
