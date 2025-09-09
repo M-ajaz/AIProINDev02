@@ -44,11 +44,6 @@ export const MenuList: Record<string, any>[] = [
         link: "/industries"
     },
     {
-        name: "careers",
-        children: [],
-        link: "/careers"
-    },
-    {
         name: "insights",
         children: [],
         link: "/insights"
