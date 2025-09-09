@@ -191,7 +191,7 @@ const ROIStatsSection = () => {
     );
 };
 
-// Core BI Capabilities Section - Bacancy Style Split Layout
+// Core BI Capabilities Section - Fixed Split Layout (No Inner Scroll)
 const CoreCapabilitiesSection = () => {
     const capabilities = [
         {
@@ -270,10 +270,10 @@ const CoreCapabilitiesSection = () => {
         <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Split Layout Container */}
-                <div className="flex flex-col lg:flex-row gap-12 min-h-screen">
-                    {/* Left Panel - Fixed/Sticky */}
-                    <div className="lg:w-2/5 lg:sticky lg:top-20 lg:self-start" data-aos="fade-right">
-                        <div className="space-y-8">
+                <div className="flex flex-col lg:flex-row gap-12">
+                    {/* Left Panel - Fixed/Sticky (40% width) */}
+                    <div className="lg:w-2/5 lg:sticky lg:top-20 lg:self-start lg:h-screen" data-aos="fade-right">
+                        <div className="space-y-8 lg:pr-8">
                             <h2 className="text-4xl lg:text-5xl font-black text-navy-800 leading-tight" style={{ fontFamily: 'Lato' }}>
                                 Our Core BI & Data Visualization Capabilities
                             </h2>
@@ -282,8 +282,8 @@ const CoreCapabilitiesSection = () => {
                                 A complete suite of BI services that unify data, design interactive dashboards, and deliver real-time insights—helping businesses simplify decision-making, improve efficiency, and stay ahead with data-driven strategies.
                             </p>
                             
-                            {/* Decorative Elements */}
-                            <div className="relative">
+                            {/* Decorative Stats Card */}
+                            <div className="relative mt-12">
                                 <div className="absolute -top-4 -left-4 w-16 h-16 bg-lime-400/20 rounded-full animate-pulse"></div>
                                 <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-teal-500/30 rounded-full animate-bounce"></div>
                                 <div className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-lg border border-gray-100">
@@ -301,9 +301,9 @@ const CoreCapabilitiesSection = () => {
                         </div>
                     </div>
 
-                    {/* Right Panel - Scrollable Cards */}
+                    {/* Right Panel - Natural Scroll (60% width) */}
                     <div className="lg:w-3/5" data-aos="fade-left">
-                        <div className="space-y-6 max-h-screen lg:overflow-y-auto lg:pr-4 scrollbar-thin scrollbar-thumb-lime-400 scrollbar-track-gray-100">
+                        <div className="space-y-8">
                             {capabilities.map((capability, index) => {
                                 const IconComponent = capability.icon;
                                 return (
@@ -311,7 +311,7 @@ const CoreCapabilitiesSection = () => {
                                         key={index}
                                         className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-transparent hover:border-lime-400/20 overflow-hidden"
                                         data-aos="fade-up"
-                                        data-aos-delay={index * 50}
+                                        data-aos-delay={index * 100}
                                         style={{
                                             background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)'
                                         }}
@@ -358,9 +358,6 @@ const CoreCapabilitiesSection = () => {
                                                 <FaArrowRight className="text-lime-400 text-xl" />
                                             </div>
                                         </div>
-
-                                        {/* Subtle Border Animation */}
-                                        <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-gradient-to-r from-lime-400 to-teal-500 transition-all duration-500"></div>
                                     </div>
                                 );
                             })}
