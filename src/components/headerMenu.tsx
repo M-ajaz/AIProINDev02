@@ -70,7 +70,7 @@ const HeaderMenuList = () => {
                         {MenuList.map((menu, index) => (
                             <div key={index} className='py-3 border-b border-gray-100 last:border-b-0'>
                                 <p
-                                    className={`${(menu?.name !== "careers" && menu?.name !== "industries") && "cursor-pointer"} text-lg font-medium text-primary capitalize`}
+                                    className={`${(menu?.name !== "industries") && "cursor-pointer"} text-lg font-medium text-primary capitalize`}
                                     onClick={() => handleNavigation(menu)}
                                 >
                                     {menu?.name || ""}
