@@ -534,19 +534,45 @@ const BenefitsStatsSection = () => {
 
 // Industries Section
 const IndustriesSection = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    
     const industries = [
-        "Aerospace / Space",
-        "eCommerce", 
-        "Networking",
-        "Cloud Computing",
-        "Data",
-        "Gaming",
-        "Software / SaaS",
-        "Semiconductor",
-        "Consumer Goods / Virtual Reality",
-        "Medical Device",
-        "Government / DoD"
+        { name: "Aerospace / Space", icon: "🚀" },
+        { name: "eCommerce", icon: "🛒" },
+        { name: "Networking", icon: "🌐" },
+        { name: "Cloud Computing", icon: "☁️" },
+        { name: "Data", icon: "📊" },
+        { name: "Gaming", icon: "🎮" },
+        { name: "Software / SaaS", icon: "💻" },
+        { name: "Semiconductor", icon: "🔌" },
+        { name: "Consumer Goods / Virtual Reality", icon: "🥽" },
+        { name: "Medical Device", icon: "🏥" },
+        { name: "Government / DoD", icon: "🏛️" }
     ];
+
+    const itemsPerSlide = 4;
+    const totalSlides = Math.ceil(industries.length / itemsPerSlide);
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+    };
+
+    // Auto-slide functionality
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 4000);
+        return () => clearInterval(interval);
+    }, [currentSlide]);
+
+    const getCurrentItems = () => {
+        const startIndex = currentSlide * itemsPerSlide;
+        return industries.slice(startIndex, startIndex + itemsPerSlide);
+    };
 
     return (
         <section className="w-full py-20 bg-gradient-to-b from-white to-gray-50">
@@ -562,46 +588,92 @@ const IndustriesSection = () => {
                     </p>
                 </div>
 
-                {/* Industries Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {industries.map((industry, index) => (
-                        <div 
-                            key={index}
-                            className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-                            data-aos="zoom-in"
-                            data-aos-delay={index * 100}
-                        >
-                            {/* Background Image */}
-                            <div className="relative h-48">
-                                <Image 
-                                    src={`https://images.unsplash.com/photo-${[
-                                        '1606857521015-7f9fcf423740',
-                                        '1497366754035-f200968a6e72',
-                                        '1718220216044-006f43e3a9b1',
-                                        '1748346918817-0b1b6b2f9bab',
-                                        '1600880292089-90a7e086ee0c',
-                                        '1557426272-fc759fdf7a8d',
-                                        '1517048676732-d65bc937f952',
-                                        '1521737852567-6949f3f9f2b5',
-                                        '1606857521015-7f9fcf423740',
-                                        '1497366754035-f200968a6e72',
-                                        '1718220216044-006f43e3a9b1'
-                                    ][index % 11]}?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85`}
-                                    alt={industry}
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-br from-teal-600/80 to-navy-700/60 group-hover:from-teal-700/90 group-hover:to-navy-800/70 transition-colors duration-500"></div>
-                            </div>
-                            
-                            {/* Content */}
-                            <div className="relative z-10 p-6">
-                                <h3 className="text-lg font-bold text-white text-center group-hover:text-lime-300 transition-colors duration-300">
-                                    {industry}
-                                </h3>
+                {/* Industries Slider */}
+                <div className="relative" data-aos="fade-up">
+                    {/* Slider Container */}
+                    <div className="overflow-hidden rounded-3xl bg-white shadow-2xl border border-gray-100">
+                        <div className="relative">
+                            {/* Slide Content */}
+                            <div className="flex transition-transform duration-500 ease-in-out">
+                                <div className="w-full flex-shrink-0">
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 p-12">
+                                        {getCurrentItems().map((industry, index) => (
+                                            <div 
+                                                key={index}
+                                                className="group flex flex-col items-center text-center space-y-4 p-6 rounded-2xl hover:bg-gradient-to-br hover:from-lime-50 hover:to-teal-50 transition-all duration-300 transform hover:-translate-y-2"
+                                                data-aos="zoom-in"
+                                                data-aos-delay={index * 100}
+                                            >
+                                                {/* Icon Container */}
+                                                <div className="relative">
+                                                    <div className="w-20 h-20 bg-gradient-to-br from-lime-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                                                        <span className="text-3xl filter drop-shadow-sm">
+                                                            {industry.icon}
+                                                        </span>
+                                                    </div>
+                                                    {/* Glow effect */}
+                                                    <div className="absolute inset-0 bg-gradient-to-br from-lime-400 to-teal-500 rounded-full opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
+                                                </div>
+                                                
+                                                {/* Industry Name */}
+                                                <h3 className="text-lg font-bold text-navy-800 group-hover:text-teal-600 transition-colors duration-300">
+                                                    {industry.name}
+                                                </h3>
+                                                
+                                                {/* Hover Line */}
+                                                <div className="w-0 h-0.5 bg-gradient-to-r from-lime-400 to-teal-500 group-hover:w-full transition-all duration-300"></div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Navigation Arrows */}
+                    <button 
+                        onClick={prevSlide}
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl flex items-center justify-center text-navy-800 hover:text-teal-600 transition-all duration-300 hover:scale-110 border border-gray-200"
+                        aria-label="Previous slide"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    
+                    <button 
+                        onClick={nextSlide}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl flex items-center justify-center text-navy-800 hover:text-teal-600 transition-all duration-300 hover:scale-110 border border-gray-200"
+                        aria-label="Next slide"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    {/* Slide Indicators */}
+                    <div className="flex justify-center mt-8 space-x-3">
+                        {Array.from({ length: totalSlides }).map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentSlide(index)}
+                                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                    currentSlide === index 
+                                        ? 'bg-gradient-to-r from-lime-400 to-teal-500 shadow-lg scale-125' 
+                                        : 'bg-gray-300 hover:bg-gray-400'
+                                }`}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Statistics */}
+                <div className="mt-16 text-center" data-aos="fade-up">
+                    <div className="inline-flex items-center bg-gradient-to-r from-lime-400 to-teal-500 rounded-full px-8 py-4 shadow-lg">
+                        <span className="text-white font-bold text-lg mr-2">11+</span>
+                        <span className="text-white font-medium">Industries Served</span>
+                    </div>
                 </div>
             </div>
         </section>
