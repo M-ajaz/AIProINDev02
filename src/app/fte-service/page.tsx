@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ServiceFTEBanner, EnhancedFAQSection } from "@/components";
 import Image from 'next/image';
-import { FaCheckCircle, FaCogs, FaUsers, FaChartLine, FaRocket, FaArrowRight, FaPlus, FaMinus, FaSearch } from 'react-icons/fa';
+import { FaCheckCircle, FaCogs, FaUsers, FaChartLine, FaRocket, FaArrowRight, FaPlus, FaMinus, FaSearch, FaSpaceShuttle, FaShoppingCart, FaNetworkWired, FaCloud, FaDatabase, FaGamepad, FaLaptopCode, FaMicrochip, FaVrCardboard, FaHospital, FaUniversity } from 'react-icons/fa';
 
 // --------------------------------------------------------------
 
