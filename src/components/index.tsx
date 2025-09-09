@@ -21,6 +21,7 @@ export { default as ServicePartners } from './ReusableComponents/servicePartners
 export { default as ServicePartnersCard } from './ReusableComponents/servicePartners/servicePartnersCard';
 export { default as ScrollToTop } from './scrollToTop';
 export { default as FAQSection } from './ReusableComponents/FAQSection';
+export { default as EnhancedFAQSection } from './EnhancedFAQSection';
 export { default as FAQComponent } from './ReusableComponents/FAQSection/FAQComponent';
 export { default as Footer } from './footer';
 export { default as HeroSection } from './home/heroSection';
