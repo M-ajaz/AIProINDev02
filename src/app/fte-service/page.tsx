@@ -267,6 +267,29 @@ const ServiceOfferingsBentoSection = () => {
 
 // Process Timeline Section
 const ProcessTimelineSection = () => {
+    const processSteps = [
+        {
+            title: "Requirement Discovery",
+            desc: "Understand your project needs, timelines, and resourcing expectations."
+        },
+        {
+            title: "Talent Mapping",
+            desc: "Match expert professionals to roles with domain-specific alignment."
+        },
+        {
+            title: "Resource Onboarding",
+            desc: "Fast-track orientation to ensure zero downtime from day one."
+        },
+        {
+            title: "Workflow Integration",
+            desc: "FTEs embedded into your team for smooth collaboration and delivery."
+        },
+        {
+            title: "Monitoring & Optimization",
+            desc: "Track KPIs, ensure compliance, and optimize performance consistently."
+        }
+    ];
+
     return (
         <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white">
             <div className="max-w-7xl mx-auto px-6">
@@ -283,7 +306,7 @@ const ProcessTimelineSection = () => {
 
                 {/* Timeline Steps */}
                 <div className="space-y-20">
-                    {ServicesProcessData.slice(0, 5).map((step, index) => (
+                    {processSteps.map((step, index) => (
                         <div 
                             key={index}
                             className={`flex flex-col lg:flex-row items-center gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
@@ -296,7 +319,7 @@ const ProcessTimelineSection = () => {
                                 </div>
                                 
                                 {/* Connecting Line */}
-                                {index < 4 && (
+                                {index < processSteps.length - 1 && (
                                     <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-1 h-20 bg-gradient-to-b from-lime-400 to-teal-500 hidden lg:block"></div>
                                 )}
                             </div>
