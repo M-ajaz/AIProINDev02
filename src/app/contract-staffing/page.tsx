@@ -507,19 +507,10 @@ const StreamlinedApproachTimeline = () => {
                 </div>
 
                 <div ref={timelineRef} className="relative">
-                    {/* Timeline line */}
-                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform md:-translate-x-1/2"></div>
-                    <div 
-                        className="timeline-progress absolute left-4 md:left-1/2 top-0 w-1 transform md:-translate-x-1/2 z-10"
-                        style={{
-                            height: `${(visibleSteps.filter(Boolean).length / processSteps.length) * 100}%`,
-                            background: 'linear-gradient(135deg, #34969D, #CBDC13)'
-                        }}
-                    ></div>
-
-                    <div className="space-y-12 md:space-y-16">
+                    <div className="space-y-8 md:space-y-12">
                         {processSteps.map((step, index) => {
                             const IconComponent = step.icon;
+                            const isEven = index % 2 === 0;
                             return (
                                 <div
                                     key={index}
@@ -528,48 +519,60 @@ const StreamlinedApproachTimeline = () => {
                                     style={{ animationDelay: `${index * 0.2}s` }}
                                 >
                                     <div className={`flex flex-col md:flex-row items-start md:items-center gap-8 ${
-                                        index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                                        isEven ? 'md:flex-row' : 'md:flex-row-reverse'
                                     }`}>
-                                        {/* Step icon and number */}
+                                        
+                                        {/* Step Number and Icon - Fixed positioning */}
                                         <div className="relative z-20 flex-shrink-0 flex flex-col items-center">
-                                            {/* Icon */}
-                                            <div 
-                                                className="w-12 h-12 rounded-xl flex items-center justify-center mb-2 transition-all duration-300 hover:scale-110 hover:rotate-6"
-                                                style={{ 
-                                                    backgroundColor: step.accentColor,
-                                                    boxShadow: visibleSteps[index] ? `0 8px 25px ${step.accentColor}40` : 'none'
-                                                }}
-                                            >
-                                                <IconComponent className="text-white text-lg" />
-                                            </div>
-                                            
                                             {/* Step number */}
                                             <div 
-                                                className={`w-16 h-16 rounded-full border-4 border-white shadow-lg flex items-center justify-center font-bold text-white cursor-pointer transition-all duration-300 ${
+                                                className={`w-20 h-20 rounded-full shadow-2xl flex items-center justify-center font-bold text-white cursor-pointer transition-all duration-300 mb-4 ${
                                                     activeStep === index ? 'scale-110' : 'hover:scale-105'
                                                 }`}
                                                 style={{
-                                                    backgroundColor: activeStep === index ? '#CBDC13' : '#012D50'
+                                                    background: `linear-gradient(135deg, ${step.accentColor}, ${step.accentColor}E6)`,
+                                                    boxShadow: visibleSteps[index] ? `0 12px 30px ${step.accentColor}40` : '0 8px 20px rgba(0,0,0,0.1)'
                                                 }}
                                                 onClick={() => setActiveStep(activeStep === index ? null : index)}
                                             >
-                                                {String(index + 1).padStart(2, '0')}
+                                                <span className="text-2xl font-black">{String(index + 1).padStart(2, '0')}</span>
+                                            </div>
+                                            
+                                            {/* Icon */}
+                                            <div 
+                                                className="w-16 h-16 rounded-2xl flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:rotate-6 shadow-lg"
+                                                style={{ 
+                                                    backgroundColor: isEven ? '#012D50' : '#34969D'
+                                                }}
+                                            >
+                                                <IconComponent className="text-2xl" />
                                             </div>
                                         </div>
 
-                                        {/* Step content */}
-                                        <div className={`flex-1 ml-8 md:ml-0 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                                        {/* Step content - More space and better positioning */}
+                                        <div className={`flex-1 ${isEven ? 'md:pl-8' : 'md:pr-8'}`}>
                                             <div 
-                                                className="bg-white p-6 md:p-8 rounded-2xl cursor-pointer hover-lift group shadow-lg border-2"
-                                                style={{ borderColor: step.accentColor }}
+                                                className="bg-white p-8 md:p-10 rounded-3xl cursor-pointer hover-lift group shadow-xl border-l-4 transition-all duration-300 hover:shadow-2xl"
+                                                style={{ 
+                                                    borderLeftColor: step.accentColor,
+                                                    transform: visibleSteps[index] ? 'translateY(0)' : 'translateY(20px)',
+                                                    opacity: visibleSteps[index] ? 1 : 0.8
+                                                }}
                                                 onClick={() => setActiveStep(activeStep === index ? null : index)}
                                             >
-                                                <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-opacity-90 transition-colors duration-300" style={{ color: '#012D50' }}>
+                                                <h3 className="text-2xl md:text-3xl font-bold mb-6 group-hover:text-opacity-90 transition-colors duration-300" 
+                                                    style={{ color: '#012D50' }}>
                                                     {step.title}
                                                 </h3>
-                                                <p className="text-gray-600 leading-relaxed">
+                                                <p className="text-gray-600 text-lg leading-relaxed">
                                                     {step.description}
                                                 </p>
+                                                
+                                                {/* Visual accent line */}
+                                                <div 
+                                                    className="mt-6 h-1 w-20 rounded-full transition-all duration-300 group-hover:w-32"
+                                                    style={{ backgroundColor: step.accentColor }}
+                                                ></div>
                                             </div>
                                         </div>
                                     </div>
