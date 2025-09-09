@@ -149,8 +149,10 @@ const ChallengeSection = () => {
     ];
 
     return (
-        <div className="w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-24">
-            <div className="max-w-[1450px] mx-auto px-4 md:px-6">
+        <div className="relative w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 overflow-hidden">
+            <GeometricBackground variant="tertiary" intensity="light" />
+            
+            <div className="max-w-[1450px] mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#113F64' }}>
                         The Challenge We Solve
