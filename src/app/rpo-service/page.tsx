@@ -529,8 +529,8 @@ const InteractiveTimeline = () => {
                                             </div>
                                         </div>
 
-                                    {/* Step content */}
-                                    <div className={`flex-1 ml-8 md:ml-0 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                                        {/* Step content - More space and better positioning */}
+                                        <div className={`flex-1 ${isEven ? 'md:pl-8' : 'md:pr-8'}`}>
                                         <div 
                                             className="glass-card p-6 md:p-8 rounded-2xl cursor-pointer hover-lift group"
                                             onClick={() => setActiveStep(activeStep === index ? null : index)}
