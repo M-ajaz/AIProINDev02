@@ -186,8 +186,8 @@ const ServiceOfferingsBentoSection = () => {
                     </p>
                 </div>
 
-                {/* Bento Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 h-auto lg:h-[800px]">
+                {/* Improved Bento Grid Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 h-auto lg:h-[600px]">
                     {/* Large Featured Card - Hybrid Resource Flexibility */}
                     <div 
                         className="lg:col-span-2 lg:row-span-2 group relative bg-gradient-to-br from-navy-600 to-teal-600 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500"
@@ -223,41 +223,92 @@ const ServiceOfferingsBentoSection = () => {
                         </div>
                     </div>
 
-                    {/* Smaller Service Cards */}
-                    {serviceOfferings.slice(1).map((service, index) => (
-                        <div 
-                            key={index}
-                            className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-                            data-aos="fade-up"
-                            data-aos-delay={index * 100}
-                        >
-                            <div className="absolute inset-0">
-                                <Image 
-                                    src={`https://images.unsplash.com/photo-${[
-                                        '1517048676732-d65bc937f952',
-                                        '1521737852567-6949f3f9f2b5',
-                                        '1606857521015-7f9fcf423740'
-                                    ][index]}?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85`}
-                                    alt={service.title}
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-br from-navy-600/80 to-teal-400/60 group-hover:from-navy-700/90 group-hover:to-teal-500/70 transition-colors duration-500"></div>
-                            </div>
-                            
-                            <div className="relative z-10 p-8">
-                                <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                    <FaCogs className="text-navy-800 text-lg" />
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-lime-300 transition-colors duration-300">
-                                    {service.title}
-                                </h3>
-                                <p className="text-gray-200 text-sm leading-relaxed">
-                                    {service.desc}
-                                </p>
-                            </div>
+                    {/* Top Right Card - Seamless Project Oversight */}
+                    <div 
+                        className="lg:col-span-2 group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div className="absolute inset-0">
+                            <Image 
+                                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85"
+                                alt="Project oversight"
+                                fill
+                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-br from-navy-600/80 to-teal-400/60 group-hover:from-navy-700/90 group-hover:to-teal-500/70 transition-colors duration-500"></div>
                         </div>
-                    ))}
+                        
+                        <div className="relative z-10 p-8 h-full flex flex-col justify-center">
+                            <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <FaCogs className="text-navy-800 text-lg" />
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-4 group-hover:text-lime-300 transition-colors duration-300">
+                                {serviceOfferings[1].title}
+                            </h3>
+                            <p className="text-gray-200 text-sm leading-relaxed">
+                                {serviceOfferings[1].desc}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Bottom Left Card - Quick Access to Niche Talent */}
+                    <div 
+                        className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div className="absolute inset-0">
+                            <Image 
+                                src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85"
+                                alt="Niche talent"
+                                fill
+                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-br from-navy-600/80 to-teal-400/60 group-hover:from-navy-700/90 group-hover:to-teal-500/70 transition-colors duration-500"></div>
+                        </div>
+                        
+                        <div className="relative z-10 p-8 h-full flex flex-col justify-center">
+                            <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <FaRocket className="text-navy-800 text-lg" />
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-4 group-hover:text-lime-300 transition-colors duration-300">
+                                {serviceOfferings[2].title}
+                            </h3>
+                            <p className="text-gray-200 text-sm leading-relaxed">
+                                {serviceOfferings[2].desc}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Bottom Right Card - Quality & Compliance Assurance */}
+                    <div 
+                        className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+                        <div className="absolute inset-0">
+                            <Image 
+                                src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85"
+                                alt="Quality assurance"
+                                fill
+                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-br from-navy-600/80 to-teal-400/60 group-hover:from-navy-700/90 group-hover:to-teal-500/70 transition-colors duration-500"></div>
+                        </div>
+                        
+                        <div className="relative z-10 p-8 h-full flex flex-col justify-center">
+                            <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <FaCheckCircle className="text-navy-800 text-lg" />
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-4 group-hover:text-lime-300 transition-colors duration-300">
+                                {serviceOfferings[3].title}
+                            </h3>
+                            <p className="text-gray-200 text-sm leading-relaxed">
+                                {serviceOfferings[3].desc}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
