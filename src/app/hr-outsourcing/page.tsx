@@ -1068,10 +1068,6 @@ export default function HROutsourcingService() {
             <WhyChooseProtingentSection />
             <FinalCTASection />
             
-            <div className="py-16 md:py-24 w-full flex justify-center">
-                <ContactUsComponent />
-            </div>
-
             <HROutsourcingFAQSection />
         </div>
     );
