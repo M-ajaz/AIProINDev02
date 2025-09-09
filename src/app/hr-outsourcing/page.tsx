@@ -238,6 +238,9 @@ const StrategicAdvantageSection = () => {
 
     return (
         <div ref={sectionRef} className="relative w-full py-16 md:py-24 bg-white overflow-hidden">
+            {/* Enhanced geometric background */}
+            <GeometricBackground variant="primary" intensity="medium" />
+            
             {/* Subtle geometric pattern background */}
             <div className="absolute inset-0 opacity-5">
                 <div 
