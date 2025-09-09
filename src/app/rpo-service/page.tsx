@@ -560,16 +560,13 @@ const InteractiveTimeline = () => {
                                                     </ul>
                                                 </div>
                                             </div>
-                                            
-                                            {/* Hover indicator */}
-                                            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                <div className={`w-6 h-6 border-2 border-primary rounded-full flex items-center justify-center transition-transform duration-300 ${
-                                                    activeStep === index ? 'rotate-45' : ''
-                                                }`}>
-                                                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                                                </div>
+                                                
+                                                {/* Visual accent line */}
+                                                <div 
+                                                    className="mt-6 h-1 w-20 rounded-full transition-all duration-300 group-hover:w-32"
+                                                    style={{ backgroundColor: isEven ? '#34969D' : '#CBDC13' }}
+                                                ></div>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
