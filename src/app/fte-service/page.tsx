@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { ServiceFTEBanner, EnhancedFAQSection } from "@/components";
-import { serviceFTEFAQ, ProductivityCardData, ServiceOfferingData, ServicesProcessData, businessBenefitsData, serviceFTEIndustryData, serviceFTEPartnersData } from '@/utils/constants';
 import Image from 'next/image';
 import { FaCheckCircle, FaCogs, FaUsers, FaChartLine, FaRocket, FaArrowRight, FaPlus, FaMinus, FaSearch } from 'react-icons/fa';
 
