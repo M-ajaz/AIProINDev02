@@ -1096,10 +1096,6 @@ export default function RPOService() {
             {/* Updated Trusted Partner Section */}
             <PowerfulPartnerSection />
 
-            <div className="py-16 md:py-24 w-full flex justify-center bg-gray-50">
-                <ContactUsComponent />
-            </div>
-
             <EnhancedFAQSection
                 title="Frequently Asked Questions"
                 description="Get answers to common questions about our RPO services and how Protingent can help accelerate your hiring process while maintaining quality and reducing costs."
