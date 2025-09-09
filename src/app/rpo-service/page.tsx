@@ -1112,13 +1112,11 @@ export default function RPOService() {
                 <ContactUsComponent />
             </div>
 
-            <div className="py-16 md:py-24 w-full flex justify-center">
-                <FAQSection
-                    title="Frequently Asked Questions"
-                    desc="Get answers to common questions about our RPO services and how Protingent can help accelerate your hiring process while maintaining quality and reducing costs."
-                    FAQList={serviceRPOFAQ}
-                />
-            </div>
+            <EnhancedFAQSection
+                title="Frequently Asked Questions"
+                description="Get answers to common questions about our RPO services and how Protingent can help accelerate your hiring process while maintaining quality and reducing costs."
+                FAQList={serviceRPOFAQ}
+            />
         </div>
     );
 }
