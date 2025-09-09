@@ -788,7 +788,7 @@ const BenefitsSection = () => {
 };
 
 // --------------------------------------------------------------
-// 7. Industries Section (Visual Cards) - Masonry Grid Layout
+// 7. Industries Section (Visual Cards) - Bento Grid Layout
 // --------------------------------------------------------------
 const IndustriesSection = () => {
     const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null);
@@ -797,37 +797,42 @@ const IndustriesSection = () => {
         {
             title: "Information Technology & Software Development",
             description: "From cloud engineers to cybersecurity experts, we provide IT staffing solutions that match today's fast-changing tech landscape.",
-            image: "https://images.unsplash.com/photo-1664526937033-fe2c11f1be25",
+            image: "https://images.unsplash.com/photo-1650398121402-f0c5d619d846",
             icon: FaLaptopCode,
-            color: "#34969E"
+            color: "#34969E",
+            size: "large"
         },
         {
             title: "Business Intelligence & Data Analytics", 
             description: "Access BI and analytics professionals who can turn raw data into real business intelligence, helping you drive smarter decisions.",
-            image: "https://images.unsplash.com/photo-1646394828039-0802101e1053",
+            image: "https://images.pexels.com/photos/3183172/pexels-photo-3183172.jpeg",
             icon: FaChartBar,
-            color: "#C2D92C"
+            color: "#C2D92C",
+            size: "large"
         },
         {
             title: "Engineering & Product Development",
             description: "Mechanical, electrical, and embedded engineers—our engineering workforce solutions help companies bring products to life faster.",
-            image: "https://images.unsplash.com/photo-1652359282381-63624506739c",
+            image: "https://images.pexels.com/photos/33773644/pexels-photo-33773644.jpeg",
             icon: FaCogs,
-            color: "#34969E"
+            color: "#34969E",
+            size: "small"
         },
         {
             title: "Managed IT & Infrastructure",
             description: "Support your operations with infrastructure specialists and IT consultants who keep systems secure, scalable, and efficient.",
-            image: "https://images.unsplash.com/photo-1548098751-d645421e0d7a",
+            image: "https://images.unsplash.com/photo-1659355894515-2548f35525f1",
             icon: FaCloud,
-            color: "#C2D92C"
+            color: "#C2D92C",
+            size: "small"
         },
         {
             title: "Emerging Tech & Niche Roles",
             description: "Whether it's AI, IoT, or automation, we source experts who can plug into your most critical innovation projects.",
-            image: "https://images.pexels.com/photos/33809955/pexels-photo-33809955.jpeg",
+            image: "https://images.pexels.com/photos/33827315/pexels-photo-33827315.jpeg",
             icon: FaRobot,
-            color: "#34969E"
+            color: "#34969E",
+            size: "small"
         }
     ];
 
@@ -845,151 +850,174 @@ const IndustriesSection = () => {
                     </p>
                 </div>
 
-                {/* Masonry Grid: 2 cards on top row, 3 cards on bottom row (centered) */}
-                <div className="space-y-8">
-                    {/* Top Row: 2 Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        {industries.slice(0, 2).map((industry, index) => {
-                            const IconComponent = industry.icon;
-                            const isHovered = hoveredIndustry === index;
-                            
-                            return (
+                {/* Bento Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-fr">
+                    {/* Top Row: 2 Large Cards */}
+                    {industries.slice(0, 2).map((industry, index) => {
+                        const IconComponent = industry.icon;
+                        const isHovered = hoveredIndustry === index;
+                        
+                        return (
+                            <div
+                                key={index}
+                                className={`md:col-span-2 lg:col-span-3 group relative overflow-hidden rounded-3xl transition-all duration-700 cursor-pointer shadow-lg hover:shadow-2xl min-h-[450px] ${
+                                    isHovered ? 'scale-105 z-10' : 'hover:scale-102'
+                                }`}
+                                style={{ animationDelay: `${index * 0.1}s` }}
+                                onMouseEnter={() => setHoveredIndustry(index)}
+                                onMouseLeave={() => setHoveredIndustry(null)}
+                            >
+                                {/* Professional Human Image Background */}
                                 <div
-                                    key={index}
-                                    className={`group relative overflow-hidden rounded-3xl transition-all duration-700 cursor-pointer shadow-lg hover:shadow-2xl ${
-                                        isHovered ? 'scale-105 z-10' : 'hover:scale-102'
-                                    }`}
-                                    style={{ animationDelay: `${index * 0.1}s` }}
-                                    onMouseEnter={() => setHoveredIndustry(index)}
-                                    onMouseLeave={() => setHoveredIndustry(null)}
-                                >
-                                    {/* MANDATORY: Representative abstract images */}
-                                    <div
-                                        className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                        style={{
-                                            backgroundImage: `url('${industry.image}')`,
-                                        }}
-                                    ></div>
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#113F64]/90 via-transparent to-black/70"></div>
-                                    
-                                    {/* Content with smooth expansion */}
-                                    <div className={`relative z-10 p-8 h-full text-white transition-all duration-700 ${
-                                        isHovered ? 'min-h-[420px]' : 'min-h-[350px]'
-                                    } flex flex-col justify-between`}>
-                                        {/* Icon and Title */}
-                                        <div>
-                                            <div 
-                                                className="w-20 h-20 rounded-2xl flex items-center justify-center text-3xl mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
-                                                style={{ backgroundColor: industry.color }}
-                                            >
-                                                <IconComponent className="text-white" />
-                                            </div>
-                                            
-                                            <h3 className="text-2xl lg:text-3xl font-bold mb-4 leading-tight">
-                                                {industry.title}
-                                            </h3>
+                                    className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                    style={{
+                                        backgroundImage: `url('${industry.image}')`,
+                                    }}
+                                ></div>
+                                
+                                {/* Abstract Geometric Overlay with Brand Colors */}
+                                <div className={`absolute inset-0 bg-gradient-to-br from-[#113F64]/85 via-[${industry.color}]/75 to-[#113F64]/90`}>
+                                    {/* Geometric Pattern Overlay */}
+                                    <div className="absolute inset-0 opacity-20">
+                                        <div 
+                                            className="w-full h-full"
+                                            style={{
+                                                backgroundImage: `repeating-linear-gradient(45deg, ${industry.color}40 0px, ${industry.color}40 2px, transparent 2px, transparent 20px)`,
+                                            }}
+                                        ></div>
+                                    </div>
+                                </div>
+                                
+                                {/* Content with smooth expansion */}
+                                <div className={`relative z-10 p-8 h-full text-white transition-all duration-700 flex flex-col justify-between`}>
+                                    {/* Icon and Title */}
+                                    <div>
+                                        <div 
+                                            className="w-24 h-24 rounded-2xl flex items-center justify-center text-4xl mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
+                                            style={{ backgroundColor: industry.color }}
+                                        >
+                                            <IconComponent className="text-[#113F64]" />
                                         </div>
                                         
-                                        {/* Description with hover reveal */}
-                                        <div className={`transition-all duration-700 overflow-hidden ${
-                                            isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                                        }`}>
-                                            <p className="text-white/90 leading-relaxed text-lg mb-6">
-                                                {industry.description}
-                                            </p>
-                                            
-                                            <div className="flex items-center gap-3 font-semibold" style={{ color: industry.color }}>
-                                                <span>Explore Solutions</span>
-                                                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                                            </div>
-                                        </div>
+                                        <h3 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+                                            {industry.title}
+                                        </h3>
                                     </div>
                                     
-                                    {/* Accent border */}
-                                    <div 
-                                        className="absolute bottom-0 left-0 w-full h-2 transition-all duration-500"
-                                        style={{ backgroundColor: industry.color }}
-                                    ></div>
+                                    {/* Description - Always visible on large cards */}
+                                    <div className="transition-all duration-700">
+                                        <p className="text-white/90 leading-relaxed text-xl mb-6">
+                                            {industry.description}
+                                        </p>
+                                        
+                                        <div className="flex items-center gap-4 font-semibold text-lg" style={{ color: industry.color }}>
+                                            <span>Explore Solutions</span>
+                                            <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
+                                        </div>
+                                    </div>
                                 </div>
-                            );
-                        })}
-                    </div>
+                                
+                                {/* Accent border */}
+                                <div 
+                                    className="absolute bottom-0 left-0 w-full h-3 transition-all duration-500 group-hover:h-4"
+                                    style={{ backgroundColor: industry.color }}
+                                ></div>
+                            </div>
+                        );
+                    })}
 
-                    {/* Bottom Row: 3 Cards (Centered) */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        {industries.slice(2).map((industry, index) => {
-                            const actualIndex = index + 2;
-                            const IconComponent = industry.icon;
-                            const isHovered = hoveredIndustry === actualIndex;
-                            
-                            return (
+                    {/* Bottom Row: 3 Smaller Cards */}
+                    {industries.slice(2).map((industry, index) => {
+                        const actualIndex = index + 2;
+                        const IconComponent = industry.icon;
+                        const isHovered = hoveredIndustry === actualIndex;
+                        
+                        return (
+                            <div
+                                key={actualIndex}
+                                className={`md:col-span-4 lg:col-span-2 group relative overflow-hidden rounded-3xl transition-all duration-700 cursor-pointer shadow-lg hover:shadow-2xl min-h-[350px] ${
+                                    isHovered ? 'scale-105 z-10' : 'hover:scale-102'
+                                }`}
+                                style={{ animationDelay: `${actualIndex * 0.1}s` }}
+                                onMouseEnter={() => setHoveredIndustry(actualIndex)}
+                                onMouseLeave={() => setHoveredIndustry(null)}
+                            >
+                                {/* Professional Human Image Background */}
                                 <div
-                                    key={actualIndex}
-                                    className={`group relative overflow-hidden rounded-3xl transition-all duration-700 cursor-pointer shadow-lg hover:shadow-2xl ${
-                                        isHovered ? 'scale-105 z-10' : 'hover:scale-102'
-                                    }`}
-                                    style={{ animationDelay: `${actualIndex * 0.1}s` }}
-                                    onMouseEnter={() => setHoveredIndustry(actualIndex)}
-                                    onMouseLeave={() => setHoveredIndustry(null)}
-                                >
-                                    {/* MANDATORY: Representative abstract images */}
-                                    <div
-                                        className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                        style={{
-                                            backgroundImage: `url('${industry.image}')`,
-                                        }}
-                                    ></div>
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#113F64]/90 via-transparent to-black/70"></div>
-                                    
-                                    {/* Content with smooth expansion */}
-                                    <div className={`relative z-10 p-6 h-full text-white transition-all duration-700 ${
-                                        isHovered ? 'min-h-[400px]' : 'min-h-[320px]'
-                                    } flex flex-col justify-between`}>
-                                        {/* Icon and Title */}
-                                        <div>
-                                            <div 
-                                                className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
-                                                style={{ backgroundColor: industry.color }}
-                                            >
-                                                <IconComponent className="text-white" />
-                                            </div>
-                                            
-                                            <h3 className="text-xl lg:text-2xl font-bold mb-3 leading-tight">
-                                                {industry.title}
-                                            </h3>
+                                    className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                    style={{
+                                        backgroundImage: `url('${industry.image}')`,
+                                    }}
+                                ></div>
+                                
+                                {/* Abstract Geometric Overlay */}
+                                <div className={`absolute inset-0 bg-gradient-to-br from-[#113F64]/85 via-[${industry.color}]/75 to-[#113F64]/90`}>
+                                    {/* Subtle geometric pattern */}
+                                    <div className="absolute inset-0 opacity-15">
+                                        <div 
+                                            className="w-full h-full"
+                                            style={{
+                                                backgroundImage: `radial-gradient(circle at 30% 30%, ${industry.color}30 2px, transparent 2px), radial-gradient(circle at 70% 70%, #113F6430 3px, transparent 3px)`,
+                                                backgroundSize: '50px 50px, 70px 70px'
+                                            }}
+                                        ></div>
+                                    </div>
+                                </div>
+                                
+                                {/* Content with smooth expansion */}
+                                <div className={`relative z-10 p-6 h-full text-white transition-all duration-700 flex flex-col justify-between`}>
+                                    {/* Icon and Title */}
+                                    <div>
+                                        <div 
+                                            className="w-18 h-18 rounded-2xl flex items-center justify-center text-2xl mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
+                                            style={{ backgroundColor: industry.color }}
+                                        >
+                                            <IconComponent className="text-[#113F64]" />
                                         </div>
                                         
-                                        {/* Description with hover reveal */}
-                                        <div className={`transition-all duration-700 overflow-hidden ${
-                                            isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                                        }`}>
-                                            <p className="text-white/90 leading-relaxed text-base mb-4">
-                                                {industry.description}
-                                            </p>
-                                            
-                                            <div className="flex items-center gap-2 font-semibold text-sm" style={{ color: industry.color }}>
-                                                <span>Explore Solutions</span>
-                                                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                                            </div>
+                                        <h3 className="text-xl lg:text-2xl font-bold mb-4 leading-tight">
+                                            {industry.title}
+                                        </h3>
+                                    </div>
+                                    
+                                    {/* Description with hover reveal */}
+                                    <div className={`transition-all duration-700 overflow-hidden ${
+                                        isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                                    }`}>
+                                        <p className="text-white/90 leading-relaxed text-base mb-4">
+                                            {industry.description}
+                                        </p>
+                                        
+                                        <div className="flex items-center gap-2 font-semibold text-sm" style={{ color: industry.color }}>
+                                            <span>Explore Solutions</span>
+                                            <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                                         </div>
                                     </div>
                                     
-                                    {/* Accent border */}
-                                    <div 
-                                        className="absolute bottom-0 left-0 w-full h-2 transition-all duration-500"
-                                        style={{ backgroundColor: industry.color }}
-                                    ></div>
+                                    {/* Show/Hide indicator for smaller cards */}
+                                    <div className={`flex items-center gap-2 font-semibold text-sm transition-all duration-300 ${
+                                        isHovered ? 'opacity-0' : 'opacity-70'
+                                    }`} style={{ color: industry.color }}>
+                                        <span>Hover to explore</span>
+                                        <FaEye />
+                                    </div>
                                 </div>
-                            );
-                        })}
-                    </div>
+                                
+                                {/* Accent border */}
+                                <div 
+                                    className="absolute bottom-0 left-0 w-full h-2 transition-all duration-500 group-hover:h-3"
+                                    style={{ backgroundColor: industry.color }}
+                                ></div>
+                            </div>
+                        );
+                    })}
                 </div>
 
                 {/* Call to Action Button */}
                 <div className="text-center mt-16">
                     <button className="group relative overflow-hidden px-12 py-4 bg-[#34969E] text-white font-bold text-lg rounded-2xl hover:scale-105 transform transition-all shadow-2xl">
                         <span className="relative z-10 flex items-center gap-3">
-                            Explore All Industries
+                            Discover Industry Solutions
                             <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
                         </span>
                         <div className="absolute inset-0 bg-[#C2D92C] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
