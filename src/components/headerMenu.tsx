@@ -14,7 +14,7 @@ const HeaderMenuList = () => {
         if (menu?.name === "services") {
             setOpen(!open);
             return
-        } if (menu?.name !== "careers" && menu?.name !== "industries") {
+        } if (menu?.name !== "industries") {
             router.push(menu?.link)
             setMobileMenuOpen(false); // Close mobile menu after navigation
         }
