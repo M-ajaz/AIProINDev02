@@ -156,7 +156,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Marketing Solutions Page - FAQ Section"
+    - "Direct Sourcing Page - All Sections Completed"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
