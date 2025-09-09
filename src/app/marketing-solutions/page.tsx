@@ -839,7 +839,7 @@ const CTASection = () => {
 };
 
 // --------------------------------------------------------------
-// FAQ Section with Mandatory Pattern Background
+// FAQ Section with Enhanced Design
 // --------------------------------------------------------------
 const MarketingFAQSection = () => {
     const faqs = [
@@ -874,24 +874,11 @@ const MarketingFAQSection = () => {
     ];
 
     return (
-        <div className="w-full bg-gray-50 py-16 md:py-24 relative">
-            {/* MANDATORY: Subtle pattern background image */}
-            <div
-                className="absolute inset-0 bg-repeat opacity-5"
-                style={{
-                    backgroundImage: `url('https://images.pexels.com/photos/33820159/pexels-photo-33820159.jpeg')`,
-                    backgroundSize: '80px 80px'
-                }}
-            ></div>
-            
-            <div className="relative z-10 max-w-[1450px] mx-auto px-4 md:px-6">
-                <FAQSection
-                    title="Frequently Asked Questions"
-                    desc="Get answers to common questions about our marketing solutions and how Protingent India can help you achieve sustainable business growth through data-driven marketing strategies."
-                    FAQList={faqs}
-                />
-            </div>
-        </div>
+        <EnhancedFAQSection
+            title="Frequently Asked Questions"
+            description="Get answers to common questions about our marketing solutions and how Protingent India can help you achieve sustainable business growth through data-driven marketing strategies."
+            FAQList={faqs}
+        />
     );
 };
 
