@@ -499,9 +499,10 @@ const InteractiveTimeline = () => {
                                     style={{ animationDelay: `${index * 0.2}s` }}
                                 >
                                     <div className={`flex flex-col md:flex-row items-start md:items-center gap-8 ${
-                                        index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                                        isEven ? 'md:flex-row' : 'md:flex-row-reverse'
                                     }`}>
-                                        {/* Step number with icon */}
+                                        
+                                        {/* Step Number and Icon - Fixed positioning */}
                                         <div className="relative z-20 flex-shrink-0 flex flex-col items-center">
                                             {/* Icon */}
                                             <div 
