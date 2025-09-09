@@ -484,6 +484,20 @@ const BenefitsStatsSection = () => {
 
 // Industries Section
 const IndustriesSection = () => {
+    const industries = [
+        "Aerospace / Space",
+        "eCommerce", 
+        "Networking",
+        "Cloud Computing",
+        "Data",
+        "Gaming",
+        "Software / SaaS",
+        "Semiconductor",
+        "Consumer Goods / Virtual Reality",
+        "Medical Device",
+        "Government / DoD"
+    ];
+
     return (
         <section className="w-full py-20 bg-gradient-to-b from-white to-gray-50">
             <div className="max-w-7xl mx-auto px-6">
@@ -494,13 +508,13 @@ const IndustriesSection = () => {
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-lime-400 to-teal-500 rounded-full mx-auto mb-6"></div>
                     <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                        Our Full-Time Equivalent (FTE) services are designed to seamlessly integrate with businesses across industries empowering them with domain-specific skills, faster turnaround, and scalable operations.
+                        Our Full-Time Equivalent (FTE) services are designed to seamlessly integrate with businesses across industries, empowering them with domain-specific skills, faster turnaround, and scalable operations.
                     </p>
                 </div>
 
                 {/* Industries Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {serviceFTEIndustryData.map((industry, index) => (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {industries.map((industry, index) => (
                         <div 
                             key={index}
                             className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
@@ -514,9 +528,16 @@ const IndustriesSection = () => {
                                         '1606857521015-7f9fcf423740',
                                         '1497366754035-f200968a6e72',
                                         '1718220216044-006f43e3a9b1',
-                                        '1748346918817-0b1b6b2f9bab'
-                                    ][index % 4]}?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85`}
-                                    alt={industry.title}
+                                        '1748346918817-0b1b6b2f9bab',
+                                        '1600880292089-90a7e086ee0c',
+                                        '1557426272-fc759fdf7a8d',
+                                        '1517048676732-d65bc937f952',
+                                        '1521737852567-6949f3f9f2b5',
+                                        '1606857521015-7f9fcf423740',
+                                        '1497366754035-f200968a6e72',
+                                        '1718220216044-006f43e3a9b1'
+                                    ][index % 11]}?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85`}
+                                    alt={industry}
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
@@ -526,7 +547,7 @@ const IndustriesSection = () => {
                             {/* Content */}
                             <div className="relative z-10 p-6">
                                 <h3 className="text-lg font-bold text-white text-center group-hover:text-lime-300 transition-colors duration-300">
-                                    {industry.title}
+                                    {industry}
                                 </h3>
                             </div>
                         </div>
