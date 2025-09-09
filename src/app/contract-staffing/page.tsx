@@ -962,13 +962,11 @@ export default function ContractStaffingService() {
                 <ContactUsComponent />
             </div>
 
-            <div className="py-16 md:py-24 w-full flex justify-center bg-gray-50">
-                <FAQSection
-                    title="Frequently Asked Questions"
-                    desc="Get answers to common questions about our contract staffing services and how Protingent can help you build flexible, compliant workforce solutions."
-                    FAQList={contractStaffingFAQ}
-                />
-            </div>
+            <EnhancedFAQSection
+                title="Frequently Asked Questions"
+                description="Get answers to common questions about our contract staffing services and how Protingent can help you build flexible, compliant workforce solutions."
+                FAQList={contractStaffingFAQ}
+            />
         </div>
     );
 }
