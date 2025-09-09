@@ -160,7 +160,10 @@ const BrandBenefitsSection = () => {
     }, []);
 
     return (
-        <div ref={sectionRef} className="w-full max-w-[1450px] flex flex-col items-center gap-8 md:gap-12 px-4 md:px-6">
+        <div ref={sectionRef} className="relative w-full max-w-[1450px] flex flex-col items-center gap-8 md:gap-12 px-4 md:px-6">
+            {/* Geometric Background */}
+            <GeometricBackground variant="primary" intensity="light" />
+            
             <CommonHeading
                 title="Recruitment Process Outsourcing (RPO) for Your Talent-Pool"
                 desc="Recruitment delays cost businesses more than time. It holds back growth, revenue, and innovation. Through professional RPO Services, you can outsource talent hiring responsibility to expert recruiters like Protingent who act as an extension of your in-house HR team."
