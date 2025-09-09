@@ -154,6 +154,25 @@ const WorkforceChallengesSection = () => {
 
 // Service Offerings Bento Grid Section
 const ServiceOfferingsBentoSection = () => {
+    const serviceOfferings = [
+        {
+            title: "Hybrid Resource Flexibility",
+            desc: "Blend in-house direction with outsourced expertise through custom-built resource models that scale seamlessly with your project demands."
+        },
+        {
+            title: "Seamless Project Oversight",
+            desc: "Get dedicated project managers and regular updates that ensure milestone tracking, accountability, and zero communication gaps."
+        },
+        {
+            title: "Quick Access to Niche Talent",
+            desc: "Deploy specialized professionals on-demand — without recruitment delays or onboarding hurdles — to fast-track delivery."
+        },
+        {
+            title: "Quality & Compliance Assurance",
+            desc: "Engage FTEs trained in regulatory, data security, and industry protocols, ensuring every outcome is compliant and audit-ready."
+        }
+    ];
+
     return (
         <section className="w-full py-20 bg-white">
             <div className="max-w-7xl mx-auto px-6">
@@ -191,10 +210,10 @@ const ServiceOfferingsBentoSection = () => {
                                     <FaUsers className="text-navy-800 text-2xl" />
                                 </div>
                                 <h3 className="text-3xl lg:text-4xl font-black text-white mb-6">
-                                    {ServiceOfferingData[0].title}
+                                    {serviceOfferings[0].title}
                                 </h3>
                                 <p className="text-xl text-gray-200 leading-relaxed">
-                                    {ServiceOfferingData[0].desc}
+                                    {serviceOfferings[0].desc}
                                 </p>
                             </div>
                             
@@ -206,7 +225,7 @@ const ServiceOfferingsBentoSection = () => {
                     </div>
 
                     {/* Smaller Service Cards */}
-                    {ServiceOfferingData.slice(1).map((service, index) => (
+                    {serviceOfferings.slice(1).map((service, index) => (
                         <div 
                             key={index}
                             className="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
@@ -218,8 +237,7 @@ const ServiceOfferingsBentoSection = () => {
                                     src={`https://images.unsplash.com/photo-${[
                                         '1517048676732-d65bc937f952',
                                         '1521737852567-6949f3f9f2b5',
-                                        '1606857521015-7f9fcf423740',
-                                        '1497366754035-f200968a6e72'
+                                        '1606857521015-7f9fcf423740'
                                     ][index]}?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85`}
                                     alt={service.title}
                                     fill
