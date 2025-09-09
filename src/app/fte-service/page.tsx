@@ -560,6 +560,33 @@ const IndustriesSection = () => {
 
 // Why Protingent Section
 const WhyProtingentSection = () => {
+    const partnersData = [
+        {
+            title: "Domain-Ready Talent Pool",
+            desc: "Access pre-vetted experts with specialized skills across industries."
+        },
+        {
+            title: "Agile Onboarding Process",
+            desc: "Scale your workforce quickly without the usual hiring delays."
+        },
+        {
+            title: "Flexible Engagement Models",
+            desc: "Choose from hourly, monthly, or project-based FTE structures."
+        },
+        {
+            title: "Continuous Performance Monitoring",
+            desc: "Get regular updates, KPIs, and transparent team evaluations."
+        },
+        {
+            title: "US-Based & Global Delivery",
+            desc: "Leverage both local expertise and cost-effective global talent."
+        },
+        {
+            title: "Client-Centric Support",
+            desc: "Dedicated account managers ensure 24/7 responsiveness and alignment."
+        }
+    ];
+
     return (
         <section className="w-full py-20 bg-white relative overflow-hidden">
             {/* Background Geometric Motifs */}
@@ -577,13 +604,13 @@ const WhyProtingentSection = () => {
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-lime-400 to-teal-500 rounded-full mx-auto mb-6"></div>
                     <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                        Finding the right FTE provider can be the difference between stagnation and scalable success. Protingent go beyond basic staffing, bring you dedicated professionals, agile processes, and industry-leading value tailored to your business goals.
+                        Finding the right FTE provider can be the difference between stagnation and scalable success. Protingent goes beyond basic staffing, bringing you dedicated professionals, agile processes, and industry-leading value tailored to your business goals.
                     </p>
                 </div>
 
                 {/* Partners Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {serviceFTEPartnersData.map((partner, index) => (
+                    {partnersData.map((partner, index) => (
                         <div 
                             key={index}
                             className="group relative bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
