@@ -545,11 +545,12 @@ export default function Home() {
     useEffect(() => {
         // Initialize AOS
         if (typeof window !== 'undefined') {
-            const AOS = require('aos');
-            AOS.init({
-                duration: 800,
-                easing: 'ease-out-cubic',
-                once: true,
+            import('aos').then((AOS) => {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-out-cubic',
+                    once: true,
+                });
             });
         }
     }, []);
