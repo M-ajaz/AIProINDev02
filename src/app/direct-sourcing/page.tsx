@@ -823,7 +823,7 @@ const BenefitsSection = () => {
 };
 
 // --------------------------------------------------------------
-// 7. Industries Section (Visual Cards)
+// 7. Industries Section (Visual Cards) - Masonry Grid Layout
 // --------------------------------------------------------------
 const IndustriesSection = () => {
     const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null);
@@ -880,72 +880,155 @@ const IndustriesSection = () => {
                     </p>
                 </div>
 
-                {/* 5 Industry Cards with hover reveal + smooth expansion */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {industries.map((industry, index) => {
-                        const IconComponent = industry.icon;
-                        const isHovered = hoveredIndustry === index;
-                        
-                        return (
-                            <div
-                                key={index}
-                                className={`group relative overflow-hidden rounded-3xl transition-all duration-700 cursor-pointer shadow-lg hover:shadow-2xl ${
-                                    isHovered ? 'scale-105 z-10' : 'hover:scale-102'
-                                } ${index === 2 ? 'lg:col-span-1 lg:col-start-2' : ''}`}
-                                style={{ animationDelay: `${index * 0.1}s` }}
-                                onMouseEnter={() => setHoveredIndustry(index)}
-                                onMouseLeave={() => setHoveredIndustry(null)}
-                            >
-                                {/* MANDATORY: Representative abstract images */}
+                {/* Masonry Grid: 2 cards on top row, 3 cards on bottom row (centered) */}
+                <div className="space-y-8">
+                    {/* Top Row: 2 Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        {industries.slice(0, 2).map((industry, index) => {
+                            const IconComponent = industry.icon;
+                            const isHovered = hoveredIndustry === index;
+                            
+                            return (
                                 <div
-                                    className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                    style={{
-                                        backgroundImage: `url('${industry.image}')`,
-                                    }}
-                                ></div>
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#113F64]/90 via-transparent to-black/70"></div>
-                                
-                                {/* Content with smooth expansion */}
-                                <div className={`relative z-10 p-8 h-full text-white transition-all duration-700 ${
-                                    isHovered ? 'min-h-[400px]' : 'min-h-[320px]'
-                                } flex flex-col justify-between`}>
-                                    {/* Icon and Title */}
-                                    <div>
-                                        <div 
-                                            className="w-20 h-20 rounded-2xl flex items-center justify-center text-3xl mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
-                                            style={{ backgroundColor: industry.color }}
-                                        >
-                                            <IconComponent className="text-white" />
+                                    key={index}
+                                    className={`group relative overflow-hidden rounded-3xl transition-all duration-700 cursor-pointer shadow-lg hover:shadow-2xl ${
+                                        isHovered ? 'scale-105 z-10' : 'hover:scale-102'
+                                    }`}
+                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                    onMouseEnter={() => setHoveredIndustry(index)}
+                                    onMouseLeave={() => setHoveredIndustry(null)}
+                                >
+                                    {/* MANDATORY: Representative abstract images */}
+                                    <div
+                                        className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                        style={{
+                                            backgroundImage: `url('${industry.image}')`,
+                                        }}
+                                    ></div>
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#113F64]/90 via-transparent to-black/70"></div>
+                                    
+                                    {/* Content with smooth expansion */}
+                                    <div className={`relative z-10 p-8 h-full text-white transition-all duration-700 ${
+                                        isHovered ? 'min-h-[420px]' : 'min-h-[350px]'
+                                    } flex flex-col justify-between`}>
+                                        {/* Icon and Title */}
+                                        <div>
+                                            <div 
+                                                className="w-20 h-20 rounded-2xl flex items-center justify-center text-3xl mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
+                                                style={{ backgroundColor: industry.color }}
+                                            >
+                                                <IconComponent className="text-white" />
+                                            </div>
+                                            
+                                            <h3 className="text-2xl lg:text-3xl font-bold mb-4 leading-tight">
+                                                {industry.title}
+                                            </h3>
                                         </div>
                                         
-                                        <h3 className="text-2xl lg:text-3xl font-bold mb-4 leading-tight">
-                                            {industry.title}
-                                        </h3>
+                                        {/* Description with hover reveal */}
+                                        <div className={`transition-all duration-700 overflow-hidden ${
+                                            isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                                        }`}>
+                                            <p className="text-white/90 leading-relaxed text-lg mb-6">
+                                                {industry.description}
+                                            </p>
+                                            
+                                            <div className="flex items-center gap-3 font-semibold" style={{ color: industry.color }}>
+                                                <span>Explore Solutions</span>
+                                                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                                            </div>
+                                        </div>
                                     </div>
                                     
-                                    {/* Description with hover reveal */}
-                                    <div className={`transition-all duration-700 overflow-hidden ${
-                                        isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                                    }`}>
-                                        <p className="text-white/90 leading-relaxed text-lg mb-6">
-                                            {industry.description}
-                                        </p>
+                                    {/* Accent border */}
+                                    <div 
+                                        className="absolute bottom-0 left-0 w-full h-2 transition-all duration-500"
+                                        style={{ backgroundColor: industry.color }}
+                                    ></div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Bottom Row: 3 Cards (Centered) */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        {industries.slice(2).map((industry, index) => {
+                            const actualIndex = index + 2;
+                            const IconComponent = industry.icon;
+                            const isHovered = hoveredIndustry === actualIndex;
+                            
+                            return (
+                                <div
+                                    key={actualIndex}
+                                    className={`group relative overflow-hidden rounded-3xl transition-all duration-700 cursor-pointer shadow-lg hover:shadow-2xl ${
+                                        isHovered ? 'scale-105 z-10' : 'hover:scale-102'
+                                    }`}
+                                    style={{ animationDelay: `${actualIndex * 0.1}s` }}
+                                    onMouseEnter={() => setHoveredIndustry(actualIndex)}
+                                    onMouseLeave={() => setHoveredIndustry(null)}
+                                >
+                                    {/* MANDATORY: Representative abstract images */}
+                                    <div
+                                        className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                        style={{
+                                            backgroundImage: `url('${industry.image}')`,
+                                        }}
+                                    ></div>
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#113F64]/90 via-transparent to-black/70"></div>
+                                    
+                                    {/* Content with smooth expansion */}
+                                    <div className={`relative z-10 p-6 h-full text-white transition-all duration-700 ${
+                                        isHovered ? 'min-h-[400px]' : 'min-h-[320px]'
+                                    } flex flex-col justify-between`}>
+                                        {/* Icon and Title */}
+                                        <div>
+                                            <div 
+                                                className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
+                                                style={{ backgroundColor: industry.color }}
+                                            >
+                                                <IconComponent className="text-white" />
+                                            </div>
+                                            
+                                            <h3 className="text-xl lg:text-2xl font-bold mb-3 leading-tight">
+                                                {industry.title}
+                                            </h3>
+                                        </div>
                                         
-                                        <div className="flex items-center gap-3 font-semibold" style={{ color: industry.color }}>
-                                            <span>Explore Solutions</span>
-                                            <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                                        {/* Description with hover reveal */}
+                                        <div className={`transition-all duration-700 overflow-hidden ${
+                                            isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                                        }`}>
+                                            <p className="text-white/90 leading-relaxed text-base mb-4">
+                                                {industry.description}
+                                            </p>
+                                            
+                                            <div className="flex items-center gap-2 font-semibold text-sm" style={{ color: industry.color }}>
+                                                <span>Explore Solutions</span>
+                                                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                                            </div>
                                         </div>
                                     </div>
+                                    
+                                    {/* Accent border */}
+                                    <div 
+                                        className="absolute bottom-0 left-0 w-full h-2 transition-all duration-500"
+                                        style={{ backgroundColor: industry.color }}
+                                    ></div>
                                 </div>
-                                
-                                {/* Accent border */}
-                                <div 
-                                    className="absolute bottom-0 left-0 w-full h-2 transition-all duration-500"
-                                    style={{ backgroundColor: industry.color }}
-                                ></div>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* Call to Action Button */}
+                <div className="text-center mt-16">
+                    <button className="group relative overflow-hidden px-12 py-4 bg-[#34969E] text-white font-bold text-lg rounded-2xl hover:scale-105 transform transition-all shadow-2xl">
+                        <span className="relative z-10 flex items-center gap-3">
+                            Explore All Industries
+                            <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
+                        </span>
+                        <div className="absolute inset-0 bg-[#C2D92C] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </button>
                 </div>
             </div>
         </div>
