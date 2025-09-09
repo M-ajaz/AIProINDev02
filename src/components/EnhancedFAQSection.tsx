@@ -192,5 +192,4 @@ export const EnhancedFAQSection = ({ title, description, FAQList }: EnhancedFAQS
                 )}
             </div>
         </div>
-    );
-};
+export default EnhancedFAQSection;
