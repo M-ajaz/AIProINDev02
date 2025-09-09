@@ -662,7 +662,7 @@ const FinalCTASection = () => {
                 </h2>
                 
                 <p className="text-xl text-gray-200 mb-12 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                    Transform your business operations with our expert FTE services. Start your journey to operational excellence today.
+                    Power your projects with Protingent's agile FTE talent solutions—designed to meet deadlines, cut costs, and fuel business momentum.
                 </p>
                 
                 <button 
