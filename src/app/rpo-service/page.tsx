@@ -504,39 +504,29 @@ const InteractiveTimeline = () => {
                                         
                                         {/* Step Number and Icon - Fixed positioning */}
                                         <div className="relative z-20 flex-shrink-0 flex flex-col items-center">
-                                            {/* Icon */}
-                                            <div 
-                                                className="w-12 h-12 rounded-xl flex items-center justify-center mb-2 transition-all duration-300 hover:scale-110 hover:rotate-6"
-                                                style={{ 
-                                                    backgroundColor: index % 2 === 0 ? '#34969D' : '#CBDC13',
-                                                    boxShadow: visibleSteps[index] ? `0 8px 25px ${index % 2 === 0 ? '#34969D' : '#CBDC13'}40` : 'none'
-                                                }}
-                                            >
-                                                <IconComponent className="text-white text-lg" />
-                                            </div>
-                                            
                                             {/* Step number */}
                                             <div 
-                                                className={`w-16 h-16 rounded-full border-4 border-white shadow-lg flex items-center justify-center font-bold text-white cursor-pointer transition-all duration-300 ${
-                                                    activeStep === index 
-                                                        ? 'scale-110' 
-                                                        : 'hover:scale-105'
+                                                className={`w-20 h-20 rounded-full shadow-2xl flex items-center justify-center font-bold text-white cursor-pointer transition-all duration-300 mb-4 ${
+                                                    activeStep === index ? 'scale-110' : 'hover:scale-105'
                                                 }`}
                                                 style={{
-                                                    backgroundColor: activeStep === index ? '#CBDC13' : '#012D50'
+                                                    background: `linear-gradient(135deg, ${isEven ? '#34969D' : '#CBDC13'}, ${isEven ? '#34969DE6' : '#CBDC13E6'})`,
+                                                    boxShadow: visibleSteps[index] ? `0 12px 30px ${isEven ? '#34969D' : '#CBDC13'}40` : '0 8px 20px rgba(0,0,0,0.1)'
                                                 }}
                                                 onClick={() => setActiveStep(activeStep === index ? null : index)}
                                             >
-                                                {String(index + 1).padStart(2, '0')}
+                                                <span className="text-2xl font-black">{String(index + 1).padStart(2, '0')}</span>
                                             </div>
-                                            {visibleSteps[index] && (
-                                                <div 
-                                                    className="absolute inset-0 rounded-full animate-pulse"
-                                                    style={{ 
-                                                        backgroundColor: index % 2 === 0 ? '#34969D30' : '#CBDC1330'
-                                                    }}
-                                                ></div>
-                                            )}
+                                            
+                                            {/* Icon */}
+                                            <div 
+                                                className="w-16 h-16 rounded-2xl flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:rotate-6 shadow-lg"
+                                                style={{ 
+                                                    backgroundColor: '#012D50'
+                                                }}
+                                            >
+                                                <IconComponent className="text-2xl" />
+                                            </div>
                                         </div>
 
                                     {/* Step content */}
