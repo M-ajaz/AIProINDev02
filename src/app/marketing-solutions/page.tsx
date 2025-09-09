@@ -3,7 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import {
     ContactUsComponent,
     EnhancedFAQSection,
-    CommonHeading
+    CommonHeading,
+    GeometricBackground
 } from "@/components";
 import { 
     FaChartLine, 
