@@ -365,6 +365,33 @@ const ProcessTimelineSection = () => {
 const BenefitsStatsSection = () => {
     const [counters, setCounters] = useState([0, 0, 0]);
 
+    const businessBenefits = [
+        {
+            title: "Controlled Operational Costs",
+            desc: "Pay only for full-time resource commitment without infrastructure or retention costs."
+        },
+        {
+            title: "Enhanced Project Flexibility",
+            desc: "Scale teams up or down swiftly based on evolving project demands."
+        },
+        {
+            title: "Faster Time-to-Market",
+            desc: "Skilled FTE professionals accelerate workflows and shorten delivery timelines."
+        },
+        {
+            title: "Domain-Specific Expertise",
+            desc: "Access vetted professionals with industry-aligned technical and functional knowledge."
+        },
+        {
+            title: "Seamless Team Integration",
+            desc: "FTEs adapt to your tools, culture, and workflows like internal employees."
+        },
+        {
+            title: "Reduced HR and Admin Load",
+            desc: "No hassle of hiring, onboarding, compliance, or payroll management on your side."
+        }
+    ];
+
     useEffect(() => {
         const targetValues = [95, 40, 60]; // Example stats
         const animateCounters = () => {
@@ -404,8 +431,8 @@ const BenefitsStatsSection = () => {
                 </div>
 
                 {/* Benefits Grid */}
-                <div className="grid md:grid-cols-3 gap-8">
-                    {businessBenefitsData.map((benefit, index) => (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {businessBenefits.map((benefit, index) => (
                         <div 
                             key={index}
                             className="group relative bg-gradient-to-br from-teal-600 to-navy-700 rounded-3xl p-8 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
@@ -418,7 +445,10 @@ const BenefitsStatsSection = () => {
                                     src={`https://images.unsplash.com/photo-${[
                                         '1606857521015-7f9fcf423740',
                                         '1497366754035-f200968a6e72',
-                                        '1718220216044-006f43e3a9b1'
+                                        '1718220216044-006f43e3a9b1',
+                                        '1748346918817-0b1b6b2f9bab',
+                                        '1600880292089-90a7e086ee0c',
+                                        '1557426272-fc759fdf7a8d'
                                     ][index]}?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85`}
                                     alt={benefit.title}
                                     fill
@@ -430,10 +460,12 @@ const BenefitsStatsSection = () => {
                             <div className="absolute inset-0 bg-gradient-to-br from-navy-800/80 to-teal-600/60 group-hover:from-navy-900/90 group-hover:to-teal-700/70 transition-colors duration-500"></div>
                             
                             <div className="relative z-10">
-                                {/* Animated Counter */}
-                                <div className="text-4xl font-black text-lime-400 mb-4">
-                                    {counters[index]}%+
-                                </div>
+                                {/* Animated Counter for first 3 items */}
+                                {index < 3 && (
+                                    <div className="text-4xl font-black text-lime-400 mb-4">
+                                        {counters[index]}%+
+                                    </div>
+                                )}
                                 
                                 <h3 className="text-xl font-bold text-white mb-4">
                                     {benefit.title}
