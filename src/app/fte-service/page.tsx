@@ -717,7 +717,40 @@ export default function Home() {
                 <EnhancedFAQSection
                     title="Frequently Asked Questions"
                     description="Protingent India brings a proven combination of healthcare knowledge, technology capabilities, and agile delivery models that ensure your organization can meet today's challenges while preparing for tomorrow."
-                    FAQList={serviceFTEFAQ}
+                    FAQList={[
+                        {
+                            q: "How does FTE service allow for more efficient growth of my business?",
+                            a: "FTE Services has dedicated experts who only work on your projects. As a result, there are no distractions, the turnaround will be faster, and responsibility is taken in full. FTE services allow for dedicated attention and seamless integration, and businesses will typically see increased productivity, which translates to big savings in costs, allowing them to grow faster and smarter without being forced to hire additional insourcing talent or stress existing teams."
+                        },
+                        {
+                            q: "Is hiring via FTE services cheaper than traditional hiring?",
+                            a: "With FTE services, you pay only for the dedicated hours worked without the typical overhead of benefits, bonuses, and more, or in some cases, idle time. Traditional hiring comes with recruiting, onboarding, and administrative expenses. An FTE model alleviates this process and provides clients with the external resources they require with predictable pricing and much better control of budgeting, while increasing efficiency because it maximizes their access to great skills while limiting operational complexity."
+                        },
+                        {
+                            q: "Can I customize FTE services to suit my project?",
+                            a: "FTE services are quite flexible. Whether hiring one resource, a team, a short-term or long-term engagement, everything about FTE services can be customized. We talk about skillset, start schedules, situation—so you can define what fits your particular workflow. This, in turn, helps ensure the talent fits into your workflow, gives a more tailored quality of service that fits your specific needs in terms of business objectives, deadlines, and delivery timelines."
+                        },
+                        {
+                            q: "What kind of professionals can I hire through FTE Services?",
+                            a: "You can hire a wide variety of professionals, including developers, data analysts, designers, quality assurance testers, scientists, and more. We have FTE services available for all types of technical, creative, analytical, and research roles, no matter the industry - healthcare, IT, pharma, research, etc. With FTE Services, you have domain-specific experts who are ready to get to work for you on day one."
+                        },
+                        {
+                            q: "How quickly can Protingent deploy resources through FTE Services?",
+                            a: "Protingent provides quick and easy onboarding of resources through FTE Services. We can generally deploy resources within 3 to 7 business days, depending on the role/skill set needed. We always maintain a strong bench of pre-vetted candidates for deployment and expand recruitment issues through our future talent network, reducing time for all clients. You get talented professionals ready to go quickly, ensuring no downtime and uninterrupted momentum in projects."
+                        },
+                        {
+                            q: "What if I want to scale my FTE team up or down in the middle of a project?",
+                            a: "FTE Services are designed to be scalable. You can easily add or subtract team members based on workload, deadlines, or project changes. This scalability also helps ensure that you are not under-resourced on your project, nor paying for a team to sit idle. Our team can help you quickly adjust the size of your team while maintaining productivity and quality."
+                        },
+                        {
+                            q: "Will FTE professionals be managed by my team or Protingent?",
+                            a: "That will be up to you. Most clients lean toward being responsible for the overall supervision due to alignment with their internal processes, but we can provide full management as necessary. Either way, the resource is dedicated to your project, assisting your stakeholders, and is a key, integrated member of your operations."
+                        },
+                        {
+                            q: "How does Protingent ensure quality and accountability, and achieve FTE service for its Users?",
+                            a: "Protingent employs a strong quality framework. All FTE Professionals are vetted to ensure technical, communication, and domain knowledge to ensure quality. In addition to regular performance check-ins, we encourage the use of reporting metrics and feedback loops to ensure accountability. Furthermore, our client success managers monitor all aspects of the engagement, so you can be assured that there is never a void of communication or satisfaction."
+                        }
+                    ]}
                 />
             </div>
         </div>
