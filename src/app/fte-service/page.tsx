@@ -90,7 +90,28 @@ const WorkforceChallengesSection = () => {
 
                 {/* Challenge Cards Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {ProductivityCardData.map((challenge, index) => (
+                    {[
+                        {
+                            title: "Cost Inefficiency",
+                            desc: "Traditional hiring models often result in overpaying for underutilized resources, draining budgets without maximizing returns on talent investment.",
+                            img: "/img/serviceFTE/productivityCard1.png"
+                        },
+                        {
+                            title: "Inconsistent Output Quality",
+                            desc: "Fluctuating freelancer performance or multitasking in-house teams can lead to delivery delays and uneven quality, ultimately impacting client satisfaction and brand reputation.",
+                            img: "/img/serviceFTE/productivityCard2.png"
+                        },
+                        {
+                            title: "Limited Scalability",
+                            desc: "Rapid project expansion becomes challenging when teams lack the necessary capacity or specialized skills, slowing growth and hindering agility.",
+                            img: "/img/serviceFTE/productivityCard3.png"
+                        },
+                        {
+                            title: "Resource Gaps and Burnout",
+                            desc: "In-house teams often face burnout due to unbalanced workloads, while businesses struggle to maintain continuity across long-term or high-volume projects.",
+                            img: "/img/serviceFTE/productivityCard4.png"
+                        }
+                    ].map((challenge, index) => (
                         <div 
                             key={index}
                             className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
