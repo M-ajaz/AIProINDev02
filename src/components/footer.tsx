@@ -139,9 +139,6 @@ const Footer = () => {
                                         About Us
                                     </p>
                                 </Link>
-                                <p className="hover:text-primary-green-color transition-colors cursor-pointer">
-                                    Careers
-                                </p>
                                 <Link href={"/insights"} >
                                     <p className="hover:text-primary-green-color transition-colors">
                                         insights
