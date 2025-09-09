@@ -490,6 +490,7 @@ const InteractiveTimeline = () => {
                     <div className="space-y-8 md:space-y-12">
                         {rpoProcessData.map((step, index) => {
                             const IconComponent = timelineIcons[index];
+                            const isEven = index % 2 === 0;
                             return (
                                 <div
                                     key={index}
