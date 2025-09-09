@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import {
     ContactUsComponent,
-    FAQSection,
+    EnhancedFAQSection,
     IndustriesSection,
     CommonHeading
 } from "@/components";
