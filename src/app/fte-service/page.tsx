@@ -1,7 +1,7 @@
 import {
     BgWithListComponent,
     ContactUsComponent,
-    FAQSection,
+    EnhancedFAQSection,
     FTEIntroSection,
     IndustriesSection,
     ServiceFTEBanner,
