@@ -52,9 +52,9 @@ export default function Home() {
                 cardList={serviceFTEPartnersData}
             />
             <ContactUsComponent />
-            <FAQSection
+            <EnhancedFAQSection
                 title="Frequently Asked Questions"
-                desc="Protingent India brings a proven combination of healthcare knowledge, technology capabilities, and agile delivery models that ensure your organization can meet today's challenges while preparing for tomorrow."
+                description="Protingent India brings a proven combination of healthcare knowledge, technology capabilities, and agile delivery models that ensure your organization can meet today's challenges while preparing for tomorrow."
                 FAQList={serviceFTEFAQ}
             />
         </div>
