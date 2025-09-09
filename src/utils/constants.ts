@@ -27,6 +27,10 @@ export const MenuList: Record<string, any>[] = [
             {
                 name: "Marketing Solutions",
                 link: "/marketing-solutions"
+            },
+            {
+                name: "Direct Sourcing",
+                link: "/direct-sourcing"
             }
         ]
     },
