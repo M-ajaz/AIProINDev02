@@ -898,10 +898,6 @@ export default function MarketingSolutionsService() {
             <IndustriesSection />
             <CTASection />
             
-            <div className="py-16 md:py-24 w-full flex justify-center">
-                <ContactUsComponent />
-            </div>
-
             <MarketingFAQSection />
         </div>
     );
