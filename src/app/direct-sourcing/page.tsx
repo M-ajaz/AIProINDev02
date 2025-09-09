@@ -1326,10 +1326,6 @@ export default function DirectSourcingService() {
             <WhyChooseSection />
             <FinalCTASection />
             
-            <div className="py-16 md:py-24 w-full flex justify-center">
-                <ContactUsComponent />
-            </div>
-
             <DirectSourcingFAQSection />
         </div>
     );
