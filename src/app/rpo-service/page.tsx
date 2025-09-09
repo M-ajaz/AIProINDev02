@@ -4,7 +4,8 @@ import {
     ContactUsComponent,
     EnhancedFAQSection,
     IndustriesSection,
-    CommonHeading
+    CommonHeading,
+    GeometricBackground
 } from "@/components";
 import {
     rpoBenefitsData,
