@@ -191,7 +191,7 @@ const ROIStatsSection = () => {
     );
 };
 
-// Core BI Capabilities Section
+// Core BI Capabilities Section - Bacancy Style Split Layout
 const CoreCapabilitiesSection = () => {
     const capabilities = [
         {
@@ -269,60 +269,103 @@ const CoreCapabilitiesSection = () => {
     return (
         <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white">
             <div className="max-w-7xl mx-auto px-6">
-                {/* Header */}
-                <div className="text-center mb-16" data-aos="fade-up">
-                    <h2 className="text-4xl lg:text-5xl font-black text-navy-800 mb-6">
-                        Our Core BI & Data Visualization Capabilities
-                    </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-lime-400 to-teal-500 rounded-full mx-auto mb-6"></div>
-                    <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                        A complete suite of BI services that unify data, design interactive dashboards, and deliver real-time insights—helping businesses simplify decision-making, improve efficiency, and stay ahead with data-driven strategies.
-                    </p>
-                </div>
-
-                {/* Capabilities Grid - Bacancy Style */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {capabilities.map((capability, index) => {
-                        const IconComponent = capability.icon;
-                        return (
-                            <div 
-                                key={index}
-                                className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-transparent hover:border-lime-400/20"
-                                data-aos="fade-up"
-                                data-aos-delay={index * 100}
-                            >
-                                {/* Number Badge */}
-                                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-lime-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                                    {capability.number}
-                                </div>
-
-                                {/* Icon */}
-                                <div className="w-16 h-16 bg-gradient-to-br from-navy-600 to-teal-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                    <IconComponent className="text-white text-2xl" />
-                                </div>
-
-                                {/* Content */}
-                                <h3 className="text-xl font-bold text-navy-800 mb-4 group-hover:text-teal-600 transition-colors duration-300">
-                                    {capability.title}
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-6">
-                                    {capability.description}
-                                </p>
-
-                                {/* Feature Tags */}
-                                <div className="flex flex-wrap gap-2">
-                                    {capability.tags.map((tag, tagIndex) => (
-                                        <span 
-                                            key={tagIndex}
-                                            className="px-3 py-1 bg-gradient-to-r from-lime-100 to-teal-100 text-navy-700 text-sm font-semibold rounded-full"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
+                {/* Split Layout Container */}
+                <div className="flex flex-col lg:flex-row gap-12 min-h-screen">
+                    {/* Left Panel - Fixed/Sticky */}
+                    <div className="lg:w-2/5 lg:sticky lg:top-20 lg:self-start" data-aos="fade-right">
+                        <div className="space-y-8">
+                            <h2 className="text-4xl lg:text-5xl font-black text-navy-800 leading-tight" style={{ fontFamily: 'Lato' }}>
+                                Our Core BI & Data Visualization Capabilities
+                            </h2>
+                            <div className="w-20 h-1 bg-gradient-to-r from-lime-400 to-teal-500 rounded-full"></div>
+                            <p className="text-xl text-gray-700 leading-relaxed" style={{ fontFamily: 'Raleway' }}>
+                                A complete suite of BI services that unify data, design interactive dashboards, and deliver real-time insights—helping businesses simplify decision-making, improve efficiency, and stay ahead with data-driven strategies.
+                            </p>
+                            
+                            {/* Decorative Elements */}
+                            <div className="relative">
+                                <div className="absolute -top-4 -left-4 w-16 h-16 bg-lime-400/20 rounded-full animate-pulse"></div>
+                                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-teal-500/30 rounded-full animate-bounce"></div>
+                                <div className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-lg border border-gray-100">
+                                    <div className="flex items-center space-x-4">
+                                        <div className="w-12 h-12 bg-gradient-to-br from-lime-400 to-teal-500 rounded-full flex items-center justify-center">
+                                            <FaChartBar className="text-white text-xl" />
+                                        </div>
+                                        <div>
+                                            <div className="text-2xl font-bold text-navy-800">10+</div>
+                                            <div className="text-sm text-gray-600">Core Capabilities</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        );
-                    })}
+                        </div>
+                    </div>
+
+                    {/* Right Panel - Scrollable Cards */}
+                    <div className="lg:w-3/5" data-aos="fade-left">
+                        <div className="space-y-6 max-h-screen lg:overflow-y-auto lg:pr-4 scrollbar-thin scrollbar-thumb-lime-400 scrollbar-track-gray-100">
+                            {capabilities.map((capability, index) => {
+                                const IconComponent = capability.icon;
+                                return (
+                                    <div 
+                                        key={index}
+                                        className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-2 border-transparent hover:border-lime-400/20 overflow-hidden"
+                                        data-aos="fade-up"
+                                        data-aos-delay={index * 50}
+                                        style={{
+                                            background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)'
+                                        }}
+                                    >
+                                        {/* Background Gradient Overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-lime-50/50 via-transparent to-teal-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        
+                                        {/* Number Badge */}
+                                        <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-lime-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                            {capability.number}
+                                        </div>
+
+                                        {/* Content Container */}
+                                        <div className="relative z-10">
+                                            {/* Icon */}
+                                            <div className="w-20 h-20 bg-gradient-to-br from-navy-600 to-teal-500 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-xl">
+                                                <IconComponent className="text-white text-3xl" />
+                                            </div>
+
+                                            {/* Title */}
+                                            <h3 className="text-2xl font-bold text-navy-800 mb-4 group-hover:text-teal-600 transition-colors duration-300" style={{ fontFamily: 'Lato' }}>
+                                                {capability.title}
+                                            </h3>
+
+                                            {/* Description */}
+                                            <p className="text-gray-600 leading-relaxed mb-6 text-lg" style={{ fontFamily: 'Raleway' }}>
+                                                {capability.description}
+                                            </p>
+
+                                            {/* Feature Tags */}
+                                            <div className="flex flex-wrap gap-3">
+                                                {capability.tags.map((tag, tagIndex) => (
+                                                    <span 
+                                                        key={tagIndex}
+                                                        className="px-4 py-2 bg-gradient-to-r from-lime-100 to-teal-100 text-navy-700 text-sm font-semibold rounded-full border border-lime-400/30 hover:shadow-md transition-shadow duration-300"
+                                                    >
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+
+                                            {/* Hover Arrow Indicator */}
+                                            <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1">
+                                                <FaArrowRight className="text-lime-400 text-xl" />
+                                            </div>
+                                        </div>
+
+                                        {/* Subtle Border Animation */}
+                                        <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-gradient-to-r from-lime-400 to-teal-500 transition-all duration-500"></div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
