@@ -764,47 +764,7 @@ const WhyProtingentSection = () => {
     );
 };
 
-// Final CTA Section
-const FinalCTASection = () => {
-    return (
-        <section className="relative w-full py-32 overflow-hidden">
-            {/* Background Image with Gradient Overlay */}
-            <div className="absolute inset-0">
-                <Image 
-                    src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTc0MjAxMjN8MA&ixlib=rb-4.1.0&q=85"
-                    alt="Team collaboration"
-                    fill
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-lime-600/90 via-teal-700/80 to-navy-800/90"></div>
-            </div>
-            
-            <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-                <h2 className="text-5xl lg:text-6xl font-black text-white mb-8 leading-tight" data-aos="fade-up">
-                    Grow Smarter. Hire Faster. Deliver Better.
-                </h2>
-                
-                <p className="text-xl text-gray-200 mb-12 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                    Power your projects with Protingent's agile FTE talent solutions—designed to meet deadlines, cut costs, and fuel business momentum.
-                </p>
-                
-                <button 
-                    className="group relative px-12 py-6 bg-white text-navy-800 font-bold text-lg rounded-full shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-1 overflow-hidden"
-                    data-aos="zoom-in"
-                    data-aos-delay="400"
-                >
-                    <span className="relative z-10 flex items-center">
-                        Get Started Today
-                        <FaArrowRight className="ml-3 transform group-hover:translate-x-2 transition-transform duration-300" />
-                    </span>
-                    
-                    {/* Ripple Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                </button>
-            </div>
-        </section>
-    );
-};
+// Enhanced FAQ Section is handled by the imported EnhancedFAQSection component
 
 export default function Home() {
     useEffect(() => {
