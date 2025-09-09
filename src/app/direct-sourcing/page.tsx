@@ -446,10 +446,13 @@ const ProcessSection = () => {
 };
 
 // --------------------------------------------------------------
-// 5. How It Works (SPD Tech Style)
+// 5. How It Works (SPD Tech Style) - Carousel Layout
 // --------------------------------------------------------------
 const HowItWorksSection = () => {
     const [activeCard, setActiveCard] = useState<number | null>(null);
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [isAutoPlay, setIsAutoPlay] = useState(true);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
     
     const steps = [
         {
@@ -484,6 +487,40 @@ const HowItWorksSection = () => {
         }
     ];
 
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % steps.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + steps.length) % steps.length);
+    };
+
+    const goToSlide = (index: number) => {
+        setCurrentSlide(index);
+    };
+
+    useEffect(() => {
+        if (isAutoPlay) {
+            intervalRef.current = setInterval(() => {
+                nextSlide();
+            }, 4000); // 4 seconds per slide
+        }
+
+        return () => {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+        };
+    }, [isAutoPlay, currentSlide]);
+
+    const handleMouseEnter = () => {
+        setIsAutoPlay(false);
+        setActiveCard(currentSlide);
+    };
+    
+    const handleMouseLeave = () => {
+        setIsAutoPlay(true);
+        setActiveCard(null);
+    };
+
     return (
         <div className="w-full bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -498,76 +535,174 @@ const HowItWorksSection = () => {
                     </p>
                 </div>
 
-                {/* 5 Interactive Cards with hover effects */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {steps.map((step, index) => {
-                        const IconComponent = step.icon;
-                        return (
-                            <div
-                                key={index}
-                                className={`group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-2 bg-white ${
-                                    index === 2 ? 'lg:col-span-1 lg:col-start-2' : ''
-                                } ${index >= 3 ? 'lg:col-span-1' : ''}`}
-                                style={{ animationDelay: `${index * 0.1}s` }}
-                                onMouseEnter={() => setActiveCard(index)}
-                                onMouseLeave={() => setActiveCard(null)}
-                            >
-                                {/* Card background with subtle pattern */}
-                                <div className="absolute inset-0 opacity-5">
-                                    <div 
-                                        className="w-full h-full"
-                                        style={{
-                                            backgroundImage: `radial-gradient(circle at 50% 50%, ${step.color}20 2px, transparent 2px)`,
-                                            backgroundSize: '30px 30px'
-                                        }}
-                                    ></div>
-                                </div>
-                                
-                                <div className="relative z-10 p-8 h-full min-h-[300px] flex flex-col justify-between">
-                                    {/* Step number and icon */}
-                                    <div className="flex items-center justify-between mb-6">
+                {/* Carousel Container */}
+                <div 
+                    className="relative bg-white rounded-3xl shadow-2xl overflow-hidden"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    {/* Desktop: Show 3 cards, Mobile: Show 1 card */}
+                    <div className="hidden md:flex transition-transform duration-500 ease-in-out"
+                         style={{ transform: `translateX(-${currentSlide * 33.333}%)` }}>
+                        {steps.map((step, index) => {
+                            const IconComponent = step.icon;
+                            return (
+                                <div
+                                    key={index}
+                                    className="w-1/3 flex-shrink-0 p-6"
+                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                >
+                                    <div className="group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-2 bg-white border-2"
+                                         style={{ borderColor: step.color }}>
+                                        {/* Card background with subtle pattern */}
+                                        <div className="absolute inset-0 opacity-5">
+                                            <div 
+                                                className="w-full h-full"
+                                                style={{
+                                                    backgroundImage: `radial-gradient(circle at 50% 50%, ${step.color}20 2px, transparent 2px)`,
+                                                    backgroundSize: '30px 30px'
+                                                }}
+                                            ></div>
+                                        </div>
+                                        
+                                        <div className="relative z-10 p-8 h-full min-h-[350px] flex flex-col justify-between">
+                                            {/* Step number and icon */}
+                                            <div className="flex items-center justify-between mb-6">
+                                                <div 
+                                                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+                                                    style={{ backgroundColor: step.color }}
+                                                >
+                                                    <IconComponent className="text-white" />
+                                                </div>
+                                                <div 
+                                                    className="text-4xl font-bold opacity-20"
+                                                    style={{ color: step.color }}
+                                                >
+                                                    {String(index + 1).padStart(2, '0')}
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <h3 className="text-2xl font-bold mb-4 text-[#113F64] group-hover:text-[#34969E] transition-colors duration-300">
+                                                    {step.title}
+                                                </h3>
+                                                <p className="text-gray-600 leading-relaxed mb-6">
+                                                    {step.description}
+                                                </p>
+                                                
+                                                {/* Expand indicator */}
+                                                <div className={`flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${
+                                                    activeCard === index 
+                                                        ? 'opacity-100 gap-3' 
+                                                        : 'opacity-0'
+                                                }`} style={{ color: step.color }}>
+                                                    <span>Explore Details</span>
+                                                    <FaArrowRight />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Hover accent border */}
                                         <div 
-                                            className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+                                            className="absolute bottom-0 left-0 w-full h-1 transition-all duration-500 group-hover:h-2"
                                             style={{ backgroundColor: step.color }}
-                                        >
-                                            <IconComponent className="text-white" />
-                                        </div>
+                                        ></div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Mobile: Stack cards normally */}
+                    <div className="md:hidden grid grid-cols-1 gap-6 p-6">
+                        {steps.map((step, index) => {
+                            const IconComponent = step.icon;
+                            return (
+                                <div
+                                    key={index}
+                                    className="group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-2 bg-white border-2"
+                                    style={{ borderColor: step.color, animationDelay: `${index * 0.1}s` }}
+                                    onMouseEnter={() => setActiveCard(index)}
+                                    onMouseLeave={() => setActiveCard(null)}
+                                >
+                                    {/* Card background with subtle pattern */}
+                                    <div className="absolute inset-0 opacity-5">
                                         <div 
-                                            className="text-4xl font-bold opacity-20"
-                                            style={{ color: step.color }}
-                                        >
-                                            {String(index + 1).padStart(2, '0')}
-                                        </div>
+                                            className="w-full h-full"
+                                            style={{
+                                                backgroundImage: `radial-gradient(circle at 50% 50%, ${step.color}20 2px, transparent 2px)`,
+                                                backgroundSize: '30px 30px'
+                                            }}
+                                        ></div>
                                     </div>
                                     
-                                    <div>
-                                        <h3 className="text-2xl font-bold mb-4 text-[#113F64] group-hover:text-[#34969E] transition-colors duration-300">
-                                            {step.title}
-                                        </h3>
-                                        <p className="text-gray-600 leading-relaxed mb-6">
-                                            {step.description}
-                                        </p>
-                                        
-                                        {/* Expand indicator */}
-                                        <div className={`flex items-center gap-2 text-sm font-semibold transition-all duration-300 ${
-                                            activeCard === index 
-                                                ? 'opacity-100 gap-3' 
-                                                : 'opacity-0'
-                                        }`} style={{ color: step.color }}>
-                                            <span>Explore Details</span>
-                                            <FaArrowRight />
+                                    <div className="relative z-10 p-6 h-full min-h-[280px] flex flex-col justify-between">
+                                        {/* Step number and icon */}
+                                        <div className="flex items-center justify-between mb-4">
+                                            <div 
+                                                className="w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+                                                style={{ backgroundColor: step.color }}
+                                            >
+                                                <IconComponent className="text-white" />
+                                            </div>
+                                            <div 
+                                                className="text-3xl font-bold opacity-20"
+                                                style={{ color: step.color }}
+                                            >
+                                                {String(index + 1).padStart(2, '0')}
+                                            </div>
                                         </div>
+                                        
+                                        <div>
+                                            <h3 className="text-xl font-bold mb-3 text-[#113F64] group-hover:text-[#34969E] transition-colors duration-300">
+                                                {step.title}
+                                            </h3>
+                                            <p className="text-gray-600 leading-relaxed mb-4">
+                                                {step.description}
+                                            </p>
+                                        </div>
+                                        
+                                        {/* Hover accent border */}
+                                        <div 
+                                            className="absolute bottom-0 left-0 w-full h-1 transition-all duration-500 group-hover:h-2"
+                                            style={{ backgroundColor: step.color }}
+                                        ></div>
                                     </div>
                                 </div>
-                                
-                                {/* Hover accent border */}
-                                <div 
-                                    className="absolute bottom-0 left-0 w-full h-1 transition-all duration-500 group-hover:h-2"
-                                    style={{ backgroundColor: step.color }}
-                                ></div>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
+
+                    {/* Navigation arrows (Desktop only) */}
+                    <div className="hidden md:block">
+                        <button
+                            onClick={prevSlide}
+                            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 shadow-lg group"
+                        >
+                            <div className="w-0 h-0 border-r-[8px] border-r-[#113F64] border-y-[6px] border-y-transparent group-hover:-translate-x-1 transition-transform duration-300"></div>
+                        </button>
+                        <button
+                            onClick={nextSlide}
+                            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-all duration-300 shadow-lg group"
+                        >
+                            <div className="w-0 h-0 border-l-[8px] border-l-[#113F64] border-y-[6px] border-y-transparent group-hover:translate-x-1 transition-transform duration-300"></div>
+                        </button>
+                    </div>
+
+                    {/* Navigation dots (Desktop only) */}
+                    <div className="hidden md:flex absolute bottom-6 left-1/2 transform -translate-x-1/2 gap-3">
+                        {steps.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => goToSlide(index)}
+                                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                    index === currentSlide 
+                                        ? 'bg-[#34969E] w-8' 
+                                        : 'bg-gray-300 hover:bg-[#34969E]/50'
+                                }`}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
