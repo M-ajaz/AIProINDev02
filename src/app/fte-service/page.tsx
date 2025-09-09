@@ -537,17 +537,17 @@ const IndustriesSection = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     
     const industries = [
-        { name: "Aerospace / Space", icon: "🚀" },
-        { name: "eCommerce", icon: "🛒" },
-        { name: "Networking", icon: "🌐" },
-        { name: "Cloud Computing", icon: "☁️" },
-        { name: "Data", icon: "📊" },
-        { name: "Gaming", icon: "🎮" },
-        { name: "Software / SaaS", icon: "💻" },
-        { name: "Semiconductor", icon: "🔌" },
-        { name: "Consumer Goods / Virtual Reality", icon: "🥽" },
-        { name: "Medical Device", icon: "🏥" },
-        { name: "Government / DoD", icon: "🏛️" }
+        { name: "Aerospace / Space", icon: FaSpaceShuttle },
+        { name: "eCommerce", icon: FaShoppingCart },
+        { name: "Networking", icon: FaNetworkWired },
+        { name: "Cloud Computing", icon: FaCloud },
+        { name: "Data", icon: FaDatabase },
+        { name: "Gaming", icon: FaGamepad },
+        { name: "Software / SaaS", icon: FaLaptopCode },
+        { name: "Semiconductor", icon: FaMicrochip },
+        { name: "Consumer Goods / Virtual Reality", icon: FaVrCardboard },
+        { name: "Medical Device", icon: FaHospital },
+        { name: "Government / DoD", icon: FaUniversity }
     ];
 
     const itemsPerSlide = 4;
@@ -597,33 +597,34 @@ const IndustriesSection = () => {
                             <div className="flex transition-transform duration-500 ease-in-out">
                                 <div className="w-full flex-shrink-0">
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 p-12">
-                                        {getCurrentItems().map((industry, index) => (
-                                            <div 
-                                                key={index}
-                                                className="group flex flex-col items-center text-center space-y-4 p-6 rounded-2xl hover:bg-gradient-to-br hover:from-lime-50 hover:to-teal-50 transition-all duration-300 transform hover:-translate-y-2"
-                                                data-aos="zoom-in"
-                                                data-aos-delay={index * 100}
-                                            >
-                                                {/* Icon Container */}
-                                                <div className="relative">
-                                                    <div className="w-20 h-20 bg-gradient-to-br from-lime-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
-                                                        <span className="text-3xl filter drop-shadow-sm">
-                                                            {industry.icon}
-                                                        </span>
+                                        {getCurrentItems().map((industry, index) => {
+                                            const IconComponent = industry.icon;
+                                            return (
+                                                <div 
+                                                    key={index}
+                                                    className="group flex flex-col items-center text-center space-y-4 p-6 rounded-2xl hover:bg-gradient-to-br hover:from-lime-50 hover:to-teal-50 transition-all duration-300 transform hover:-translate-y-2"
+                                                    data-aos="zoom-in"
+                                                    data-aos-delay={index * 100}
+                                                >
+                                                    {/* Icon Container */}
+                                                    <div className="relative">
+                                                        <div className="w-20 h-20 bg-gradient-to-br from-lime-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                                                            <IconComponent className="text-3xl text-white drop-shadow-sm" />
+                                                        </div>
+                                                        {/* Glow effect */}
+                                                        <div className="absolute inset-0 bg-gradient-to-br from-lime-400 to-teal-500 rounded-full opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
                                                     </div>
-                                                    {/* Glow effect */}
-                                                    <div className="absolute inset-0 bg-gradient-to-br from-lime-400 to-teal-500 rounded-full opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
+                                                    
+                                                    {/* Industry Name */}
+                                                    <h3 className="text-lg font-bold text-navy-800 group-hover:text-teal-600 transition-colors duration-300">
+                                                        {industry.name}
+                                                    </h3>
+                                                    
+                                                    {/* Hover Line */}
+                                                    <div className="w-0 h-0.5 bg-gradient-to-r from-lime-400 to-teal-500 group-hover:w-full transition-all duration-300"></div>
                                                 </div>
-                                                
-                                                {/* Industry Name */}
-                                                <h3 className="text-lg font-bold text-navy-800 group-hover:text-teal-600 transition-colors duration-300">
-                                                    {industry.name}
-                                                </h3>
-                                                
-                                                {/* Hover Line */}
-                                                <div className="w-0 h-0.5 bg-gradient-to-r from-lime-400 to-teal-500 group-hover:w-full transition-all duration-300"></div>
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
                                 </div>
                             </div>
