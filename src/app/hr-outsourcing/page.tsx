@@ -965,20 +965,17 @@ const WhyChooseProtingentSection = () => {
                     </p>
                 </div>
 
-                {/* Staggered Grid Layout */}
+                {/* Proper Grid Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {features.map((feature, index) => {
                         const IconComponent = feature.icon;
                         return (
                             <div
                                 key={index}
-                                className={`group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer bg-white shadow-lg hover:shadow-2xl hover:-translate-y-3 border-l-4 ${
-                                    index === 5 ? 'lg:col-span-1 lg:col-start-2' : ''
-                                }`}
+                                className="group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer bg-white shadow-lg hover:shadow-2xl hover:-translate-y-3 border-l-4"
                                 style={{ 
                                     borderLeftColor: feature.color,
-                                    animationDelay: `${index * 0.1}s`,
-                                    marginTop: index % 2 === 1 ? '2rem' : '0' // Staggered positioning
+                                    animationDelay: `${index * 0.1}s`
                                 }}
                             >
                                 {/* Abstract background visual */}
