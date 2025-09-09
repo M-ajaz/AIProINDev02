@@ -202,8 +202,10 @@ const ContractualBenefitsSection = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-24 bg-white">
-            <div className="container mx-auto px-4 max-w-[1450px]">
+        <section ref={sectionRef} className="relative py-16 md:py-24 bg-white overflow-hidden">
+            <GeometricBackground variant="secondary" intensity="light" />
+            
+            <div className="container mx-auto px-4 max-w-[1450px] relative z-10">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#012D50' }}>
                         Contractual Staffing Solutions For Dedicated Hiring
