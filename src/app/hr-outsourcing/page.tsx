@@ -415,65 +415,16 @@ const HRSolutionsSection = () => {
                     </p>
                 </div>
 
-                {/* Bento Grid Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-fr">
-                    {/* Large Featured Card - Payroll Management */}
-                    <div
-                        className="md:col-span-4 lg:col-span-4 group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-2 min-h-[400px]"
-                        onMouseEnter={() => setHoveredSolution(0)}
-                        onMouseLeave={() => setHoveredSolution(null)}
-                    >
-                        <div
-                            className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                            style={{
-                                backgroundImage: `url('${solutions[0].image}')`,
-                            }}
-                        ></div>
-                        <div className={`absolute inset-0 bg-gradient-to-br from-[#113F64]/85 via-[${solutions[0].color}]/75 to-[#113F64]/90`}>
-                            <div className="absolute inset-0 opacity-20">
-                                <div 
-                                    className="w-full h-full"
-                                    style={{
-                                        backgroundImage: `repeating-linear-gradient(45deg, ${solutions[0].color}40 0px, ${solutions[0].color}40 3px, transparent 3px, transparent 30px)`,
-                                    }}
-                                ></div>
-                            </div>
-                        </div>
-                        
-                        <div className="relative z-10 p-8 lg:p-12 h-full text-white flex flex-col justify-between">
-                            <div>
-                                <div 
-                                    className="w-24 h-24 rounded-2xl flex items-center justify-center text-4xl mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
-                                    style={{ backgroundColor: solutions[0].color }}
-                                >
-                                    <FaMoneyBillWave className="text-[#113F64]" />
-                                </div>
-                                
-                                <h3 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight" style={{ fontFamily: 'Lato' }}>
-                                    {solutions[0].title}
-                                </h3>
-                                <p className="text-white/90 leading-relaxed text-xl mb-6" style={{ fontFamily: 'Raleway' }}>
-                                    {solutions[0].description}
-                                </p>
-                            </div>
-                            
-                            <div className="flex items-center gap-4 font-semibold text-lg" style={{ color: solutions[0].color }}>
-                                <span>Explore Payroll Solutions</span>
-                                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Medium Cards - Compliance & RPO */}
-                    {solutions.slice(1, 3).map((solution, index) => {
-                        const actualIndex = index + 1;
+                {/* Balanced Symmetrical Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
+                    {solutions.map((solution, index) => {
                         const IconComponent = solution.icon;
                         return (
                             <div
-                                key={actualIndex}
-                                className="md:col-span-4 lg:col-span-2 group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-2 min-h-[350px]"
-                                style={{ animationDelay: `${actualIndex * 0.1}s` }}
-                                onMouseEnter={() => setHoveredSolution(actualIndex)}
+                                key={index}
+                                className="group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-2 min-h-[350px]"
+                                style={{ animationDelay: `${index * 0.1}s` }}
+                                onMouseEnter={() => setHoveredSolution(index)}
                                 onMouseLeave={() => setHoveredSolution(null)}
                             >
                                 <div
@@ -494,10 +445,10 @@ const HRSolutionsSection = () => {
                                     </div>
                                 </div>
                                 
-                                <div className="relative z-10 p-6 h-full text-white flex flex-col justify-between">
+                                <div className="relative z-10 p-6 lg:p-8 h-full text-white flex flex-col justify-between">
                                     <div>
                                         <div 
-                                            className="w-18 h-18 rounded-2xl flex items-center justify-center text-2xl mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
+                                            className="w-20 h-20 rounded-2xl flex items-center justify-center text-2xl lg:text-3xl mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
                                             style={{ backgroundColor: solution.color }}
                                         >
                                             <IconComponent className="text-[#113F64]" />
@@ -511,64 +462,8 @@ const HRSolutionsSection = () => {
                                         </p>
                                     </div>
                                     
-                                    <div className="flex items-center gap-2 font-semibold text-sm mt-4" style={{ color: solution.color }}>
+                                    <div className="flex items-center gap-2 font-semibold text-sm mt-6" style={{ color: solution.color }}>
                                         <span>Learn More</span>
-                                        <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-
-                    {/* Small Cards - Remaining Services */}
-                    {solutions.slice(3).map((solution, index) => {
-                        const actualIndex = index + 3;
-                        const IconComponent = solution.icon;
-                        return (
-                            <div
-                                key={actualIndex}
-                                className="md:col-span-2 lg:col-span-2 group relative overflow-hidden rounded-3xl transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-2 min-h-[280px]"
-                                style={{ animationDelay: `${actualIndex * 0.1}s` }}
-                                onMouseEnter={() => setHoveredSolution(actualIndex)}
-                                onMouseLeave={() => setHoveredSolution(null)}
-                            >
-                                <div
-                                    className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                    style={{
-                                        backgroundImage: `url('${solution.image}')`,
-                                    }}
-                                ></div>
-                                <div className={`absolute inset-0 bg-gradient-to-br from-[#113F64]/85 via-[${solution.color}]/75 to-[#113F64]/90`}>
-                                    <div className="absolute inset-0 opacity-10">
-                                        <div 
-                                            className="w-full h-full"
-                                            style={{
-                                                backgroundImage: `linear-gradient(45deg, ${solution.color}20 25%, transparent 25%), linear-gradient(-45deg, ${solution.color}20 25%, transparent 25%)`,
-                                                backgroundSize: '30px 30px'
-                                            }}
-                                        ></div>
-                                    </div>
-                                </div>
-                                
-                                <div className="relative z-10 p-6 h-full text-white flex flex-col justify-between">
-                                    <div>
-                                        <div 
-                                            className="w-16 h-16 rounded-2xl flex items-center justify-center text-xl mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-xl"
-                                            style={{ backgroundColor: solution.color }}
-                                        >
-                                            <IconComponent className="text-[#113F64]" />
-                                        </div>
-                                        
-                                        <h3 className="text-lg font-bold mb-3 leading-tight" style={{ fontFamily: 'Lato' }}>
-                                            {solution.title}
-                                        </h3>
-                                        <p className="text-white/90 leading-relaxed text-sm" style={{ fontFamily: 'Raleway' }}>
-                                            {solution.description}
-                                        </p>
-                                    </div>
-                                    
-                                    <div className="flex items-center gap-2 font-semibold text-xs mt-4" style={{ color: solution.color }}>
-                                        <span>Explore</span>
                                         <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                                     </div>
                                 </div>
