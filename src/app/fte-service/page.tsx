@@ -833,7 +833,6 @@ export default function Home() {
             <BenefitsStatsSection />
             <IndustriesSection />
             <WhyProtingentSection />
-            <FinalCTASection />
             
             {/* Enhanced FAQ Section */}
             <div className="w-full py-20">
