@@ -236,10 +236,9 @@ const StrategicAdvantageSection = () => {
     }, []);
 
     return (
-        <div ref={sectionRef} className="relative w-full py-16 md:py-24 overflow-hidden">
-            {/* Full-width gradient background with geometric overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#113F64] via-[#34969E] to-[#113F64]"></div>
-            <div className="absolute inset-0 opacity-10">
+        <div ref={sectionRef} className="relative w-full py-16 md:py-24 bg-white overflow-hidden">
+            {/* Subtle geometric pattern background */}
+            <div className="absolute inset-0 opacity-5">
                 <div 
                     className="w-full h-full"
                     style={{
@@ -250,11 +249,11 @@ const StrategicAdvantageSection = () => {
             
             <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white" style={{ fontFamily: 'Lato' }}>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ color: '#113F64', fontFamily: 'Lato' }}>
                         HR Outsourcing is a
-                        <span className="block text-[#C2D92C]">Strategic Advantage</span>
+                        <span className="block text-[#34969E]">Strategic Advantage</span>
                     </h2>
-                    <p className="text-xl lg:text-2xl text-white/90 max-w-5xl mx-auto leading-relaxed" style={{ fontFamily: 'Raleway' }}>
+                    <p className="text-xl lg:text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed" style={{ fontFamily: 'Raleway' }}>
                         HR Outsourcing is your organizational growth enabler. By partnering with experts like Protingent, 
                         businesses reduce risks, save resources, and gain measurable improvements in efficiency and compliance.
                     </p>
