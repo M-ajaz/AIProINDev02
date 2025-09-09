@@ -487,16 +487,7 @@ const InteractiveTimeline = () => {
                 </div>
 
                 <div ref={timelineRef} className="relative">
-                    {/* Timeline line */}
-                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform md:-translate-x-1/2"></div>
-                    <div 
-                        className="timeline-progress absolute left-4 md:left-1/2 top-0 w-1 transform md:-translate-x-1/2 z-10"
-                        style={{
-                            height: `${(visibleSteps.filter(Boolean).length / rpoProcessData.length) * 100}%`
-                        }}
-                    ></div>
-
-                    <div className="space-y-12 md:space-y-16">
+                    <div className="space-y-8 md:space-y-12">
                         {rpoProcessData.map((step, index) => {
                             const IconComponent = timelineIcons[index];
                             return (
