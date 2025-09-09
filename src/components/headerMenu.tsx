@@ -31,7 +31,7 @@ const HeaderMenuList = () => {
                         onClick={() => handleNavigation(menu)}
                     >
                         <p
-                            className={`${(menu?.name !== "careers" && menu?.name !== "industries") && "cursor-pointer"} text-xl xl:text-2xl hover:text-secondry transition-colors`}
+                            className={`${(menu?.name !== "industries") && "cursor-pointer"} text-xl xl:text-2xl hover:text-secondry transition-colors`}
                         >
                             {menu?.name || ""}
                         </p>
