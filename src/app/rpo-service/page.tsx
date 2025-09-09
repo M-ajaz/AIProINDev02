@@ -531,16 +531,21 @@ const InteractiveTimeline = () => {
 
                                         {/* Step content - More space and better positioning */}
                                         <div className={`flex-1 ${isEven ? 'md:pl-8' : 'md:pr-8'}`}>
-                                        <div 
-                                            className="glass-card p-6 md:p-8 rounded-2xl cursor-pointer hover-lift group"
-                                            onClick={() => setActiveStep(activeStep === index ? null : index)}
-                                        >
-                                            <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 group-hover:text-secondry transition-colors duration-300">
-                                                {step.title}
-                                            </h3>
-                                            <p className="text-gray-600 leading-relaxed">
-                                                {step.desc}
-                                            </p>
+                                            <div 
+                                                className="glass-card p-8 md:p-10 rounded-3xl cursor-pointer hover-lift group shadow-xl border-l-4 transition-all duration-300 hover:shadow-2xl"
+                                                style={{ 
+                                                    borderLeftColor: isEven ? '#34969D' : '#CBDC13',
+                                                    transform: visibleSteps[index] ? 'translateY(0)' : 'translateY(20px)',
+                                                    opacity: visibleSteps[index] ? 1 : 0.8
+                                                }}
+                                                onClick={() => setActiveStep(activeStep === index ? null : index)}
+                                            >
+                                                <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6 group-hover:text-secondry transition-colors duration-300">
+                                                    {step.title}
+                                                </h3>
+                                                <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                                                    {step.desc}
+                                                </p>
                                             
                                             {/* Expandable details */}
                                             <div className={`overflow-hidden transition-all duration-500 ${
