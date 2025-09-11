@@ -156,7 +156,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Homepage - Your Trusted Partner in Talent, Technology, and Transformation Section"
+    - "IT Consulting Page - All Sections Tested and Working"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
