@@ -39,6 +39,10 @@ export const MenuList: Record<string, any>[] = [
             {
                 name: "BI Data Visualization",
                 link: "/bi-data-visualization"
+            },
+            {
+                name: "IT Consulting & Development",
+                link: "/it-consulting"
             }
         ]
     },
