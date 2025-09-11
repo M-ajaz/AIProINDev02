@@ -490,36 +490,68 @@ export const comprehensiveDataMobile = [
 
 export const comprehensiveData = [
     {
-        img: "/img/RPOServiceSlide.png",
-        title: "RPO Service"
+        img: "https://images.unsplash.com/photo-1573496130103-a442a3754d0e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbHxlbnwwfHx8Ymx1ZXwxNzU3NTg0MjgwfDA&ixlib=rb-4.1.0&q=85",
+        title: "RPO Service",
+        subtitle: "Recruitment Process Outsourcing",
+        description: "Transform your hiring with our comprehensive RPO solutions powered by AI-driven candidate matching, automated screening processes, and real-time analytics. Scale your talent acquisition strategy while reducing time-to-hire by 50% through our cloud-based recruitment platform and data-driven insights.",
+        link: "/rpo-service",
+        features: ["AI-Powered Matching", "Automated Workflows", "Real-time Analytics", "Scalable Infrastructure"]
     },
     {
-        img: "/img/biDataVisualizationSlide.png",
-        title: "IT Consulting"
+        img: "https://images.unsplash.com/photo-1573497490790-9053816a01d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbHxlbnwwfHx8Ymx1ZXwxNzU3NTg0MjgwfDA&ixlib=rb-4.1.0&q=85",
+        title: "FTE Service", 
+        subtitle: "Full-Time Equivalent Solutions",
+        description: "Deploy dedicated full-time professionals seamlessly integrated with your team through our smart resource allocation system. Leverage automation tools for performance monitoring, KPI tracking, and budget optimization to maximize ROI on your human capital investments.",
+        link: "/fte-service",
+        features: ["Smart Resource Allocation", "Performance Automation", "KPI Dashboards", "Cost Optimization"]
     },
     {
-        img: "/img/FTEHiringSlide.png",
-        title: "FTE Hiring"
+        img: "https://images.unsplash.com/photo-1536408157291-aef6d736e2cd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbHxlbnwwfHx8Ymx1ZXwxNzU3NTY0MjgwfDA&ixlib=rb-4.1.0&q=85",
+        title: "Contract Staffing",
+        subtitle: "Flexible Workforce Solutions",
+        description: "Access on-demand talent through our intelligent staffing platform featuring predictive analytics, automated contractor matching, and cloud-based project management. Optimize workforce flexibility while maintaining quality through AI-driven performance assessments and real-time collaboration tools.",
+        link: "/contract-staffing",
+        features: ["Predictive Analytics", "Automated Matching", "Cloud Project Management", "AI Performance Assessment"]
     },
     {
-        img: "/img/contractStaffingSlide.png",
-        title: "Contract Staffing"
+        img: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbHxlbnwwfHx8Ymx1ZXwxNzU3NTg0MjgwfDA&ixlib=rb-4.1.0&q=85",
+        title: "Direct Sourcing",
+        subtitle: "Strategic Talent Acquisition",
+        description: "Build your private talent community using advanced data analytics, automated employer branding, and machine learning algorithms. Reduce recruiting costs by 40% through our self-service talent pools, intelligent candidate curation, and predictive hiring analytics.",
+        link: "/direct-sourcing", 
+        features: ["Data Analytics", "ML Algorithms", "Self-Service Pools", "Predictive Hiring"]
     },
     {
-        img: "/img/directSourcingSlide.png",
-        title: "Direct Sourcing"
+        img: "https://images.unsplash.com/photo-1606588984221-7ab3e2bb038a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZ3xlbnwwfHx8Ymx1ZXwxNzU3NTg0Mjg3fDA&ixlib=rb-4.1.0&q=85",
+        title: "HR Outsourcing", 
+        subtitle: "Complete HR Technology Solutions",
+        description: "Modernize your HR operations with our integrated cloud platform featuring automated payroll processing, AI-powered compliance monitoring, and advanced workforce analytics. Streamline HR processes while ensuring regulatory compliance through intelligent automation and real-time reporting.",
+        link: "/hr-outsourcing",
+        features: ["Cloud HR Platform", "AI Compliance", "Automated Payroll", "Workforce Analytics"]
     },
     {
-        img: "/img/HROutsourcingSlide.png",
-        title: "HR Outsourcing"
+        img: "https://images.unsplash.com/photo-1626148750586-df6e1b0bebf2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZ3xlbnwwfHx8Ymx1ZXwxNzU3NTg0Mjg3fDA&ixlib=rb-4.1.0&q=85",
+        title: "Marketing Solutions",
+        subtitle: "Data-Driven Digital Marketing",
+        description: "Accelerate growth through our AI-powered marketing automation platform with predictive customer analytics, automated campaign optimization, and real-time ROI tracking. Transform your marketing effectiveness using machine learning insights and cloud-based collaboration tools.",
+        link: "/marketing-solutions",
+        features: ["AI Marketing Automation", "Predictive Analytics", "ROI Tracking", "ML Insights"]
     },
     {
-        img: "/img/marketingSolutionSlide.png",
-        title: "Marketing Solutions"
+        img: "https://images.pexels.com/photos/8728559/pexels-photo-8728559.jpeg",
+        title: "BI & Data Visualization", 
+        subtitle: "Advanced Business Intelligence",
+        description: "Unlock actionable insights with our comprehensive BI platform featuring AI-driven data analysis, automated reporting, and interactive dashboards. Transform raw data into strategic decisions through machine learning models, predictive analytics, and cloud-based visualization tools.",
+        link: "/bi-data-visualization",
+        features: ["AI Data Analysis", "Automated Reporting", "ML Models", "Interactive Dashboards"]
     },
     {
-        img: "/img/biDataVisualizationSlide.png",
-        title: "BI DATA Visualization"
+        img: "https://images.pexels.com/photos/8254894/pexels-photo-8254894.jpeg",
+        title: "IT Consulting & Development",
+        subtitle: "Digital Transformation Excellence", 
+        description: "Drive digital innovation through our comprehensive IT consulting services powered by cloud architecture, automated DevOps pipelines, and AI-enhanced development workflows. Accelerate your digital transformation with cutting-edge technologies and data-driven strategic planning.",
+        link: "/it-consulting",
+        features: ["Cloud Architecture", "DevOps Automation", "AI Development", "Strategic Planning"]
     }
 ]
 
