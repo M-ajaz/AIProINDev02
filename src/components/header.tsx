@@ -397,7 +397,7 @@ const Header = () => {
                                                                         >
                                                                             <IconComponent className="w-4 h-4" />
                                                                             <span className="text-lg">{service.name}</span>
-                                                                        </Link>
+                                                                        </button>
                                                                     );
                                                                 })}
                                                             </div>
