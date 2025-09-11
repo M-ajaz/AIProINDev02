@@ -186,7 +186,7 @@ const Header = () => {
     const router = useRouter();
     const pathname = usePathname();
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const timeoutRef = useRef<NodeJS.Timeout>();
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     // Handle scroll behavior for glassmorphism effect
     useEffect(() => {
