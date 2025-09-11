@@ -296,10 +296,10 @@ const Header = () => {
                                                                 {category.items.map((service, serviceIndex) => {
                                                                     const IconComponent = service.icon;
                                                                     return (
-                                                                        <Link
+                                                                        <button
                                                                             key={serviceIndex}
-                                                                            href={service.link}
-                                                                            className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
+                                                                            onClick={() => handleServiceClick(service.link)}
+                                                                            className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-all duration-300 group w-full text-left"
                                                                         >
                                                                             <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-[#34969E] to-[#C2D92C] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                                                                 <IconComponent className="w-5 h-5 text-white" />
