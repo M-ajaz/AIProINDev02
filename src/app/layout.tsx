@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import dynamicComponent from "next/dynamic";
 import StoreProvider from "./StoreProvider";
+import AOSWrapper from "@/components/AOSWrapper";
 import "./globals.css";
 
 // -------------------------------------------------------------------------
@@ -42,13 +43,15 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${lato.className} antialiased`}>
-				<ScrollToTop>
-					<StoreProvider>
-						<Header />
-						{children}
-						<Footer />
-					</StoreProvider>
-				</ScrollToTop>
+				<AOSWrapper>
+					<ScrollToTop>
+						<StoreProvider>
+							<Header />
+							{children}
+							<Footer />
+						</StoreProvider>
+					</ScrollToTop>
+				</AOSWrapper>
 			</body>
 		</html>
 	);
