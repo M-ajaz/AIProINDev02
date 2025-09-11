@@ -455,36 +455,36 @@ export const rpoPartnersData = [
 
 export const comprehensiveDataMobile = [
     {
-        img: "/img/comprehensive1.jpg",
+        img: "https://images.unsplash.com/photo-1573496130103-a442a3754d0e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbHxlbnwwfHx8Ymx1ZXwxNzU3NTg0MjgwfDA&ixlib=rb-4.1.0&q=85",
         title: "RPO Service"
     },
     {
-        img: "/img/comprehensive2.jpg",
-        title: "IT Consulting"
+        img: "https://images.unsplash.com/photo-1573497490790-9053816a01d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbHxlbnwwfHx8Ymx1ZXwxNzU3NTg0MjgwfDA&ixlib=rb-4.1.0&q=85",
+        title: "FTE Service"
     },
     {
-        img: "/img/comprehensive3.jpg",
-        title: "FTE Hiring"
-    },
-    {
-        img: "/img/comprehensive4.jpg",
+        img: "https://images.unsplash.com/photo-1536408157291-aef6d736e2cd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbHxlbnwwfHx8Ymx1ZXwxNzU3NTg0MjgwfDA&ixlib=rb-4.1.0&q=85",
         title: "Contract Staffing"
     },
     {
-        img: "/img/comprehensive5.jpg",
+        img: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHw0fHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbHxlbnwwfHx8Ymx1ZXwxNzU3NTg0MjgwfDA&ixlib=rb-4.1.0&q=85",
         title: "Direct Sourcing"
     },
     {
-        img: "/img/comprehensive6.jpg",
+        img: "https://images.unsplash.com/photo-1606588984221-7ab3e2bb038a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZ3xlbnwwfHx8Ymx1ZXwxNzU3NTg0Mjg3fDA&ixlib=rb-4.1.0&q=85",
         title: "HR Outsourcing"
     },
     {
-        img: "/img/comprehensive7.jpg",
+        img: "https://images.unsplash.com/photo-1626148750586-df6e1b0bebf2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZ3xlbnwwfHx8Ymx1ZXwxNzU3NTg0Mjg3fDA&ixlib=rb-4.1.0&q=85",
         title: "Marketing Solutions"
     },
     {
-        img: "/img/comprehensive2.jpg",
-        title: "BI DATA Visualization"
+        img: "https://images.pexels.com/photos/8728559/pexels-photo-8728559.jpeg",
+        title: "BI & Data Visualization"
+    },
+    {
+        img: "https://images.pexels.com/photos/8254894/pexels-photo-8254894.jpeg",
+        title: "IT Consulting & Development"
     }
 ]
 
