@@ -55,7 +55,7 @@ export const MenuList: Record<string, any>[] = [
     {
         name: "contact",
         children: [],
-        link: "/contact"
+        link: "/contact-us"
     }
 ]
 
