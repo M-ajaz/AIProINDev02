@@ -399,7 +399,7 @@ const ITConsultingPage = () => {
                 </div>
             </section>
 
-            {/* Engagement Models - Scrollable Cards */}
+            {/* Engagement Models - Responsive Grid */}
             <section className="py-20 bg-gradient-to-br from-navy-600 to-teal-500">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16" data-aos="fade-up">
@@ -411,7 +411,7 @@ const ITConsultingPage = () => {
                         </p>
                     </div>
 
-                    <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory" data-aos="fade-up" data-aos-delay="200">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="200">
                         {[
                             {
                                 title: "Advisory Sprints",
@@ -440,7 +440,7 @@ const ITConsultingPage = () => {
                         ].map((model, index) => (
                             <div 
                                 key={index}
-                                className="min-w-[320px] bg-white/10 backdrop-blur-lg rounded-3xl p-8 snap-center border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+                                className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:bg-white/20 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
                             >
                                 <div className="w-16 h-16 bg-lime-400 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                                     <Icon icon={model.icon} className="text-2xl text-navy-600" />
