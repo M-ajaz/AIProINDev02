@@ -390,10 +390,10 @@ const Header = () => {
                                                                 {category.items.map((service, serviceIndex) => {
                                                                     const IconComponent = service.icon;
                                                                     return (
-                                                                        <Link
+                                                                        <button
                                                                             key={serviceIndex}
-                                                                            href={service.link}
-                                                                            className="flex items-center space-x-3 text-white hover:text-[#C2D92C] transition-colors duration-300"
+                                                                            onClick={() => handleServiceClick(service.link)}
+                                                                            className="flex items-center space-x-3 text-white hover:text-[#C2D92C] transition-colors duration-300 w-full text-left"
                                                                         >
                                                                             <IconComponent className="w-4 h-4" />
                                                                             <span className="text-lg">{service.name}</span>
