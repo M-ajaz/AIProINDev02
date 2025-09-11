@@ -10,6 +10,8 @@ import {
     FaChartLine, 
     FaHeadset, 
     FaDatabase,
+    FaBullhorn,
+    FaLaptopCode,
     FaChevronDown,
     FaTimes,
     FaBars,
