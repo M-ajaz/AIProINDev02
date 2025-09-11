@@ -561,35 +561,50 @@ export const comprehensiveData = [
 
 export const industriesSliderData = [
     {
-        title: "Healthcare",
-        desc: "Protingent delivers expert pre-vetted healthcare staffing solutions and result-oriented IT services for measurable outcomes. We focus on tangible improvements that strengthen care delivery, optimize costs, and improve workforce efficiency.",
-        img: "/img/healthCareInd.png"
+        title: "Construction",
+        desc: "Digitally enabled project staffing, IT consulting, and data-driven insights ensure faster project execution, cost control, safety compliance, and smarter workforce allocation.",
+        img: "https://images.pexels.com/photos/33854499/pexels-photo-33854499.jpeg"
+    },
+    {
+        title: "Manufacturing",
+        desc: "Automation, predictive analytics, and skilled workforce integration streamline production cycles, reduce downtime, and improve quality control for next-gen manufacturing efficiency.",
+        img: "https://images.unsplash.com/photo-1747999359057-7b5bb6646a12?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwyfHxpbmR1c3RyeSUyMHdvcmtwbGFjZXxlbnwwfHx8fDE3NTc1OTAzMDR8MA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+        title: "Energy",
+        desc: "Smart workforce solutions and digital transformation accelerate sustainable energy operations, improve asset management, and ensure compliance for evolving energy ecosystems.",
+        img: "https://images.unsplash.com/photo-1535999148025-f0f66109d384?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwzfHxpbmR1c3RyeSUyMHdvcmtwbGFjZXxlbnwwfHx8fDE3NTc1OTAzMDR8MA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+        title: "Finance",
+        desc: "Secure staffing, analytics, and IT consulting enable digital banking, regulatory compliance, fraud prevention, and customer-centric innovations for resilient financial services.",
+        img: "https://images.unsplash.com/photo-1425421669292-0c3da3b8f529?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3xlbnwwfHx8fDE3NTc1OTAyOTl8MA&ixlib=rb-4.1.0&q=85"
     },
     {
         title: "Engineering",
-        desc: "Protingent delivers expert pre-vetted healthcare staffing solutions and result-oriented IT services for measurable outcomes. We focus on tangible improvements that strengthen care delivery, optimize costs, and improve workforce efficiency.",
-        img: "/img/healthCareInd.png"
+        desc: "Specialized talent and advanced IT consulting drive innovation, ensure precision, and improve project delivery timelines for engineering firms across sectors.",
+        img: "https://images.unsplash.com/photo-1489689680823-fdc334aa73a4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxpbmR1c3RyeSUyMHdvcmtwbGFjZXxlbnwwfHx8fDE3NTc1OTAzMDR8MA&ixlib=rb-4.1.0&q=85"
     },
     {
-        title: "Consumer Goods",
-        desc: "Protingent delivers expert pre-vetted healthcare staffing solutions and result-oriented IT services for measurable outcomes. We focus on tangible improvements that strengthen care delivery, optimize costs, and improve workforce efficiency.",
-        img: "/img/healthCareInd.png"
+        title: "Technology",
+        desc: "Agile staffing and digital consulting support product innovation, cloud adoption, and rapid scalability in the fast-paced technology ecosystem.",
+        img: "https://images.unsplash.com/photo-1589979034086-5885b60c8f59?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3xlbnwwfHx8fDE3NTc1OTAyOTl8MA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+        title: "Telecommunication",
+        desc: "End-to-end workforce solutions and IT expertise strengthen infrastructure deployment, accelerate 5G rollouts, and ensure seamless customer connectivity.",
+        img: "https://images.unsplash.com/photo-1518644672559-989648509aa8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3xlbnwwfHx8fDE3NTc1OTAyOTl8MA&ixlib=rb-4.1.0&q=85"
     },
     {
         title: "Healthcare",
-        desc: "Protingent delivers expert pre-vetted healthcare staffing solutions and result-oriented IT services for measurable outcomes. We focus on tangible improvements that strengthen care delivery, optimize costs, and improve workforce efficiency.",
-        img: "/img/healthCareInd.png"
+        desc: "AI-powered staffing and IT services optimize care delivery, improve workforce efficiency, reduce operational costs, and enhance patient outcomes.",
+        img: "https://images.unsplash.com/photo-1522199899308-2eef382e2158?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3xlbnwwfHx8fDE3NTc1OTAyOTl8MA&ixlib=rb-4.1.0&q=85"
     },
     {
-        title: "Engineering",
-        desc: "Protingent delivers expert pre-vetted healthcare staffing solutions and result-oriented IT services for measurable outcomes. We focus on tangible improvements that strengthen care delivery, optimize costs, and improve workforce efficiency.",
-        img: "/img/healthCareInd.png"
-    },
-    {
-        title: "Consumer Goods",
-        desc: "Protingent delivers expert pre-vetted healthcare staffing solutions and result-oriented IT services for measurable outcomes. We focus on tangible improvements that strengthen care delivery, optimize costs, and improve workforce efficiency.",
-        img: "/img/healthCareInd.png"
-    },
+        title: "Aerospace",
+        desc: "Specialized talent, compliance-driven processes, and advanced analytics power innovation, safety, and operational excellence in aerospace engineering and manufacturing.",
+        img: "https://images.pexels.com/photos/33852427/pexels-photo-33852427.jpeg"
+    }
 ]
 
 export const talkToExpertData = [
