@@ -215,7 +215,13 @@ const Header = () => {
     const handleMouseLeave = () => {
         timeoutRef.current = setTimeout(() => {
             setIsServicesDropdownOpen(false);
-        }, 150);
+        }, 300); // Increased delay from 150ms to 300ms
+    };
+
+    // Handle service link clicks
+    const handleServiceClick = (link: string) => {
+        setIsServicesDropdownOpen(false);
+        router.push(link);
     };
 
     // Check if current route is active
