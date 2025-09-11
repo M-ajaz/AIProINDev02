@@ -220,8 +220,11 @@ const Header = () => {
 
     // Handle service link clicks
     const handleServiceClick = (link: string) => {
+        console.log('Service clicked:', link);
         setIsServicesDropdownOpen(false);
-        router.push(link);
+        setIsMobileMenuOpen(false);
+        // Use window.location for more reliable navigation
+        window.location.href = link;
     };
 
     // Check if current route is active
