@@ -490,6 +490,9 @@ test_plan:
       - working: true
         agent: "testing"
         comment: "Minor: Engagement models section title found, horizontal scrolling container present, all 4 engagement models visible. Minor technical issue with scroll method in test script, but scrolling functionality visually confirmed. Feature lists and icons working on each card."
+      - working: true
+        agent: "testing"
+        comment: "✅ MAJOR UPDATE: Horizontal scrollbar successfully removed! Section now uses proper CSS Grid layout (grid-cols-1 md:grid-cols-2 lg:grid-cols-4) with responsive behavior. Desktop shows 4 columns (290px each), tablet shows 2 columns (348px each), mobile shows 1 column (342px). All 4 engagement model cards present with correct titles: Advisory Sprints, Project-Based Consulting, Managed Transformation Programs, Dedicated Consulting Pods. Hover effects working properly. No horizontal overflow detected (overflow-x: visible). Grid layout confirmed working across all screen sizes."
 
   - task: "IT Consulting Page - Why Businesses Trust Protingent India"
     implemented: true
