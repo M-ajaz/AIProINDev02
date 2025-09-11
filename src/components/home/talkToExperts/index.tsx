@@ -230,5 +230,3 @@ const TalkToExpert = () => {
 }
 
 export default TalkToExpert;
-
-export default TalkToExpert;
