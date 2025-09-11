@@ -115,13 +115,13 @@ const servicesData: ServiceCategory[] = [
             {
                 name: "RPO Services",
                 description: "Recruitment Process Outsourcing for enterprise hiring",
-                link: "/rpo-services",
+                link: "/rpo-service",
                 icon: FaUserTie
             },
             {
                 name: "FTE Hiring",
                 description: "Full-time employee recruitment and placement",
-                link: "/fte-hiring",
+                link: "/fte-service",
                 icon: FaHandshake
             },
             {
@@ -148,10 +148,22 @@ const servicesData: ServiceCategory[] = [
                 icon: FaHeadset
             },
             {
+                name: "Marketing Solutions",
+                description: "Digital marketing and growth strategies",
+                link: "/marketing-solutions",
+                icon: FaBullhorn
+            },
+            {
                 name: "BI & Data Visualization",
                 description: "Business intelligence and data analytics",
                 link: "/bi-data-visualization",
                 icon: FaDatabase
+            },
+            {
+                name: "IT Consulting",
+                description: "Technology consulting and digital transformation",
+                link: "/it-consulting",
+                icon: FaLaptopCode
             }
         ]
     }
