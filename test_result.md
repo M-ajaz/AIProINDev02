@@ -156,7 +156,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Homepage - Comprehensive Solutions & Expertise Section"
+    - "Homepage - Industries We Transform with Innovation Slider Section"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
